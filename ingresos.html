@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Ingresos - Presupuesto Abierto Ciudadano - Municipalidad de Córdoba</title>
+
+  <!-- Bootstrap -->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,900" rel="stylesheet">
+  <link href="assets/css/bsMuniCba.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/animate.css">
+
+  <link href="assets/css/bsMuniCba-responsiveness.css" rel="stylesheet">
+
+  <link href="assets/css/presupuesto.css" rel="stylesheet">
+  <link href="assets/css/presupuesto-responsiveness.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/jquery.timelineMe.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/cslider.css">
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+  <div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+  </div>
+  <nav class="nav-side hidden-md hidden-lg">
+    <ul class="list-unstyled main-menu">
+
+      <!--Include your navigation here-->
+      <li class="text-right"><a href="#" id="nav-close"><i class="fa fa-times" aria-hidden="true"></i>
+      </a></li>
+      <a href="index.html"><li>Inicio <span class="icon"></span></li></a>
+      <a href="ingresos.html" class="active"><li>Ingresos <span class="icon"></span></li></a>
+      <a href="gastos.html"><li>Gastos <span class="icon"></span></li></a>
+      <a href="ejecuciones-presupuestarias.html"><li>Ejecuciones Presupuestarias <span class="icon"></span></li></a>
+      <a href="presupuesto-participativo.html"><li>Presupuesto Participativo <span class="icon"></span></li></a>
+      <a target="_blank" href="https://gobiernoabierto.cordoba.gob.ar/data/datos-abiertos/categoria/economia/presupuestos/14"><li>Descargá todos los datos <span class="icon"></span></li></a>
+    </ul>
+  </nav>
+
+  <!-- Fixed navbar -->
+  <nav class="navbar navbar-default navbar-gaMuniCba affix">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="index.html">
+          <div class="menuLogo">
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+             viewBox="0 0 242.9 300" style="enable-background:new 0 0 242.9 300;" xml:space="preserve">
+            <g>
+            <path class="stLogo" d="M236.7,108.9l-28.5-28.5c-1.5-1.5-3.7-2.3-6-2.3c-2.3,0-4.6,0.9-6.1,2.4c-2.2,2.3-3,5.6-1.9,8.7
+              c-3.7,5.3-9.7,8.4-16.1,8.4c-9.7,0-17.8-6.8-19.5-16.3h3.2c5,0,9.1-4.1,9.1-9.1c0-4.9-3.9-8.9-8.8-9.1c0.1-0.5,0.1-1,0.1-1.4
+              c0-5-4.1-9.1-9.1-9.1h-23.6v-5h44.4c2.1,0,3.8-1.7,3.8-3.8V12c0-2.1-1.7-3.8-3.8-3.8h-44.5c-0.5-3.7-3.6-6.5-7.4-6.5
+              c-4.1,0-7.5,3.4-7.5,7.5v43.2H91c-5,0-9.1,4.1-9.1,9.1c0,0.6,0.1,1.1,0.2,1.7c-4.1,1-6.9,4.6-6.9,8.8c0,5,4.1,9.1,9.1,9.1h1.4
+              c-1.7,9.4-9.8,16.2-19.5,16.3c-6.8,0-13-3.4-16.6-9.1c0.2-0.7,0.4-1.5,0.4-2.3c0.1-2.3-0.7-4.5-2.3-6.1c-1.5-1.6-3.8-2.5-6.3-2.5
+              c-2.2,0-4.3,0.8-5.8,2.2L6.2,107.3c-1.7,1.6-2.6,3.7-2.7,6c-0.1,2.3,0.7,4.4,2.3,6c1.6,1.7,3.7,2.7,6.2,2.7c0.8,0,1.5-0.1,2.3-0.3
+              c12.4,8.9,19.8,23.3,19.8,38.6c0,8.8-2.4,17.4-7,24.9c-3.4,7.3-5.1,15-5.1,23c0,0.4,0,0.8,0,1.3l0,0.1l0,0.7c0,0.2,0,0.5,0.1,1.1
+              c0,0.6,0.1,1.1,0.2,1.9c0.1,0.7,0.1,1.4,0.2,2.3c0.3,1.9,0.7,3.9,1.2,6.2l0.2,0.9c0.2,0.8,0.5,1.6,0.8,2.5l0.6,1.9
+              c0.1,0.3,0.2,0.7,0.4,1l0.2,0.5c3,7.4,7.6,14.2,13.5,19.6l-0.1,0.1l5.5,4.3c0.5,0.4,1,0.7,1.5,1.1l59,39.2c5,3.5,10.8,5.3,16.8,5.3
+              c6.6,0,13.1-2.2,18.1-6.3l58.8-39.2c0.2-0.1,0.4-0.3,0.5-0.4l2.2-1.6c7.2-5.8,12.9-13.4,16.4-22l0.4-0.7c2.2-5.6,3.4-11.5,3.7-17.8
+              l0-0.7l0-0.1l0-0.1c0-0.4,0.1-0.8,0.1-1.2c0-7.7-1.7-15.3-5-22.6c-4.8-7.6-7.3-16.3-7.3-25.3c0-14.6,6.6-28.2,18.1-37.3
+              c3,1,6.4,0.1,8.6-2.1C240,117.7,240,112.3,236.7,108.9z M41.1,82.4c0.3,0,0.5,0,0.8,0c0.8,0.1,1.6,0.5,2.1,1.1c0.6,0.7,1,1.6,1,2.5
+              c0,1-0.4,1.8-1.1,2.5l-29.4,27.6c-1.4,1.3-3.8,1.2-5-0.1c-1.4-1.5-1.3-3.7,0.2-5l29.4-27.7C39.6,82.7,40.4,82.5,41.1,82.4z
+               M84.3,68H91h26.2v8.3h-33c-2.3,0-4.1-1.9-4.1-4.2C80.1,69.9,82,68,84.3,68z M91,57.5h26.2v8.3H90.9c-2.2-0.1-4.1-1.9-4.1-4.1
+              C86.9,59.3,88.7,57.5,91,57.5z M122,6.7c1.4,0,2.5,1.1,2.5,2.5v99.1c-0.8-0.3-1.7-0.4-2.5-0.4c-0.9,0-1.7,0.1-2.5,0.4V9.3
+              C119.5,7.9,120.6,6.7,122,6.7z M122,110.1c3.4,0,6.1,2.8,6.1,6.1c0,0.7-0.2,1.5-0.4,2.1h-11.3c-0.3-0.7-0.5-1.4-0.5-2.1
+              C115.9,112.9,118.7,110.1,122,110.1z M172.8,23.6V32h-46v-8.4H172.8z M126.8,21.3v-8.2h46v8.2H126.8z M172.8,34.3v8.2h-46v-8.2
+              H172.8z M153,57.5c2.3,0,4.2,1.9,4.2,4.2c0,2.3-1.8,4.1-4.1,4.1h-26.4v-8.3H153z M153,68h8.7c2.3,0,4.1,1.8,4.1,4.1
+              c0,2.3-1.8,4.2-4.1,4.2h-34.9V68H153z M225.9,118.6c-3.2,2.4-6.1,5.2-8.7,8.3c-1.2,1.4-2.2,2.8-3.2,4.3c-0.1,0.1-0.2,0.2-0.3,0.4
+              c-5.6,8.4-8.7,18.4-8.7,28.8c0,9.9,2.8,19.5,7.9,27.6c2.9,6.5,4.4,13.3,4.4,20.3c0,0.2,0,0.4,0,0.6c-7-1-13.8,0.7-19.4,4.8
+              l-0.4,0.4c-8.6,6.5-18.9,9.8-29.6,9.8c-2.4,0-4.7-0.2-7-0.6c-0.8-3.3-3.8-5.7-7.2-5.7h-2.8c0.1-0.3,0.1-0.7,0.1-1.2
+              c0-2.9-2.2-5.3-5-5.6l15.4-15.4l19.9,20c0.2,0.2,0.5,0.3,0.8,0.3c0.3,0,0.6-0.1,0.8-0.3l6.3-6.3l2.1-2.2l4.2-4.2
+              c0.5-0.5,0.5-1.1,0-1.6l-19.9-20l0.6-0.6c0.4-0.4,0.4-1.2,0-1.6c-0.4-0.4-1.1-0.4-1.6,0l-1.4,1.4l-0.1,0l-12.7,12.7
+              c0,0,0,0.1,0,0.1l-16.1,16.1v-27.1l0-0.1l18.8-18.8l20,20c0.2,0.2,0.5,0.4,0.8,0.4c0.3,0,0.6-0.1,0.8-0.4l5-5l3.4-3.4v0l4.2-4.2
+              c0.4-0.4,0.4-1.2,0-1.6l-20-20l0.7-0.8c0.4-0.4,0.4-1.2,0-1.6c-0.4-0.4-1.2-0.4-1.6,0l-32.2,32.2v-23.4h0.7c3.2,0,5.8-2.6,5.8-5.8
+              c0-1.7-0.8-3.2-1.9-4.3l16.2-16.1l20,20c0.2,0.2,0.5,0.3,0.8,0.3c0.3,0,0.5-0.1,0.8-0.3l4.2-4.2l1.4-1.5l7-7c0.4-0.4,0.4-1.2,0-1.6
+              l-20-20l0.7-0.7c0.4-0.4,0.4-1.2,0-1.6c-0.4-0.5-1.2-0.5-1.6,0L147,144.2c-0.6-0.2-1.2-0.4-1.9-0.4h-7.7V130h2.9
+              c3.2,0,5.8-2.6,5.8-5.8c0-3.2-2.6-5.8-5.8-5.8h-10.2c0.2-0.7,0.3-1.4,0.3-2.1c0-2.8-1.4-5.3-3.6-6.8V78.8h26.6
+              c0,0.4,0.1,0.7,0.1,1.1c0,0.4,0.1,0.9,0.1,1.3c0,0,0,0.1,0,0.1c1.7,12,12,21.1,24.4,21.1c3.1,0,6.2-0.6,9.1-1.8
+              c4.8-1.9,8.8-5.2,11.6-9.5l21,20.9L225.9,118.6z M217.2,211.5c-0.1,2-0.4,4.1-0.8,6.1c-0.1,0.4-0.1,0.8-0.2,1.2c-0.2,1-0.5,2-0.7,3
+              c-0.2,0.6-0.4,1.1-0.5,1.7c-0.2,0.7-0.4,1.4-0.7,2c-5.8-0.3-11.5,1.6-16.3,5.1l-0.4,0.4c-8.6,6.5-18.9,9.9-29.6,9.9
+              c-9.6,0-18.7-2.9-26.7-8.1h12.5c4,0,7.2-3.1,7.5-7.1c2.3,0.3,4.5,0.6,6.8,0.6c11.3,0,22-3.6,31.1-10.4l0.4-0.4
+              c5.1-3.7,11.3-5.4,17.9-4.4C217.2,211.3,217.2,211.4,217.2,211.5z M202.6,243.4c-1,1.1-2.1,2-3.3,3c-0.5,0.4-1,0.8-1.5,1.2l-1.4,1
+              l-0.3,0.2c0,0,0,0,0,0s0,0-0.1,0l-3.3,2.2c-0.5,0.3-0.9,0.5-1.1,0.6c-0.5,0.2-1,0.5-1.5,0.7c-0.6,0.3-1.3,0.6-1.9,0.9
+              c-0.5,0.3-1.1,0.5-1.6,0.8c-0.6,0.2-1.1,0.4-1.7,0.6c-0.7,0.2-1.3,0.5-1.9,0.7c-0.5,0.2-1,0.3-1.4,0.4c-0.8,0.2-1.5,0.5-2.3,0.6
+              c-0.6,0.2-1.1,0.3-1.6,0.3c-0.7,0.1-1.5,0.3-2.2,0.4c-0.8,0.2-1.6,0.2-2.4,0.3c-0.5,0-1,0.1-1.5,0.2c-1.3,0.1-2.6,0.1-3.9,0.1
+              c-11.2,0-21.7-3.6-30.5-10.5l-1.4-1c-4.2-2.5-9-3.9-13.9-3.9c-4.9,0-9.7,1.3-13.9,3.9l-1.3,1c-8.8,6.9-19.3,10.5-30.5,10.5
+              c-2.3,0-4.6-0.1-6.9-0.5c-0.9-0.2-1.7-0.4-2.6-0.6c-1.4-0.3-2.7-0.5-4.1-0.9c-1-0.3-2-0.7-3.1-1.1c-1.1-0.4-2.3-0.7-3.4-1.2
+              c-1-0.5-2-1.1-3-1.6c-1-0.5-2.1-1-3.1-1.6l-1.2-0.8c-0.6-0.4-1.2-0.8-1.7-1.2l-0.2-0.1l-2.1-1.6c-6.1-5-10.9-11.5-14-18.8
+              c5-0.1,9.9,1.6,13.8,4.5l0.6,0.5c9,6.7,19.7,10.3,31,10.3c11.3,0,21.9-3.6,30.8-10.3H103c-8,5.2-17,8.1-26.7,8.1
+              c-10.8,0-21-3.4-29.5-9.8l-0.6-0.5c-4.6-3.3-10-5.1-15.6-5.1c-0.2,0-0.4,0-0.6,0c-0.8-2.1-1.4-4.3-1.9-6.5
+              c-0.1-0.5-0.2-0.9-0.3-1.4c-0.4-2.1-0.7-4.3-0.8-6.4c6.6-1,12.8,0.7,17.7,4.2l0.6,0.5c9,6.8,19.7,10.3,31,10.3
+              c2.3,0,4.5-0.3,6.7-0.5c0.2,4,3.5,7.1,7.5,7.1H137c9,6.7,19.6,10.3,30.8,10.3c11.3,0,22-3.6,31.1-10.4l0.4-0.3
+              c4.1-3,8.9-4.5,13.9-4.6c-2.4,5.5-5.7,10.5-9.7,14.8C203.2,242.8,202.9,243.1,202.6,243.4z M28,197.6c0.2-1.1,0.6-2.2,0.9-3.3
+              c0.2-0.6,0.3-1.2,0.5-1.8c0.4-1.2,0.9-2.3,1.4-3.4c0.2-0.5,0.4-1,0.6-1.5c1.8-3,3.3-6.1,4.5-9.4c0,0,0-0.1,0-0.1
+              c0.3-0.8,0.5-1.6,0.8-2.4c0.1-0.3,0.2-0.6,0.3-1c0.2-0.7,0.3-1.4,0.5-2c0.1-0.5,0.3-1,0.4-1.4c0.1-0.6,0.2-1.3,0.3-1.9
+              c0.1-0.5,0.2-1.1,0.3-1.6c0.1-0.7,0.2-1.4,0.2-2.1c0-0.5,0.1-1,0.2-1.5c0.1-1.2,0.1-2.4,0.1-3.7c0-2.2-0.1-4.3-0.4-6.4
+              c-0.3-2.1-0.6-4.1-1.1-6.1c0,0,0-0.1,0-0.1c-3.1-12.4-10.5-23.1-20.7-30.2l28.5-26.9c2.7,4.4,6.8,7.9,11.6,9.9
+              c2.9,1.2,6.1,1.9,9.4,1.9c10.6,0,19.6-6.7,23.1-16.1c0.1-0.2,0.1-0.3,0.2-0.5c0.1-0.4,0.2-0.8,0.3-1.1c0.1-0.4,0.2-0.8,0.3-1.2
+              c0.1-0.5,0.2-1,0.3-1.6c0-0.3,0.1-0.5,0.1-0.8c0.1-0.8,0.2-1.6,0.2-2.4h26.4v30.6c-2.2,1.5-3.6,4-3.6,6.8c0,0.7,0.2,1.5,0.4,2.1
+              h-10.2c-3.2,0-5.8,2.6-5.8,5.8c0,3.2,2.6,5.8,5.8,5.8h2.9v13.9H99c-0.7,0-1.3,0.2-1.9,0.4c0-0.1,0-0.1-0.1-0.2l-31.4-31.3
+              c-0.5-0.5-1.2-0.5-1.6,0c-0.4,0.4-0.4,1.2,0,1.6l0.7,0.7l-20,20c-0.4,0.4-0.4,1.2,0,1.6L50,142l3.1,3.1l4.2,4.2
+              c0.2,0.2,0.5,0.3,0.8,0.3c0.3,0,0.6-0.1,0.8-0.3l20-20l16.2,16.2c-1.2,1.1-1.9,2.6-1.9,4.3c0,3.2,2.6,5.8,5.8,5.8h0.7v23.4
+              l-32.2-32.2c-0.4-0.4-1.2-0.4-1.6,0c-0.5,0.4-0.5,1.2,0,1.6l0.7,0.8l-20,20c-0.5,0.4-0.5,1.2,0,1.6l4.2,4.2v0l3.4,3.4l5,5
+              c0.2,0.2,0.5,0.4,0.8,0.4c0.3,0,0.6-0.1,0.8-0.4l20.1-20L99.6,182c0,0.1,0.1,0,0.1,0.1v27.2l-16.1-16.1c0,0,0-0.1,0-0.1L71,180.4
+              l-0.1,0l-1.4-1.4c-0.4-0.4-1.2-0.4-1.6,0c-0.4,0.5-0.4,1.2,0,1.6l0.7,0.6l-20,20c-0.5,0.5-0.5,1.1,0,1.6l6.3,6.3l2.1,2.1l4.2,4.2
+              c0.2,0.2,0.5,0.3,0.8,0.3c0.3,0,0.6-0.1,0.8-0.3l20-20l15.4,15.4c-2.8,0.4-5,2.7-5,5.6c0,0.5,0.1,0.9,0.2,1.2h-2.9
+              c-3.5,0-6.4,2.4-7.3,5.7c-2.2,0.3-4.6,0.6-6.9,0.6c-10.8,0-21-3.4-29.5-9.8l-0.6-0.5c-5.5-4-12.2-5.8-19.3-4.7c0-0.2,0-0.4,0-0.6
+              c0-3.1,0.4-6.2,0.9-9.2C27.9,198.6,27.9,198,28,197.6z M148.4,217.7H95.7c-0.2-0.3-0.3-0.7-0.3-1.2c0-2,1.6-3.6,3.5-3.6h46.1
+              c2,0,3.5,1.6,3.5,3.6C148.6,217,148.6,217.4,148.4,217.7z M153.6,220c2.9,0,5.3,2.4,5.3,5.3c0,2.9-2.4,5.3-5.3,5.3H90.5
+              c-2.9,0-5.3-2.4-5.3-5.3c0-2.9,2.4-5.3,5.3-5.3H153.6z M142.1,176v4.2h-40.2V176H142.1z M101.9,173.8v-18.3h40.2v18.3H101.9z
+               M142.1,182.4v28.3h-12.9v-17.9c0-4-3.2-7.2-7.2-7.2c-4,0-7.3,3.2-7.3,7.2v17.9h-12.8v-28.3H142.1z M127.5,192.8v17.9h-11.1v-17.9
+              c0-3,2.5-5.5,5.6-5.5C125.1,187.3,127.5,189.7,127.5,192.8z M143.2,153.2h-42.4l-0.1,0H99c-1.9,0-3.5-1.6-3.5-3.5
+              c0-2,1.6-3.6,3.5-3.6h8.7c0.1,0,0.1,0.1,0.1,0.1h28.5v-0.1h8.9c2,0,3.5,1.6,3.5,3.6c0,2-1.6,3.5-3.5,3.5L143.2,153.2L143.2,153.2z
+               M108.9,143.9V130h26.2v13.8H108.9z M136.2,127.7h-28.5c0,0-0.1,0-0.2,0.1h-3.8c-2,0-3.5-1.6-3.5-3.5c0-2,1.6-3.6,3.5-3.6h36.5
+              c2,0,3.6,1.6,3.6,3.6c0,1.9-1.6,3.5-3.6,3.5h-3.8C136.4,127.7,136.3,127.7,136.2,127.7z M70.4,120.8l2.7,2.7l-19.2,19.2l-1.3-1.4
+              l-1.3-1.3L70.4,120.8z M49.6,138.5l-2.6-2.6l19.2-19.2l2.6,2.6L49.6,138.5z M74.7,125.1l2.6,2.6l-19.2,19.2l-2.6-2.6L74.7,125.1z
+               M72.3,154.9l1.4,1.3l1.3,1.3l-19.2,19.2l-0.5-0.4l-2.2-2.3L72.3,154.9z M51.6,172.5l-2.6-2.6l19.2-19.2l2.6,2.6L51.6,172.5z
+               M76.7,159.2l2.6,2.6L60,181l-2.6-2.5L76.7,159.2z M74.3,187l2.7,2.7l-19.2,19.2l-0.3-0.3l-2.4-2.4L74.3,187z M53.6,204.6L51,202
+              l19.1-19.2l2.6,2.6L53.6,204.6z M78.6,191.3l2.6,2.6L62,213.1l-2.6-2.6L78.6,191.3z M108.1,288.8l-20-13.3c0.7-0.2,1.3-0.4,1.9-0.6
+              c0.8-0.2,1.6-0.4,2.4-0.7c1.1-0.4,2.3-0.8,3.4-1.3c0.7-0.3,1.4-0.5,2.1-0.9c1.2-0.5,2.4-1.2,3.5-1.8c0.6-0.3,1.2-0.6,1.7-1
+              c1.7-1,3.3-2.2,4.9-3.3l1.3-0.9c7.6-4.7,17.8-4.7,25.3,0l1.3,0.9c1.6,1.2,3.2,2.4,4.9,3.4c0.6,0.4,1.1,0.6,1.7,0.9
+              c1.2,0.7,2.4,1.3,3.6,1.8c0.7,0.4,1.4,0.6,2.1,0.9c1.1,0.5,2.3,0.9,3.5,1.3c0.8,0.3,1.6,0.5,2.3,0.7c0.7,0.2,1.3,0.4,1.9,0.6
+              l-18.6,12.4C129,294.6,116.9,295,108.1,288.8z M155.6,273c-0.9-0.2-1.7-0.4-2.5-0.6c-1.1-0.4-2.2-0.8-3.3-1.3
+              c-0.7-0.3-1.5-0.5-2.2-0.8c-1.2-0.6-2.4-1.2-3.5-1.9c-0.6-0.3-1.2-0.6-1.7-0.9c-1.7-1-3.4-2.1-4.9-3.4l-1.4-0.9
+              c-8.3-5.1-19.4-5.2-27.8,0l-1.3,1c-1.6,1.2-3.2,2.3-4.9,3.3c-0.6,0.4-1.2,0.6-1.8,1c-1.2,0.6-2.3,1.3-3.5,1.8
+              c-0.7,0.3-1.5,0.6-2.2,0.8c-1.1,0.4-2.2,0.9-3.4,1.3c-0.8,0.2-1.6,0.4-2.4,0.6c-1.1,0.3-2.1,0.6-3.2,0.8l-23.9-15.9
+              c0.1,0,0.2,0.1,0.4,0.1c0.2,0,0.4,0.1,0.6,0.1c2.1,0.6,4.3,1.1,6.5,1.4c0.1,0,0.3,0,0.3,0c2.3,0.3,4.6,0.5,7,0.5
+              c11.7,0,22.7-3.8,31.8-10.9l1.3-0.9c7.6-4.7,17.8-4.6,25.3,0l1.3,0.9c9.1,7.2,20.2,11,31.8,11c1.3,0,2.6-0.1,4-0.2
+              c0.4,0,0.7-0.1,1.1-0.1c0.9-0.1,1.9-0.2,2.8-0.3c0.4-0.1,0.7-0.2,1.1-0.2c0.9-0.2,1.9-0.3,2.8-0.6c0.4-0.1,0.6-0.1,1-0.2
+              c0.7-0.2,1.3-0.3,2-0.5l-23.9,15.9C157.6,273.6,156.6,273.2,155.6,273z M188.9,206.2l-2.7,2.7l-19.1-19.2l2.7-2.7L188.9,206.2z
+               M171.4,185.4l2.6-2.6l19.2,19.2l-2.6,2.6L171.4,185.4z M184.6,210.5l-2.6,2.6l-19.2-19.2l2.6-2.6L184.6,210.5z M190.9,174.1
+              l-2.3,2.3l-0.4,0.4L169,157.6l2.7-2.7L190.9,174.1z M173.3,153.4l2.5-2.6l19.2,19.2l-2.6,2.6L173.3,153.4z M186.6,178.4L184,181
+              l-19.2-19.2l2.6-2.6L186.6,178.4z M192.9,140l-2.7,2.7L171,123.6l2.7-2.7L192.9,140z M175.3,119.3l2.6-2.6l19.2,19.2l-2.6,2.6
+              L175.3,119.3z M188.6,144.3l-2.6,2.6l-19.2-19.2l2.6-2.6L188.6,144.3z M228.1,117.5l-13.2-13.2L199,88.1c0,0,0,0,0-0.1
+              c-0.1-0.2-0.2-0.4-0.3-0.7c-0.1-0.2-0.1-0.5-0.1-0.7c0-0.1,0-0.3,0-0.4c0-0.9,0.4-1.7,1-2.4c0.6-0.7,1.5-1,2.4-1c0,0,0.1,0,0.1,0
+              c1,0,1.9,0.3,2.5,1l28.5,28.5c1.4,1.4,1.4,3.6,0,5.1C231.8,118.8,229.5,118.8,228.1,117.5z"/>
+            <path class="stLogo" d="M117.5,132.9v7.8v0.8h8.2h0.9v-0.8v-6.9v-0.9h-8.2H117.5z M119.2,134.7h5.6v5.2h-5.6V134.7z"/>
+            <path class="stLogo" d="M105.1,157.9v9.5v0.9h9.9h0.9v-0.9v-8.6v-0.9h-10H105.1z M106.8,159.7h7.4v6.9h-7.4V159.7z"/>
+            <path class="stLogo" d="M128,157.9v9.5v0.9h0.8h9.1h0.8v-9.5v-0.9h-10H128z M129.7,159.6h7.4v6.9h-7.4V159.6z"/>
+            </g>
+            </svg>
+
+
+          </div>
+        </a>
+        <a href="index.html">
+          <!-- <div class="sqGA"><h3 class="logoGA"><span Gobierno<br/>Abierto</h3><div class="logoGABar"></div></div> -->
+          <div class="sqGA">
+            <h3 class="logoGA">Gobierno<br/>Abierto</h3>
+            <div class="logoGABar"></div>
+            <span class="top" id="topSqGA"></span>
+            <span class="bottom"></span>
+          </div>
+        </a>
+        <div class="hidden-md hidden-lg pull-right">
+          <a id="nav-expander" class="nav-expander fixed hamburger animated fadeInLeft is-closed">
+            <span class="hamb-top"></span>
+            <span class="hamb-middle"></span>
+            <span class="hamb-bottom"></span>
+          </a>
+        </div>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse stroke">
+        <div class="hidden-md hidden-lg">
+        </div>
+        <div class="hidden-sm hidden-xs">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="index.html">
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="ingresos.html" class="active">
+                Ingresos
+              </a>
+            </li>
+            <li>
+              <a href="gastos.html">
+                Gastos
+              </a>
+            </li>
+            <li class="dos-lineas">
+              <a href="ejecuciones-presupuestarias.html">
+                Ejecuciones<br/>Presupuestarias
+              </a>
+            </li>
+            <li class="dos-lineas">
+              <a href="presupuesto-participativo.html">
+                Presupuesto<br/>Participativo
+              </a>
+            </li>
+            <li class="dropdown year">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">2017 <!--<span class="caret"></span>--></a>
+              <!-- <ul class="dropdown-menu">
+                <li><a href="#">2017</a></li>
+                <li><a href="#">2016</a></li>
+                <li><a href="#">2015</a></li>
+              </ul> -->
+            </li>
+            <li class="bajar-datos">
+              <a target="_blank" href="https://gobiernoabierto.cordoba.gob.ar/data/datos-abiertos/categoria/economia/presupuestos/14">
+                <span>Descargá</span><br><span>todos los datos</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div><!--/.nav-collapse -->
+    </div>
+    <div class="nav-buscar">
+      <form action="/search" method="GET">
+        <div class="col-xs-10 col-xs-offset-1">
+          <div class="input-group">
+            <input type="text" name="q" class="form-control" placeholder="¿Qué estás buscando?">
+            <span class="input-group-btn">
+              <button class="btn btn-default" id="btn-buscar-cerrar" type="button"><span class="cerrar fa-3x" aria-hidden="true">X</span></button>
+              <button class="btn btn-default hide" type="submit" id="btn-buscar"><i class="fa fa-search fa-4x" aria-hidden="true"></i></button>
+            </span>
+          </div>
+        </div>
+      </form>
+    </div>
+  </nav>
+
+  <!-- Begin page content -->
+  <div class="container-fluid inFContainer ingresos">
+    <div class="row">
+      <div class="col-xs-12 img-ingresos">
+        <div class="bg-overlay"></div>
+        <h1>Ingresos</h1>
+      </div>
+      <div class="col-xs-12 ingresos-body">
+        <div class="row">
+          <div class="col-xs-12">
+          <!-- <p class="definicion"> </p> -->
+          </div>
+          <div class="col-xs-12">
+            <h3 id="ingresos-title"></h3>
+            <div id="ingresosGraph"></div>
+          </div>
+        </div>
+        <!-- <hr /> -->
+        <div class="row">
+          <div class="col-xs-12">
+            <h3>Ver mas información</h3>
+          </div>
+          <div class="nav-tabs">
+            <div class="col-xs-12 col-md-4">
+              <a href="#corrientes" aria-controls="corrientes" role="tab" data-toggle="tab">
+                <div class="button-ingresos blue">
+                  Ingresos Corrientes
+                </div>
+              </a>
+            </div>
+            <div class="col-xs-12 col-md-4">
+              <a href="#capital" aria-controls="capital" role="tab" data-toggle="tab">
+                <div class="button-ingresos pink">
+                  Ingresos de Capital
+                </div>
+              </a>
+            </div>
+            <div class="col-xs-12 col-md-4">
+              <a href="#afectacion" aria-controls="afectacion" role="tab" data-toggle="tab">
+                <div class="button-ingresos orange">
+                  Rentas Generales y Afectación Específica
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="tab-content">
+            <div class="col-xs-12 tableContainer tab-panel" role="tabpanel" id="corrientes">
+              <h2 class="corrientes blue">Ingresos Corrientes</h2>
+              <p class="definicion">
+                Los Ingresos Corrientes son aquellos ingresos que la Municipalidad percibe de su normal funcionamiento diario, como cobro de tasas, contribuciones o derechos </a>.
+                <br/>
+                <br/>
+                Los Ingresos Corrientes se clasifican en <strong>ingresos de jurisdicción municipal</strong> (<i>ingresos propios</i>) e <strong>ingresos de otras jurisdicciones</strong> (<i>ingresos no propios</i>).
+
+              </p>
+
+              <!-- Nav tabs -->
+              <div class="row">
+                <div class="col-xs-12 col-xs-offset-0  col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 nav-clasificacion">
+                  <h4>Clasificación:</h4>
+                  <ul class="nav nav-tabs blue" role="tablist">
+                    <li role="presentation" class="active"><a id="tabpropios" href="#propios" aria-controls="propios" role="tab" data-toggle="tab" class="first">Propios</a></li>
+                    <li role="presentation"><a href="#no-propios" aria-controls="no-propios" role="tab" data-toggle="tab" class="last">No Propios</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Tab panes -->
+              <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="propios">
+                  <h4>Ingresos corrientes propios</h4>
+                  Entre los principales ingresos corrientes de jurisdicción municipal (PROPIOS) se pueden mencionar:
+                  <br/><br/>
+                  <ul>
+                    <li>
+                      Contribución que incide sobre los inmuebles
+                    </li>
+                    <li>
+                      Contribución sobre comercio, industria y de servicios
+                    </li>
+                    <li>
+                      Contribución sobre automotores
+                    </li>
+                    <li>
+                      Contribución sobre energía eléctrica
+                    </li>
+                    <li>
+                      Multas
+                    </li>
+                    <li>
+                      Otros
+                    </li>
+                  </ul>
+                  <h3 class="titulo-tabla">Datos:</h3>
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th style="width: 10%;"></th>
+                          <th style="width: 70%;">Concepto</th>
+                          <th style="width: 20%;">Total</th>
+                        </tr>
+                      </thead>
+                      <tbody id="tbody-ingresos-corrientes-propios">
+                      </tbody>
+                    </table>
+                  </div>
+                  <a target="_blank" href="https://docs.google.com/spreadsheets/d/1nkqXSu3MlK7uKDqaL-EqG4ZeZTNSDYPklNGS-YRrTnM/export?exportFormat=xlsx" class="btn btn-default blue">Descargar Excel</a>
+                  <a target="_blank" href="https://docs.google.com/spreadsheets/d/1nkqXSu3MlK7uKDqaL-EqG4ZeZTNSDYPklNGS-YRrTnM/export?format=csv&id=1nkqXSu3MlK7uKDqaL-EqG4ZeZTNSDYPklNGS-YRrTnM" class="btn btn-default blue">Descargar CSV</a>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="no-propios">
+                  <h4>Ingresos corrientes no propios</h4>
+                  Entre los principales ingresos corrientes de otras jurisdicciones (NO PROPIOS) a la Municipalidad se pueden observar:
+                  <br/><br/>
+                  <ul>
+                    <li>
+                      Coparticipación de ingresos nacionales y provinciales
+                    </li>
+                    <li>
+                      Programa techo digno (fondos de origen nacional)
+                    </li>
+                    <li>
+                      Fondo Federal Solidario (fondos de origen nacional)
+                    </li>
+                    <li>
+                      Fondo de financiamiento de la descentralización provincial (fondos de origen provincial)
+                    </li>
+                    <li>
+                      Programa Mejoramiento Barrial (fondos de origen nacional)
+                    </li>
+                    <li>
+                      Otros.
+                    </li>
+                  </ul>
+                  <h3 class="titulo-tabla">Datos:</h3>
+                  <div class="table-responsive">
+                    <table class="table table-striped especial">
+                      <thead>
+                        <tr>
+                          <th style="width: 10%;"></th>
+                          <th style="width: 70%;">Concepto</th>
+                          <th style="width: 20%;">Total</th>
+                        </tr>
+                      </thead>
+                      <tbody id="tbody-ingresos-corrientes-no-propios">
+                      </tbody>
+                    </table>
+                  </div>
+                  <a target="_blank" href="https://docs.google.com/spreadsheets/d/1mYqmTfiEEHJyofD636sojncI2UwAgFT_kQpIujkudMQ/export?exportFormat=xlsx" class="btn btn-default blue">Descargar Excel</a>
+                  <a target="_blank" href="https://docs.google.com/spreadsheets/d/1mYqmTfiEEHJyofD636sojncI2UwAgFT_kQpIujkudMQ/export?format=csv&id=1mYqmTfiEEHJyofD636sojncI2UwAgFT_kQpIujkudMQ" class="btn btn-default blue">Descargar CSV</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 tableContainer tab-pane" role="tabpanel" id="capital">
+              <h2 class="capital">Ingresos de capital</h2>
+              <p class="definicion">
+                Los Ingresos de capital son aquellos ingresos extraordinarios que percibe la Municipalidad. Estos pueden venir por la adquisición de <a href="#">créditos o préstamos</a>, ventas de <a href="#">activos físicos</a> y venta de <a href="#">bienes en desuso</a>, o bien por transferencias de <a href="#">otros niveles de gobierno</a> para financiar obras o inversiones de capital.
+                <br/>
+                <br/>
+                Los ingresos de capital se pueden clasificar en: <strong>Uso del crédito</strong>, <strong>venta de activo fijo</strong> y <strong>venta de bienes en desuso</strong>.
+              </p>
+
+              <!-- Nav tabs -->
+              <div class="row">
+                <div class="col-xs-12 col-xs-offset-0 col-sm-12 col-sm-offset-0 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 nav-clasificacion nav-3">
+                  <h4>Clasificación:</h4>
+                  <ul class="row nav nav-tabs pink disabled" role="tablist">
+                    <li role="presentation" class="col-xs-12 col-sm-4 active no-padding"><a class="first">Uso del crédito</a></li>
+                    <li role="presentation" class="col-xs-12 col-sm-4 active no-padding"><a>Activo fijo</a></li>
+                    <li role="presentation" class="col-xs-12 col-sm-4 active no-padding"><a class="last">Bienes en desuso</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-xs-12 col-md-6">
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <h3>Ingresos de capital: Usos de crédito</h3>
+                      <p>
+                        Se refiere a las operaciones financieras que realiza el Estado Municipal para obtener financiamiento, pudiendo ser de corto, mediano o largo plazo.
+                        <br />
+                        <br />
+                        La posibilidad de acceder a préstamos constituye un elemento muy importante en la administración fiscal. Utilizado racionalmente, el crédito permite llevar adelante un universo de proyectos que de, otro modo, no sería posible que el Estado encara.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12 nav-clasificacion nav-center">
+                      <ul class="nav nav-tabs plazos pink" role="tablist">
+                        <li role="presentation" class="active"><a href="#cortoplazo" aria-controls="cortoplazo" role="tab" data-toggle="tab" class="first">Corto Plazo</a></li>
+                        <li role="presentation"><a  href="#largoplazo" aria-controls="largoPlazo" role="tab" data-toggle="tab" class="last">Largo Plazo</a></li>
+                      </ul>
+                    </div>
+                    <div class="tab-content">
+                      <div role="tabpanel" class="tab-pane active" id="cortoplazo">
+                        <div class="col-xs-12">
+                          <p>
+                            Es el endeudamiento que se asume y se cancela dentro del mismo año. Sus montos son relativamente pequeños. Se instrumenta a través de la emisión de “Letras”, por un monto autorizado en el Presupuesto.
+                          </p>
+                        </div>
+                      </div>
+                      <div role="tabpanel" class="tab-pane" id="largoplazo">
+                        <div class="col-xs-12">
+                          <p>
+                            Es el endeudamiento que se asume con el compromiso de cancelarlo en más de un año de plazo. Tiene por finalidad financiar los proyectos de mayor envergadura, que serán incorporados al patrimonio de todos los cordobeses y cuyos beneficios serán gozados a lo largo de mucho tiempo.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <div class="divider"></div>
+                    </div>
+                    <div class="col-xs-12">
+                      <h3>Ingresos de capital: Venta de activos físicos y/o bienes en desuso</h3>
+                      <p>
+                        Corresponden a ingresos por la venta de propiedades, tierras, bienes de capital, etc., de propiedad del Estado Municipal, como así también de aquellos bienes que, por diversas razones, se encuentran en desuso por parte del municipio.
+                      </p>
+                    </div>
+
+
+                  </div>
+
+
+                </div>
+                <div class="col-xs-12 col-md-6">
+                  <div class="table-responsive">
+                    <table class="table table-striped pink">
+                      <thead>
+                        <tr>
+                          <th style="width: 10%;"></th>
+                          <th style="width: 70%;">Concepto</th>
+                          <th style="width: 20%;">Total</th>
+                        </tr>
+                      </thead>
+                      <tbody id="tbody-ingresos-capital">
+                      </tbody>
+                    </table>
+                  </div>
+                  <a target="_blank" href="https://docs.google.com/spreadsheets/d/1RJjQTHJEMeZ4KVwYrqylGJJqkw-QiY1eHSdDxdoDoFU/export?exportFormat=xlsx" class="btn btn-default pink">Descargar Excel</a>
+                  <a target="_blank" href="https://docs.google.com/spreadsheets/d/1RJjQTHJEMeZ4KVwYrqylGJJqkw-QiY1eHSdDxdoDoFU/export?format=csv&id=1RJjQTHJEMeZ4KVwYrqylGJJqkw-QiY1eHSdDxdoDoFU" class="btn btn-default pink">Descargar CSV</a>
+                </div>
+              </div>
+
+
+
+            </div>
+            <div class="col-xs-12 tableContainer tab-pane" role="tabpanel" id="afectacion">
+              <h2 class="afectacion">Rentas Generales y Afectación Específica</h2>
+
+              <p class="definicion">
+                Normalmente la mayoría de los recursos ingresan al Municipio con <strong>libre disponibilidad</strong>,
+                es decir, son aquellos que el Estado utiliza para cumplir con sus finalidades predefinidas
+                en el
+                <a href="https://gobiernoabierto.cordoba.gob.ar/plan-de-metas/plan-de-metas-2016-2019" target="_blank" rel="noopener"
+>plan de
+                 gobierno</a> y que son variadas como, por ejemplo, pagar salarios y realizar obras
+                para la Ciudad. Estos recursos ingresan al municipio bajo la denominación de Rentas Generales
+                (para el año 2017 alcanza el 97,6%).
+                <br/>
+                <br/>
+                Luego, hay otro grupo de ingresos que tiene asignada una “<strong>afectación específica</strong>”, o sea que no pueden
+                ser gastados en algo que no sea el destino establecido por la ley, en este caso la Ordenanza que le dio
+                origen.
+              </p>
+              <div class="col-xs-12 col-md-4 col-xs-offset-0 col-md-offset-1">
+                <h3 class="text-center">Afectación Específica por jurisdiscción</h3>
+                <div id="afectacion-especifica-j"></div>
+              </div>
+              <div class="col-xs-12 col-md-4 col-xs-offset-0 col-md-offset-2">
+                <h3 class="text-center">Afectación Específica de todas las jurisdicciones:</h3>
+                <div id="afectacion-especifica-jm"></div>
+              </div>
+              <div class="col-xs-12">
+                <div class="table-responsive" style="margin-top:20px;">
+                  <table class="table table-striped orange especial">
+                    <thead>
+                      <tr>
+                        <th style="width: 10%;"></th>
+                        <th style="width: 70%;">Concepto</th>
+                        <th style="width: 20%;">Afectación Específica</th>
+                      </tr>
+                    </thead>
+                    <tbody id="tbody-ingresos-afectacion">
+                    </tbody>
+                  </table>
+                </div>
+                <a target="_blank" href="https://docs.google.com/spreadsheets/d/1lJgGTuLvAMulKx59cJckTzvIFlur-fs2Twyh1dUOKgU/export?exportFormat=xlsx" class="btn btn-default orange">Descargar Excel</a>
+                <a target="_blank" href="https://docs.google.com/spreadsheets/d/1lJgGTuLvAMulKx59cJckTzvIFlur-fs2Twyh1dUOKgU/export?format=csv&id=1lJgGTuLvAMulKx59cJckTzvIFlur-fs2Twyh1dUOKgU" class="btn btn-default orange">Descargar CSV</a>
+              </div>
+              <div class="col-xs-12">
+                <h3 class="text-center">Afectación Específica - Ingresos Propios</h3>
+                <div class="graphContainer">
+                  <div id="afectacion-especifica-propios"></div>
+                </div>
+              </div>
+              <div class="col-xs-12">
+                <h3 class="text-center">Afectación Específica - Ingresos No Propios</h3>
+                <div class="graphContainer">
+                  <div id="afectacion-especifica-no_propios"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <section id="vecino">
+      <div class="row">
+        <div class="col-md-12 no-padding vecinoBg">
+          <h3>Contactanos<br /></h3>
+          <a href="mailto:gobiernoabiertocba@cordoba.gob.ar">gobiernoabiertocba@cordoba.gob.ar</a>
+        </div>
+      </div>
+    </section>
+  </div>
+  <footer class="footer-gaMuniCba">
+    <div class="container-fluid licenses-container" id="licenses" style="display:none;">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-offset-12">
+            <div class="pull-right licenses-close-btn">
+              <span class="fa fa-times" aria-hidden="true" title="Cerrar" style="display: inline; vertical-align: center;"></span><span>Cerrar</span>
+              <span class="sr-only">Cerrar</span>
+            </div>
+          </div>
+          <div class="col-xs-12">
+            <h2>Licencia de uso libre especificada</h2>
+          </div>
+          <div class="col-xs-12 col-sm-10 col-md-8">
+            <p>Todos nuestros datos y contenidos tiene licencia de uso libre especificada. Las licencias de los datos de terceros que republicamos deberán consultarse directamente a la fuente. Para nuestros contenidos generales se debe contemplar la licencia Attribution ShareAlike (CC BY-SA). Para nuestros sets de datos debe contemplarse la licencia Open Database License (ODbL). Estas licencias permiten a otros remezclar, retocar, y crear a partir esta obra (contenido o datos), incluso con fines comerciales, siempre y cuando den crédito y licencien sus nuevas creaciones bajo las mismas condiciones.
+              Más consultas sobre este dato a gobiernoabiertocba@gmail.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-5 col-sm-5 footer-logos">
+            <div class="row footer-logos-row">
+              <div class="col-xs-6  col-sm-6 col-md-6 texto-derecha">
+                <div class="logoFooter" style="width:244px;">
+                  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+viewBox="0 0 310.2 98.6" enable-background="new 0 0 310.2 98.6" xml:space="preserve">
+                    <g id="Capa_1">
+                      <g>
+                        <g>
+                          <g>
+                            <g>
+                              <path class="stLogo" d="M144.3,79.3c-0.5,0.1-2.7,0.5-5.2,0.5c-4,0-9.4-2-9.4-10.2v-4.9c0-8.3,5.4-10.2,9.4-10.2
+                                c2.5,0,4.7,0.4,5.2,0.5c0.4,0.1,0.7,0.3,0.7,0.8v2.2c0,0.4-0.2,0.7-0.7,0.7h-0.1c-1.2-0.1-3.4-0.3-5.2-0.3
+                                c-2.8,0-4.8,1.5-4.8,6.2v4.9c0,4.6,2,6.2,4.8,6.2c1.8,0,4-0.2,5.2-0.3h0.1c0.5,0,0.7,0.3,0.7,0.7v2.2
+                                C145,79,144.7,79.2,144.3,79.3"/>
+                              <path class="stLogo" d="M156,79.8c-5.5,0-9.4-3.1-9.4-10.4V65c0-7.3,4-10.4,9.4-10.4c5.5,0,9.5,3.1,9.5,10.4v4.5
+                                C165.5,76.8,161.5,79.8,156,79.8 M160.8,65c0-4.4-1.6-6.3-4.8-6.3c-3.2,0-4.8,2-4.8,6.3v4.5c0,4.4,1.6,6.3,4.8,6.3
+                                c3.3,0,4.8-2,4.8-6.3V65z M161,50.4l-2.3,2.6c-0.3,0.3-0.4,0.4-0.8,0.4h-3.5c-0.2,0-0.3-0.1-0.3-0.2c0-0.1,0-0.2,0.1-0.3
+                                l1.8-2.5c0.3-0.4,0.5-0.5,0.9-0.5h3.8c0.2,0,0.4,0.1,0.4,0.2C161.1,50.2,161.1,50.3,161,50.4"/>
+                              <path class="stLogo" d="M186,79.6h-4.1c-0.4,0-0.5-0.3-0.7-0.7l-4.8-8.9H176c-0.9,0-2.2-0.1-3-0.1v9c0,0.4-0.3,0.7-0.6,0.7
+                                h-3.3c-0.4,0-0.7-0.3-0.7-0.7V56c0-0.6,0.4-0.9,1.1-1c1.7-0.3,4.1-0.4,6.5-0.4c5.1,0,9.6,1.8,9.6,7.5v0.3
+                                c0,3.5-1.8,5.7-4.5,6.8l5.2,9.7c0.1,0.1,0.1,0.2,0.1,0.3C186.4,79.4,186.2,79.6,186,79.6 M181,62.1c0-2.5-1.7-3.6-5-3.6
+                                c-0.7,0-2.4,0.1-3,0.1v7.5c0.5,0,2.4,0.1,3,0.1c3.4,0,5-0.9,5-3.9V62.1z"/>
+                              <path class="stLogo" d="M196.2,79.8c-2.3,0-5.5-0.2-6.5-0.4c-0.6-0.1-0.9-0.4-0.9-1V56c0-0.6,0.3-0.9,0.9-1
+                                c1-0.2,4.2-0.4,6.5-0.4c6.7,0,10.4,3.6,10.4,10.2v4.9C206.6,76.2,202.8,79.8,196.2,79.8 M202,64.8c0-5-2.5-6.3-5.9-6.3
+                                c-1.2,0-2.1,0.1-2.8,0.1v17.2c0.7,0,1.6,0.1,2.8,0.1c3.3,0,5.9-1.3,5.9-6.3V64.8z"/>
+                              <path class="stLogo" d="M92.9,79.8c-2.3,0-5.5-0.2-6.5-0.4c-0.6-0.1-0.9-0.4-0.9-1V56c0-0.6,0.3-0.9,0.9-1
+                                c1-0.2,4.2-0.4,6.5-0.4c6.7,0,10.4,3.6,10.4,10.2v4.9C103.4,76.2,99.6,79.8,92.9,79.8 M98.8,64.8c0-5-2.5-6.3-5.9-6.3
+                                c-1.2,0-2.1,0.1-2.8,0.1v17.2c0.7,0,1.6,0.1,2.8,0.1c3.3,0,5.9-1.3,5.9-6.3V64.8z"/>
+                              <path class="stLogo" d="M218.7,79.8c-5.5,0-9.5-3.1-9.5-10.4V65c0-7.3,4-10.4,9.5-10.4c5.5,0,9.5,3,9.5,10.4v4.5
+                                C228.2,76.8,224.2,79.8,218.7,79.8 M223.5,65c0-4.4-1.6-6.3-4.8-6.3c-3.2,0-4.8,2-4.8,6.3v4.5c0,4.4,1.6,6.3,4.8,6.3
+                                c3.2,0,4.8-2,4.8-6.3V65z"/>
+                              <path class="stLogo" d="M238.2,79.8c-2.7,0-4.7-0.2-5.7-0.4c-1.1-0.2-1.6-0.6-1.6-1.8V56.7c0-1.2,0.4-1.6,1.5-1.8
+                                c0.9-0.1,2.9-0.3,5.5-0.3c6,0,10.2,1.7,10.2,6.7V62c0,2.2-1,4.2-3.1,5c2,0.9,3.2,2.5,3.2,5v0.6
+                                C248.3,77.9,244.4,79.8,238.2,79.8 M243.7,61.6c0-2.3-1.5-3.2-5.7-3.2c-0.8,0-1.7,0-2.4,0.1v6.7h4.2c3.1,0,4-1.5,4-3.2V61.6z
+                                 M243.8,72.2c0-1.8-1-3.5-4.1-3.5h-4.2v7.3c0.8,0,2,0.1,2.7,0.1c4.3,0,5.6-1.1,5.6-3.4V72.2z"/>
+                              <path class="stLogo" d="M269,79.6h-3.5c-0.3,0-0.6-0.3-0.6-0.6l-1.5-6.3h-7.6l-1.5,6.3c-0.1,0.3-0.3,0.6-0.6,0.6H250
+                                c-0.3,0-0.6-0.2-0.6-0.6c0,0,0-0.1,0-0.2l5.4-20.8c0.8-3.1,3.2-3.4,4.6-3.4c1.4,0,3.8,0.3,4.6,3.4l5.4,20.8c0,0.1,0,0.1,0,0.2
+                                C269.6,79.3,269.3,79.6,269,79.6 M260,59c-0.1-0.4-0.2-0.5-0.5-0.5c-0.3,0-0.4,0.1-0.5,0.5l-2.4,9.9h5.8L260,59z"/>
+                            </g>
+                            <g>
+                              <g>
+                                <path class="stLogo" d="M256.4,48.5c-2.4,0-5.6-0.2-6.6-0.4c-0.6-0.1-0.9-0.4-0.9-1V24.7c0-0.7,0.3-0.9,0.9-1
+                                  c1-0.2,4.2-0.4,6.6-0.4c6.6,0,10.4,3.6,10.4,10.2v4.9C266.8,44.9,263,48.5,256.4,48.5 M262.2,33.5c0-5-2.5-6.3-5.8-6.3
+                                  c-1.2,0-2.1,0.1-2.8,0.1v17.2c0.7,0,1.6,0.1,2.8,0.1c3.3,0,5.8-1.3,5.8-6.3V33.5z"/>
+                                <path class="stLogo" d="M287,48.3h-3.5c-0.3,0-0.6-0.3-0.6-0.6l-1.5-6.3h-7.6l-1.5,6.3c-0.1,0.3-0.3,0.6-0.6,0.6H268
+                                  c-0.3,0-0.6-0.2-0.6-0.6c0,0,0-0.1,0-0.2l5.4-20.8c0.8-3.1,3.2-3.4,4.6-3.4c1.4,0,3.8,0.3,4.6,3.4l5.5,20.8c0,0.1,0,0.1,0,0.2
+                                  C287.6,48,287.3,48.3,287,48.3 M278,27.7c-0.1-0.4-0.2-0.5-0.5-0.5c-0.3,0-0.4,0.1-0.5,0.5l-2.4,9.9h5.8L278,27.7z"/>
+                                <path class="stLogo" d="M296.8,48.5c-2.4,0-5.6-0.2-6.5-0.4c-0.6-0.1-0.9-0.4-0.9-1V24.7c0-0.7,0.3-0.9,0.9-1
+                                  c1-0.2,4.2-0.4,6.5-0.4c6.6,0,10.4,3.6,10.4,10.2v4.9C307.2,44.9,303.4,48.5,296.8,48.5 M302.6,33.5c0-5-2.5-6.3-5.8-6.3
+                                  c-1.2,0-2.1,0.1-2.8,0.1v17.2c0.7,0,1.6,0.1,2.8,0.1c3.3,0,5.8-1.3,5.8-6.3V33.5z"/>
+                                <path class="stLogo" d="M176.3,48c-0.5,0.1-2.7,0.5-5.2,0.5c-4,0-9.4-2-9.4-10.2v-4.9c0-8.3,5.4-10.2,9.4-10.2
+                                  c2.6,0,4.7,0.4,5.2,0.5c0.4,0.1,0.7,0.3,0.7,0.8v2.2c0,0.4-0.2,0.7-0.6,0.7h-0.1c-1.2-0.1-3.4-0.3-5.2-0.3
+                                  c-2.8,0-4.8,1.5-4.8,6.2v4.9c0,4.6,2,6.2,4.8,6.2c1.8,0,4-0.2,5.2-0.3h0.1c0.5,0,0.6,0.3,0.6,0.7v2.2
+                                  C177,47.7,176.7,47.9,176.3,48"/>
+                                <path class="stLogo" d="M183.6,48.3h-3.3c-0.4,0-0.7-0.3-0.7-0.7V24.2c0-0.4,0.3-0.6,0.7-0.6h3.3c0.4,0,0.7,0.3,0.7,0.6v23.4
+                                  C184.3,48,184,48.3,183.6,48.3"/>
+                                <path class="stLogo" d="M195.4,39.1c-0.9,0-2.2-0.1-3-0.1v8.7c0,0.4-0.3,0.7-0.6,0.7h-3.3c-0.4,0-0.7-0.3-0.7-0.7V24.7
+                                  c0-0.7,0.4-0.9,1.1-1c1.7-0.3,4.1-0.4,6.5-0.4c5.1,0,9.6,1.8,9.6,7.7v0.3C204.9,37.2,200.5,39.1,195.4,39.1 M200.3,31
+                                  c0-2.8-1.7-3.9-5-3.9c-0.7,0-2.4,0.1-3,0.1v7.9c0.5,0,2.4,0.1,3,0.1c3.6,0,5-1.3,5-4V31z"/>
+                                <path class="stLogo" d="M222.8,48.3h-3.5c-0.3,0-0.6-0.3-0.6-0.6l-1.5-6.3h-7.6l-1.5,6.3c-0.1,0.3-0.3,0.6-0.6,0.6h-3.5
+                                  c-0.3,0-0.6-0.2-0.6-0.6c0,0,0-0.1,0-0.2l5.4-20.8c0.8-3.1,3.2-3.4,4.6-3.4c1.4,0,3.8,0.3,4.6,3.4l5.5,20.8c0,0.1,0,0.1,0,0.2
+                                  C223.4,48,223.2,48.3,222.8,48.3 M213.9,27.7c-0.1-0.4-0.2-0.5-0.5-0.5c-0.3,0-0.4,0.1-0.5,0.5l-2.4,9.9h5.8L213.9,27.7z"/>
+                                <path class="stLogo" d="M238.2,48.1c-1,0.2-3.9,0.5-5.7,0.5c-4.3,0-7.7-1.2-7.7-6.8V24.2c0-0.4,0.3-0.7,0.7-0.7h3.3
+                                  c0.4,0,0.7,0.3,0.7,0.7v17.5c0,2.2,0.7,2.9,2.6,2.9h6.1c0.4,0,0.7,0.3,0.7,0.7v2.1C238.9,47.8,238.7,48,238.2,48.1"/>
+                                <path class="stLogo" d="M245,48.3h-3.3c-0.4,0-0.7-0.3-0.7-0.7V24.2c0-0.4,0.3-0.6,0.7-0.6h3.3c0.4,0,0.7,0.3,0.7,0.6v23.4
+                                  C245.7,48,245.4,48.3,245,48.3"/>
+                                <path class="stLogo" d="M106.3,48.3H103c-0.3,0-0.5-0.3-0.5-0.7V32.2c0-0.2,0-0.3-0.1-0.3c0,0-0.1,0.1-0.2,0.2L99,38.4
+                                  c-0.2,0.4-0.6,0.6-1.1,0.6h-3.4c-0.4,0-0.9-0.2-1.1-0.6l-3.2-6.3c-0.1-0.1-0.1-0.2-0.2-0.2c-0.1,0-0.1,0.1-0.1,0.3v15.5
+                                  c0,0.3-0.2,0.7-0.5,0.7h-3.4c-0.3,0-0.6-0.2-0.6-0.5V24.9c0-0.7,0.6-1.3,1.3-1.3h2.7c0.5,0,1,0.3,1.2,0.8l5,10.2
+                                  c0.2,0.3,0.2,0.5,0.4,0.5c0.1,0,0.2-0.2,0.4-0.5l5-10.2c0.2-0.5,0.7-0.8,1.2-0.8h2.7c0.7,0,1.3,0.6,1.3,1.3v22.9
+                                  C106.9,48.1,106.6,48.3,106.3,48.3"/>
+                                <path class="stLogo" d="M119.3,48.6c-5.4,0-9.1-2.3-9.1-9.4V24.2c0-0.4,0.3-0.6,0.7-0.6h3.3c0.4,0,0.7,0.3,0.7,0.6v14.9
+                                  c0,3.8,0.9,5.6,4.5,5.6c3.6,0,4.5-1.8,4.5-5.6V24.2c0-0.4,0.3-0.6,0.7-0.6h3.3c0.4,0,0.7,0.3,0.7,0.6v14.9
+                                  C128.5,46.2,124.7,48.6,119.3,48.6"/>
+                                <path class="stLogo" d="M149.2,48.3h-3.4c-0.8,0-1.5,0-2-1.2l-7.4-16.2c-0.1-0.2-0.2-0.3-0.3-0.3c-0.1,0-0.2,0.1-0.2,0.3v16.7
+                                  c0,0.4-0.3,0.7-0.6,0.7h-2.8c-0.4,0-0.7-0.3-0.7-0.7V24.9c0-0.7,0.6-1.3,1.3-1.3h3.6c0.7,0,1.1,0.2,1.5,1.1l7.7,17.1
+                                  c0.1,0.2,0.2,0.3,0.3,0.3c0.1,0,0.2-0.1,0.2-0.3V24.2c0-0.4,0.3-0.6,0.6-0.6h2.9c0.4,0,0.6,0.3,0.6,0.6V47
+                                  C150.5,47.7,149.9,48.3,149.2,48.3"/>
+                                <path class="stLogo" d="M158,48.3h-3.3c-0.4,0-0.7-0.3-0.7-0.7V24.2c0-0.4,0.3-0.6,0.7-0.6h3.3c0.4,0,0.7,0.3,0.7,0.6v23.4
+                                  C158.7,48,158.4,48.3,158,48.3"/>
+                              </g>
+                              <g>
+                                <path class="stLogo" d="M120.2,79.3c-1.1,0.2-2.3,0.5-6.3,0.5c-4.3,0-7.7-1.2-7.7-6.8V61.4c0-5.6,3.4-6.8,7.7-6.8
+                                  c3.9,0,5.2,0.3,6.3,0.5c0.5,0.1,0.7,0.2,0.7,0.7v2.1c0,0.4-0.3,0.7-0.7,0.7h-6.7c-1.9,0-2.6,0.7-2.6,2.8v3.6h9
+                                  c0.4,0,0.7,0.3,0.7,0.7V68c0,0.4-0.3,0.7-0.7,0.7h-9v4.3c0,2.2,0.7,2.9,2.6,2.9h6.7c0.4,0,0.7,0.3,0.7,0.7v2.1
+                                  C120.9,79,120.7,79.2,120.2,79.3"/>
+                              </g>
+                            </g>
+                          </g>
+                          <g>
+                            <path class="stLogo" d="M76.1,36.4l-9-9c-0.5-0.5-1.2-0.7-1.9-0.7c-0.7,0-1.4,0.3-1.9,0.7c-0.7,0.7-0.9,1.8-0.6,2.7
+                              c-1.2,1.7-3.1,2.7-5.1,2.7c-3.1,0-5.6-2.1-6.1-5.1h1c1.6,0,2.9-1.3,2.9-2.9c0-1.5-1.2-2.8-2.8-2.9c0-0.2,0-0.3,0-0.5
+                              c0-1.6-1.3-2.9-2.9-2.9h-7.4v-1.6h14c0.7,0,1.2-0.5,1.2-1.2V5.9c0-0.7-0.5-1.2-1.2-1.2h-14c-0.2-1.2-1.1-2-2.3-2
+                              c-1.3,0-2.4,1.1-2.4,2.4v13.6h-7.4c-1.6,0-2.9,1.3-2.9,2.9c0,0.2,0,0.4,0.1,0.5c-1.3,0.3-2.2,1.5-2.2,2.8c0,1.6,1.3,2.9,2.9,2.9
+                              h0.4c-0.5,3-3.1,5.1-6.1,5.1c-2.1,0-4.1-1.1-5.2-2.9c0.1-0.2,0.1-0.5,0.1-0.7c0-0.7-0.2-1.4-0.7-1.9c-0.5-0.5-1.2-0.8-2-0.8
+                              c-0.7,0-1.4,0.2-1.8,0.7l-9.3,8.7c-0.5,0.5-0.8,1.2-0.8,1.9c0,0.7,0.2,1.4,0.7,1.9c0.5,0.5,1.2,0.8,1.9,0.9c0.2,0,0.5,0,0.7-0.1
+                              c3.9,2.8,6.2,7.4,6.2,12.2c0,2.8-0.8,5.5-2.2,7.9c-1.1,2.3-1.6,4.7-1.6,7.2c0,0.1,0,0.3,0,0.4l0,0l0,0.2c0,0.1,0,0.1,0,0.3
+                              c0,0.2,0,0.3,0,0.6c0,0.2,0,0.5,0.1,0.7c0.1,0.6,0.2,1.2,0.4,2l0.1,0.3c0.1,0.3,0.2,0.5,0.2,0.8l0.2,0.6c0,0.1,0.1,0.2,0.1,0.3
+                              l0.1,0.1c0.9,2.3,2.4,4.5,4.3,6.2l0,0l1.7,1.3c0.2,0.1,0.3,0.2,0.5,0.3l18.6,12.4c1.6,1.1,3.4,1.7,5.3,1.7c2.1,0,4.1-0.7,5.7-2
+                              l18.5-12.3c0.1,0,0.1-0.1,0.2-0.1l0.7-0.5c2.3-1.8,4.1-4.2,5.2-6.9l0.1-0.2c0.7-1.8,1.1-3.6,1.2-5.6l0-0.2l0,0l0,0
+                              c0-0.1,0-0.2,0-0.4c0-2.4-0.5-4.8-1.6-7.1c-1.5-2.4-2.3-5.1-2.3-8c0-4.6,2.1-8.9,5.7-11.7c0.9,0.3,2,0,2.7-0.7
+                              C77.2,39.2,77.2,37.5,76.1,36.4z M14.5,28.1c0.1,0,0.2,0,0.2,0c0.3,0,0.5,0.1,0.7,0.3c0.2,0.2,0.3,0.5,0.3,0.8
+                              c0,0.3-0.1,0.6-0.4,0.8l-9.3,8.7c-0.4,0.4-1.2,0.4-1.6,0c-0.4-0.5-0.4-1.2,0-1.6l9.3-8.7C14.1,28.2,14.3,28.1,14.5,28.1z
+                               M28.1,23.5h2.1h8.3v2.6H28.1c-0.7,0-1.3-0.6-1.3-1.3C26.8,24.1,27.4,23.5,28.1,23.5z M30.3,20.2h8.3v2.6h-8.3
+                              c-0.7,0-1.3-0.6-1.3-1.3C28.9,20.8,29.5,20.2,30.3,20.2z M40,4.2c0.4,0,0.8,0.4,0.8,0.8v31.2c-0.3-0.1-0.5-0.1-0.8-0.1
+                              c-0.3,0-0.5,0-0.8,0.1V5C39.2,4.6,39.6,4.2,40,4.2z M40,36.8c1.1,0,1.9,0.9,1.9,1.9c0,0.2,0,0.5-0.1,0.7h-3.6
+                              c-0.1-0.2-0.1-0.4-0.1-0.7C38.1,37.7,39,36.8,40,36.8z M56,9.6v2.6H41.5V9.6H56z M41.5,8.8V6.3H56v2.6H41.5z M56,12.9v2.6H41.5
+                              v-2.6H56z M49.8,20.2c0.7,0,1.3,0.6,1.3,1.3c0,0.7-0.6,1.3-1.3,1.3h-8.3v-2.6H49.8z M49.8,23.5h2.7c0.7,0,1.3,0.6,1.3,1.3
+                              c0,0.7-0.6,1.3-1.3,1.3h-11v-2.6H49.8z M72.8,39.5c-1,0.8-1.9,1.6-2.7,2.6c-0.4,0.4-0.7,0.9-1,1.3c0,0-0.1,0.1-0.1,0.1
+                              c-1.8,2.7-2.7,5.8-2.7,9.1c0,3.1,0.9,6.2,2.5,8.7c0.9,2,1.4,4.2,1.4,6.4c0,0.1,0,0.1,0,0.2c-2.2-0.3-4.3,0.2-6.1,1.5l-0.1,0.1
+                              c-2.7,2-5.9,3.1-9.3,3.1c-0.7,0-1.5-0.1-2.2-0.2c-0.3-1-1.2-1.8-2.3-1.8h-0.9c0-0.1,0-0.2,0-0.4c0-0.9-0.7-1.7-1.6-1.8l4.9-4.9
+                              l6.3,6.3c0.1,0.1,0.2,0.1,0.3,0.1c0.1,0,0.2,0,0.3-0.1l2-2l0.7-0.7l1.3-1.3c0.1-0.1,0.1-0.4,0-0.5l-6.3-6.3l0.2-0.2
+                              c0.1-0.1,0.1-0.4,0-0.5c-0.1-0.1-0.4-0.1-0.5,0L56.1,59l0,0l-4,4c0,0,0,0,0,0L47.1,68v-8.5l0,0l5.9-5.9l6.3,6.3
+                              c0.1,0.1,0.2,0.1,0.3,0.1c0.1,0,0.2,0,0.3-0.1l1.6-1.6l1.1-1.1v0l1.3-1.3c0.1-0.1,0.1-0.4,0-0.5l-6.3-6.3l0.2-0.2
+                              c0.1-0.1,0.1-0.4,0-0.5c-0.1-0.1-0.4-0.1-0.5,0L47.1,58.5v-7.4h0.2c1,0,1.8-0.8,1.8-1.8c0-0.5-0.2-1-0.6-1.3l5.1-5.1l6.3,6.3
+                              c0.1,0.1,0.2,0.1,0.2,0.1c0.1,0,0.2,0,0.3-0.1l1.3-1.3l0.4-0.5l2.2-2.2c0.1-0.1,0.1-0.4,0-0.5l-6.3-6.3l0.2-0.2
+                              c0.1-0.1,0.1-0.4,0-0.5c-0.1-0.1-0.4-0.1-0.5,0l-9.9,9.9c-0.2-0.1-0.4-0.1-0.6-0.1h-2.4v-4.4h0.9c1,0,1.8-0.8,1.8-1.8
+                              c0-1-0.8-1.8-1.8-1.8h-3.2c0.1-0.2,0.1-0.4,0.1-0.7c0-0.9-0.4-1.7-1.1-2.2v-9.6h8.4c0,0.1,0,0.2,0,0.4c0,0.1,0,0.3,0,0.4
+                              c0,0,0,0,0,0c0.5,3.8,3.8,6.6,7.7,6.6c1,0,2-0.2,2.9-0.6c1.5-0.6,2.8-1.6,3.6-3l6.6,6.6L72.8,39.5z M70,68.8
+                              c0,0.6-0.1,1.3-0.2,1.9c0,0.1,0,0.3-0.1,0.4c-0.1,0.3-0.1,0.6-0.2,0.9c-0.1,0.2-0.1,0.4-0.2,0.5c-0.1,0.2-0.1,0.4-0.2,0.6
+                              c-1.8-0.1-3.6,0.5-5.1,1.6l-0.1,0.1c-2.7,2-5.9,3.1-9.3,3.1c-3,0-5.9-0.9-8.4-2.5H50c1.3,0,2.3-1,2.4-2.2
+                              c0.7,0.1,1.4,0.2,2.1,0.2c3.6,0,6.9-1.1,9.8-3.3l0.1-0.1c1.6-1.2,3.6-1.7,5.6-1.4C70,68.7,70,68.7,70,68.8z M65.4,78.8
+                              c-0.3,0.3-0.7,0.6-1,0.9c-0.2,0.1-0.3,0.2-0.5,0.4l-0.4,0.3l-0.1,0.1c0,0,0,0,0,0s0,0,0,0l-1,0.7c-0.2,0.1-0.3,0.2-0.3,0.2
+                              c-0.1,0.1-0.3,0.2-0.5,0.2c-0.2,0.1-0.4,0.2-0.6,0.3c-0.2,0.1-0.3,0.2-0.5,0.2c-0.2,0.1-0.4,0.1-0.5,0.2
+                              c-0.2,0.1-0.4,0.2-0.6,0.2c-0.1,0.1-0.3,0.1-0.5,0.1c-0.2,0.1-0.5,0.1-0.7,0.2c-0.2,0-0.3,0.1-0.5,0.1c-0.2,0-0.5,0.1-0.7,0.1
+                              c-0.2,0-0.5,0.1-0.7,0.1c-0.2,0-0.3,0-0.5,0.1c-0.4,0-0.8,0-1.2,0c-3.5,0-6.8-1.1-9.6-3.3l-0.4-0.3c-1.3-0.8-2.8-1.2-4.4-1.2
+                              c-1.5,0-3.1,0.4-4.4,1.2L35.2,80c-2.8,2.2-6.1,3.3-9.6,3.3c-0.7,0-1.4,0-2.2-0.1c-0.3,0-0.5-0.1-0.8-0.2
+                              c-0.4-0.1-0.9-0.2-1.3-0.3c-0.3-0.1-0.6-0.2-1-0.3c-0.4-0.1-0.7-0.2-1.1-0.4c-0.3-0.1-0.6-0.3-0.9-0.5c-0.3-0.2-0.7-0.3-1-0.5
+                              L17,80.7c-0.2-0.1-0.4-0.2-0.5-0.4l-0.1,0l-0.7-0.5c-1.9-1.6-3.4-3.6-4.4-5.9c1.6,0,3.1,0.5,4.4,1.4l0.2,0.2
+                              c2.8,2.1,6.2,3.2,9.8,3.2c3.5,0,6.9-1.1,9.7-3.2H34c-2.5,1.6-5.4,2.5-8.4,2.5c-3.4,0-6.6-1.1-9.3-3.1l-0.2-0.2
+                              c-1.4-1-3.1-1.6-4.9-1.6c-0.1,0-0.1,0-0.2,0c-0.3-0.7-0.4-1.4-0.6-2.1c0-0.1-0.1-0.3-0.1-0.4c-0.1-0.7-0.2-1.3-0.2-2
+                              c2.1-0.3,4,0.2,5.6,1.3l0.2,0.2c2.8,2.1,6.2,3.3,9.8,3.3c0.7,0,1.4-0.1,2.1-0.2c0.1,1.2,1.1,2.2,2.4,2.2h14.6
+                              c2.8,2.1,6.2,3.2,9.7,3.2c3.6,0,6.9-1.1,9.8-3.3l0.1-0.1c1.3-0.9,2.8-1.4,4.4-1.5c-0.7,1.7-1.8,3.3-3.1,4.7
+                              C65.6,78.6,65.5,78.7,65.4,78.8z M10.4,64.4c0.1-0.4,0.2-0.7,0.3-1c0.1-0.2,0.1-0.4,0.2-0.6c0.1-0.4,0.3-0.7,0.4-1.1
+                              c0.1-0.2,0.1-0.3,0.2-0.5c0.6-0.9,1-1.9,1.4-3c0,0,0,0,0,0c0.1-0.3,0.2-0.5,0.2-0.8c0-0.1,0.1-0.2,0.1-0.3
+                              c0.1-0.2,0.1-0.4,0.2-0.6c0-0.2,0.1-0.3,0.1-0.5c0-0.2,0.1-0.4,0.1-0.6c0-0.2,0.1-0.3,0.1-0.5c0-0.2,0-0.4,0.1-0.7
+                              c0-0.2,0-0.3,0-0.5c0-0.4,0-0.8,0-1.2c0-0.7,0-1.4-0.1-2c-0.1-0.7-0.2-1.3-0.4-1.9c0,0,0,0,0,0c-1-3.9-3.3-7.3-6.5-9.5l9-8.5
+                              c0.9,1.4,2.1,2.5,3.7,3.1c0.9,0.4,1.9,0.6,3,0.6c3.3,0,6.2-2.1,7.3-5.1c0-0.1,0-0.1,0.1-0.2c0-0.1,0.1-0.2,0.1-0.4
+                              c0-0.1,0.1-0.2,0.1-0.4c0-0.2,0.1-0.3,0.1-0.5c0-0.1,0-0.2,0-0.2c0-0.2,0.1-0.5,0.1-0.8h8.3v9.6c-0.7,0.5-1.1,1.3-1.1,2.2
+                              c0,0.2,0.1,0.5,0.1,0.7h-3.2c-1,0-1.8,0.8-1.8,1.8c0,1,0.8,1.8,1.8,1.8h0.9v4.4h-2.4c-0.2,0-0.4,0.1-0.6,0.1c0,0,0,0,0-0.1
+                              l-9.9-9.9c-0.1-0.1-0.4-0.1-0.5,0c-0.1,0.1-0.1,0.4,0,0.5l0.2,0.2l-6.3,6.3c-0.1,0.1-0.1,0.4,0,0.5l1.7,1.7l1,1l1.3,1.3
+                              c0.1,0.1,0.2,0.1,0.3,0.1c0.1,0,0.2,0,0.2-0.1l6.3-6.3l5.1,5.1c-0.4,0.3-0.6,0.8-0.6,1.3c0,1,0.8,1.8,1.8,1.8H33v7.4L22.8,48.4
+                              c-0.1-0.1-0.4-0.1-0.5,0c-0.1,0.1-0.1,0.4,0,0.5l0.2,0.2l-6.3,6.3c-0.1,0.1-0.1,0.4,0,0.5l1.3,1.3v0l1.1,1.1l1.6,1.6
+                              c0.1,0.1,0.2,0.1,0.2,0.1c0.1,0,0.2,0,0.3-0.1l6.3-6.3l5.9,5.9c0,0,0,0,0,0V68L27.9,63c0,0,0,0,0,0l-4-4l0,0l-0.4-0.4
+                              c-0.1-0.1-0.4-0.1-0.5,0c-0.1,0.1-0.1,0.4,0,0.5l0.2,0.2l-6.3,6.3c-0.1,0.1-0.1,0.4,0,0.5l2,2l0.7,0.7l1.3,1.3
+                              c0.1,0.1,0.2,0.1,0.2,0.1c0.1,0,0.2,0,0.3-0.1l6.3-6.3l4.8,4.9c-0.9,0.1-1.6,0.9-1.6,1.8c0,0.2,0,0.3,0.1,0.4h-0.9
+                              c-1.1,0-2,0.8-2.3,1.8c-0.7,0.1-1.5,0.2-2.2,0.2c-3.4,0-6.6-1.1-9.3-3.1l-0.2-0.2c-1.7-1.3-3.9-1.8-6.1-1.5c0-0.1,0-0.1,0-0.2
+                              c0-1,0.1-2,0.3-2.9C10.4,64.7,10.4,64.5,10.4,64.4z M48.3,70.7H31.7c0-0.1-0.1-0.2-0.1-0.4c0-0.6,0.5-1.1,1.1-1.1h14.5
+                              c0.6,0,1.1,0.5,1.1,1.1C48.4,70.5,48.4,70.6,48.3,70.7z M50,71.4c0.9,0,1.7,0.7,1.7,1.7c0,0.9-0.7,1.7-1.7,1.7H30.1
+                              c-0.9,0-1.7-0.7-1.7-1.7c0-0.9,0.7-1.7,1.7-1.7H50z M46.4,57.6v1.3H33.7v-1.3H46.4z M33.7,56.9v-5.8h12.7v5.8H33.7z M46.4,59.6
+                              v8.9h-4.1v-5.7c0-1.3-1-2.3-2.3-2.3c-1.3,0-2.3,1-2.3,2.3v5.7h-4v-8.9H46.4z M41.8,62.9v5.7h-3.5v-5.7c0-1,0.8-1.7,1.8-1.7
+                              C41,61.1,41.8,61.9,41.8,62.9z M46.7,50.4H33.3l0,0h-0.6c-0.6,0-1.1-0.5-1.1-1.1c0-0.6,0.5-1.1,1.1-1.1h2.7c0,0,0,0,0,0h9v0h2.8
+                              c0.6,0,1.1,0.5,1.1,1.1c0,0.6-0.5,1.1-1.1,1.1L46.7,50.4L46.7,50.4z M35.9,47.4v-4.4h8.3v4.4H35.9z M44.5,42.4h-9c0,0,0,0-0.1,0
+                              h-1.2c-0.6,0-1.1-0.5-1.1-1.1c0-0.6,0.5-1.1,1.1-1.1h11.5c0.6,0,1.1,0.5,1.1,1.1c0,0.6-0.5,1.1-1.1,1.1L44.5,42.4
+                              C44.5,42.4,44.5,42.4,44.5,42.4z M23.7,40.2l0.9,0.9l-6.1,6l-0.4-0.4l-0.4-0.4L23.7,40.2z M17.2,45.7l-0.8-0.8l6-6l0.8,0.8
+                              L17.2,45.7z M25.1,41.5l0.8,0.8l-6,6l-0.8-0.8L25.1,41.5z M24.4,50.9l0.4,0.4l0.4,0.4l-6,6L19,57.7L18.3,57L24.4,50.9z
+                               M17.8,56.5L17,55.7l6-6l0.8,0.8L17.8,56.5z M25.7,52.3l0.8,0.8l-6,6l-0.8-0.8L25.7,52.3z M25,61l0.9,0.8l-6,6l-0.1-0.1L19,67.1
+                              L25,61z M18.4,66.6l-0.8-0.8l6-6l0.8,0.8L18.4,66.6z M26.3,62.4l0.8,0.8l-6,6l-0.8-0.8L26.3,62.4z M35.6,93.1l-6.3-4.2
+                              c0.2-0.1,0.4-0.1,0.6-0.2c0.2-0.1,0.5-0.1,0.7-0.2c0.4-0.1,0.7-0.3,1.1-0.4c0.2-0.1,0.4-0.2,0.7-0.3c0.4-0.2,0.8-0.4,1.1-0.6
+                              c0.2-0.1,0.4-0.2,0.6-0.3c0.5-0.3,1.1-0.7,1.5-1.1l0.4-0.3c2.4-1.5,5.6-1.5,8,0l0.4,0.3c0.5,0.4,1,0.7,1.5,1.1
+                              c0.2,0.1,0.4,0.2,0.5,0.3c0.4,0.2,0.7,0.4,1.1,0.6c0.2,0.1,0.4,0.2,0.7,0.3c0.4,0.2,0.7,0.3,1.1,0.4c0.2,0.1,0.5,0.2,0.7,0.2
+                              c0.2,0.1,0.4,0.1,0.6,0.2l-5.9,3.9C42.2,94.9,38.4,95.1,35.6,93.1z M50.6,88.1c-0.3-0.1-0.5-0.1-0.8-0.2c-0.4-0.1-0.7-0.3-1-0.4
+                              c-0.2-0.1-0.5-0.2-0.7-0.3c-0.4-0.2-0.8-0.4-1.1-0.6c-0.2-0.1-0.4-0.2-0.5-0.3c-0.5-0.3-1.1-0.7-1.5-1.1L44.4,85
+                              c-2.6-1.6-6.1-1.6-8.8,0l-0.4,0.3c-0.5,0.4-1,0.7-1.6,1.1c-0.2,0.1-0.4,0.2-0.6,0.3c-0.4,0.2-0.7,0.4-1.1,0.6
+                              c-0.2,0.1-0.5,0.2-0.7,0.3c-0.3,0.1-0.7,0.3-1.1,0.4c-0.2,0.1-0.5,0.1-0.7,0.2c-0.3,0.1-0.7,0.2-1,0.3l-7.5-5c0,0,0.1,0,0.1,0
+                              c0.1,0,0.1,0,0.2,0c0.7,0.2,1.4,0.3,2,0.4c0,0,0.1,0,0.1,0c0.7,0.1,1.5,0.2,2.2,0.2c3.7,0,7.1-1.2,10-3.4l0.4-0.3
+                              c2.4-1.5,5.6-1.4,8,0l0.4,0.3c2.9,2.3,6.4,3.5,10,3.5c0.4,0,0.8,0,1.3-0.1c0.1,0,0.2,0,0.3,0c0.3,0,0.6-0.1,0.9-0.1
+                              c0.1,0,0.2,0,0.4-0.1c0.3-0.1,0.6-0.1,0.9-0.2c0.1,0,0.2,0,0.3-0.1c0.2,0,0.4-0.1,0.6-0.2l-7.5,5C51.2,88.3,50.9,88.2,50.6,88.1
+                              z M61.1,67.1l-0.8,0.9l-6-6l0.8-0.8L61.1,67.1z M55.6,60.5l0.8-0.8l6,6l-0.8,0.8L55.6,60.5z M59.7,68.4l-0.8,0.8l-6-6l0.8-0.8
+                              L59.7,68.4z M61.7,57L61,57.7l-0.1,0.1l-6-6l0.8-0.8L61.7,57z M56.2,50.4l0.8-0.8l6,6l-0.8,0.8L56.2,50.4z M60.4,58.3l-0.8,0.8
+                              l-6-6l0.8-0.8L60.4,58.3z M62.3,46.2l-0.8,0.8l-6.1-6l0.8-0.9L62.3,46.2z M56.8,39.7l0.8-0.8l6,6l-0.8,0.8L56.8,39.7z M61,47.6
+                              l-0.8,0.8l-6-6l0.8-0.8L61,47.6z M73.4,39.1L69.3,35l-5-5.1c0,0,0,0,0,0c0-0.1-0.1-0.1-0.1-0.2c0-0.1,0-0.1,0-0.2
+                              c0,0,0-0.1,0-0.1c0-0.3,0.1-0.5,0.3-0.7c0.2-0.2,0.5-0.3,0.8-0.3c0,0,0,0,0,0c0.3,0,0.6,0.1,0.8,0.3l9,9c0.4,0.4,0.4,1.1,0,1.6
+                              C74.6,39.6,73.9,39.6,73.4,39.1z"/>
+                            <path class="stLogo" d="M38.6,44v2.5v0.3h2.6h0.3v-0.3v-2.2V44h-2.6H38.6z M39.1,44.5h1.8v1.6h-1.8V44.5z"/>
+                            <path class="stLogo" d="M34.7,51.9v3v0.3h3.1h0.3v-0.3v-2.7v-0.3h-3.1H34.7z M35.2,52.4h2.3v2.2h-2.3V52.4z"/>
+                            <path class="stLogo" d="M41.9,51.9v3v0.3h0.3h2.9h0.3v-3v-0.3h-3.1H41.9z M42.5,52.4h2.3v2.2h-2.3V52.4z"/>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                    </svg>
+
+                </div>
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-6 footer-derecha">
+                <h3 class="tituloGA-footer">Gobierno<br/>Abierto</h3>
+                <div class="redesSociales">
+                  <a href="https://www.facebook.com/MuniCba/">
+                    <span class="fa-stack fa-lg" title="Link a Facebook">
+                      <span class="fa fa-circle fa-stack-2x"></span>
+                      <span class="fa fa-facebook fa-stack-1x fa-inverse"></span>
+                    </span>
+                  </a>
+                  <a href="https://twitter.com/municba">
+                    <span class="fa-stack fa-lg" title="Link a Twitter">
+                      <span class="fa fa-circle fa-stack-2x"></span>
+                      <span class="fa fa-twitter fa-stack-1x fa-inverse"></span>
+                    </span>
+                  </a>
+                  <a href="https://github.com/ModernizacionMuniCBA">
+                    <span class="fa-stack fa-lg github" title="Link a Github">
+                      <span class="fa fa-circle fa-stack-2x"></span>
+                      <span class="fa fa-github fa-stack-1x fa-inverse"></span>
+                    </span>
+                  </a>
+                  <a href="http://github.com">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 50" version="1.1" width="35px" height="35px" style="vertical-align:-15px;">
+                    <g id="surface1" class="blockchain">
+                    <path class="stLogo" d="M 39.0625 2 C 38.464844 2.136719 37.871094 2.269531 37.3125 2.40625 C 37.25 2.421875 37.15625 2.503906 37.15625 2.5625 C 37.144531 3.148438 37.15625 3.742188 37.15625 4.375 C 37.78125 4.242188 38.367188 4.125 38.9375 4 C 38.984375 3.988281 39.03125 3.917969 39.03125 3.875 C 39.039063 3.253906 39.0625 2.632813 39.0625 2 Z M 36.6875 2.53125 C 36.265625 2.617188 35.875 2.695313 35.46875 2.78125 C 34.824219 2.917969 34.8125 2.929688 34.8125 3.59375 L 34.8125 4.8125 C 35.46875 4.691406 36.074219 4.582031 36.6875 4.46875 Z M 34.34375 3 C 33.722656 3.109375 33.148438 3.203125 32.5625 3.3125 C 32.523438 3.320313 32.46875 3.421875 32.46875 3.46875 C 32.460938 4.035156 32.46875 4.585938 32.46875 5.1875 C 33.070313 5.089844 33.636719 5.003906 34.1875 4.90625 C 34.253906 4.894531 34.34375 4.835938 34.34375 4.78125 C 34.355469 4.203125 34.34375 3.609375 34.34375 3 Z M 29.625 3.78125 C 28.988281 3.867188 28.363281 3.949219 27.75 4.03125 L 27.75 5.84375 C 28.386719 5.769531 29.007813 5.667969 29.625 5.59375 Z M 41.375 3.90625 C 40.792969 4.039063 40.226563 4.148438 39.65625 4.28125 C 39.609375 4.292969 39.53125 4.367188 39.53125 4.40625 C 39.523438 4.957031 39.53125 5.496094 39.53125 6.0625 C 40.167969 5.929688 40.765625 5.816406 41.375 5.6875 C 41.375 5.097656 41.375 4.527344 41.375 3.90625 Z M 27.28125 4.09375 C 26.617188 4.164063 25.996094 4.214844 25.375 4.28125 L 25.375 6.0625 C 25.980469 6.003906 26.566406 5.96875 27.15625 5.90625 C 27.199219 5.902344 27.28125 5.820313 27.28125 5.78125 C 27.289063 5.226563 27.28125 4.671875 27.28125 4.09375 Z M 24.875 4.34375 C 24.226563 4.398438 23.617188 4.445313 23 4.5 L 23 6.25 C 23.632813 6.203125 24.246094 6.171875 24.875 6.125 Z M 22.5 4.53125 C 21.867188 4.566406 21.230469 4.589844 20.59375 4.625 L 20.59375 6.40625 C 21.238281 6.371094 21.882813 6.316406 22.5 6.28125 Z M 13.4375 4.75 L 13.4375 6.46875 L 15.3125 6.46875 L 15.3125 4.75 Z M 15.84375 4.78125 L 15.84375 6.46875 L 17.71875 6.46875 L 17.71875 4.78125 Z M 36.6875 4.90625 C 36.105469 5.011719 35.535156 5.109375 34.96875 5.21875 C 34.910156 5.230469 34.8125 5.296875 34.8125 5.34375 C 34.800781 5.855469 34.8125 6.363281 34.8125 6.90625 C 35.464844 6.796875 36.070313 6.699219 36.6875 6.59375 Z M 34.34375 5.34375 C 32.136719 5.652344 29.933594 5.972656 27.71875 6.28125 L 27.71875 10.25 C 26.332031 10.3125 24.980469 10.375 23.59375 10.4375 L 23.59375 8.84375 C 24.1875 8.808594 24.769531 8.78125 25.34375 8.75 L 25.34375 6.5 C 22.957031 6.632813 20.574219 6.773438 18.1875 6.90625 L 18.1875 10.71875 L 13.4375 10.71875 L 13.4375 12.6875 L 15.28125 12.6875 L 15.28125 14.1875 L 13.4375 14.1875 L 13.4375 16.125 L 15.84375 16.125 L 15.84375 22.34375 L 17.65625 22.34375 L 17.65625 23.84375 L 15.84375 23.84375 L 15.84375 26.1875 L 17.65625 26.1875 L 17.65625 27.6875 L 15.8125 27.6875 L 15.8125 33.875 L 13.4375 33.875 L 13.4375 37.78125 L 15.28125 37.78125 L 15.28125 39.28125 L 18.21875 39.28125 L 18.21875 43.125 C 19.832031 43.195313 21.414063 43.273438 23.03125 43.34375 L 23.03125 41.84375 C 23.664063 41.898438 24.253906 41.945313 24.875 42 L 24.875 39.5625 C 25.84375 39.636719 26.789063 39.707031 27.75 39.78125 L 27.75 43.71875 C 29.96875 44.027344 32.160156 44.347656 34.375 44.65625 L 34.375 40.5 C 34.769531 40.527344 35.117188 40.539063 35.46875 40.5625 C 36.683594 40.648438 37.871094 40.632813 39.0625 40.3125 C 41.257813 39.726563 42.773438 38.421875 43.375 36.1875 C 43.746094 34.808594 43.796875 33.414063 43.65625 32 C 43.539063 30.835938 43.214844 29.742188 42.625 28.71875 C 42.441406 28.398438 42.242188 28.210938 41.84375 28.25 C 41.515625 28.28125 41.179688 28.203125 40.84375 28.1875 C 40.414063 28.167969 39.976563 28.144531 39.53125 28.125 C 39.53125 27.480469 39.515625 26.894531 39.53125 26.28125 C 39.535156 26.089844 39.480469 25.988281 39.3125 25.9375 C 38.570313 25.71875 37.84375 25.480469 37.09375 25.28125 C 36.660156 25.167969 36.203125 25.113281 35.75 25.03125 L 35.75 24.40625 C 35.75 23.695313 35.757813 23.707031 36.4375 23.46875 C 37.621094 23.058594 38.777344 22.625 39.78125 21.84375 C 40.902344 20.96875 41.710938 19.867188 42.1875 18.53125 C 42.617188 17.324219 42.652344 16.042969 42.5625 14.78125 C 42.492188 13.8125 42.269531 12.898438 41.8125 12.03125 C 41.453125 11.351563 40.9375 10.804688 40.28125 10.40625 C 38.890625 9.5625 37.375 9.316406 35.78125 9.40625 C 35.316406 9.433594 34.847656 9.472656 34.375 9.5 C 34.367188 9.34375 34.351563 9.199219 34.34375 9.0625 C 33.722656 9.140625 33.136719 9.238281 32.53125 9.3125 L 32.53125 7.6875 C 33.144531 7.597656 33.738281 7.527344 34.34375 7.4375 Z M 41.375 6.125 C 40.753906 6.253906 40.136719 6.375 39.53125 6.5 L 39.53125 8.28125 C 40.15625 8.164063 40.777344 8.050781 41.375 7.9375 Z M 39.03125 6.59375 C 38.386719 6.710938 37.785156 6.828125 37.1875 6.9375 L 37.1875 8.65625 C 37.824219 8.550781 38.417969 8.445313 39.03125 8.34375 Z M 15.84375 6.90625 L 15.84375 8.40625 L 17.71875 8.40625 L 17.71875 6.90625 Z M 36.6875 7.03125 C 36.054688 7.132813 35.429688 7.242188 34.8125 7.34375 L 34.8125 9.03125 C 35.457031 8.9375 36.078125 8.839844 36.6875 8.75 Z M 13.4375 8.8125 L 13.4375 10.34375 L 15.3125 10.34375 L 15.3125 8.8125 Z M 15.84375 8.8125 L 15.84375 10.34375 L 17.71875 10.34375 L 17.71875 8.8125 Z M 6.3125 10.4375 L 6.3125 12 C 6.945313 12.035156 7.5625 12.089844 8.1875 12.125 L 8.1875 10.5625 C 7.554688 10.527344 6.941406 10.472656 6.3125 10.4375 Z M 8.6875 10.625 L 8.6875 12.15625 L 10.53125 12.15625 L 10.53125 10.625 Z M 11.0625 10.71875 L 11.0625 12.25 L 12.9375 12.25 L 12.9375 10.71875 Z M 22.5 12.4375 L 22.5 13.96875 C 21.878906 13.996094 21.253906 14.035156 20.625 14.0625 L 20.625 12.53125 C 21.253906 12.5 21.875 12.46875 22.5 12.4375 Z M 8.6875 12.5625 L 8.6875 14.09375 L 10.53125 14.09375 L 10.53125 12.5625 Z M 41.375 12.5625 L 41.375 14.375 C 40.78125 14.449219 40.179688 14.519531 39.5625 14.59375 L 39.5625 12.8125 C 40.148438 12.726563 40.746094 12.65625 41.375 12.5625 Z M 18.25 12.59375 L 20.09375 12.59375 L 20.09375 14.09375 L 18.25 14.09375 Z M 6.28125 14.4375 C 6.28125 14.890625 6.269531 15.367188 6.28125 15.84375 C 6.28125 15.886719 6.386719 15.9375 6.4375 15.9375 C 7.011719 15.945313 7.597656 15.96875 8.1875 15.96875 L 8.1875 14.4375 Z M 11.0625 14.59375 L 11.0625 16.09375 L 12.9375 16.09375 L 12.9375 14.59375 Z M 29.875 14.9375 C 33.78125 14.839844 33.691406 16.527344 33.71875 17.75 C 33.769531 19.992188 32.820313 22.011719 28.125 22.375 C 27.964844 22.386719 24.179688 22.53125 24.125 22.53125 C 24.125 20.085938 24.125 17.664063 24.125 15.21875 C 24.28125 15.207031 29.273438 14.953125 29.875 14.9375 Z M 6.3125 16.375 L 6.3125 17.9375 L 8.1875 17.9375 L 8.1875 16.375 Z M 11.0625 16.5 L 11.0625 18.03125 L 12.9375 18.03125 L 12.9375 16.5 Z M 13.4375 16.53125 L 13.4375 18.03125 L 15.3125 18.03125 L 15.3125 16.53125 Z M 17.25 16.53125 L 19.09375 16.53125 L 19.09375 18.03125 L 17.25 18.03125 Z M 41.34375 17.15625 L 41.34375 18.96875 C 40.75 19.007813 40.179688 19.054688 39.5625 19.09375 L 39.5625 17.34375 C 40.164063 17.289063 40.730469 17.214844 41.34375 17.15625 Z M 8.6875 18.40625 L 8.6875 19.9375 L 10.53125 19.9375 L 10.53125 18.40625 Z M 13.4375 18.46875 L 13.4375 19.96875 L 15.3125 19.96875 L 15.3125 18.46875 Z M 19.90625 18.46875 L 21.75 18.46875 L 21.75 19.9375 L 19.90625 19.9375 Z M 6.3125 20.3125 L 6.3125 21.84375 L 8.1875 21.84375 L 8.1875 20.3125 Z M 8.6875 20.34375 L 8.6875 21.875 L 10.53125 21.875 L 10.53125 20.34375 Z M 11.0625 20.375 L 11.0625 21.875 L 12.9375 21.875 L 12.9375 20.375 Z M 11.0625 22.3125 L 11.0625 23.8125 L 12.9375 23.8125 L 12.9375 22.3125 Z M 13.4375 22.3125 L 13.4375 23.8125 L 15.3125 23.8125 L 15.3125 22.3125 Z M 8.6875 24.25 L 8.6875 25.78125 L 10.53125 25.78125 L 10.53125 24.25 Z M 13.4375 24.25 L 13.4375 25.75 L 15.3125 25.75 L 15.3125 24.25 Z M 19.6875 24.25 L 21.53125 24.25 L 21.53125 25.75 L 19.6875 25.75 Z M 11.0625 26.1875 L 11.0625 27.6875 L 12.9375 27.6875 L 12.9375 26.1875 Z M 13.4375 26.1875 L 13.4375 27.6875 L 15.34375 27.6875 L 15.34375 26.1875 Z M 24.125 27.53125 C 24.242188 27.53125 27.570313 27.59375 28.125 27.625 C 34 27.9375 34.152344 29.078125 34.75 31.1875 C 34.921875 31.792969 34.789063 32.417969 34.625 33.03125 C 34.511719 33.457031 34.207031 35.066406 30.4375 35.0625 C 29.515625 35.0625 24.261719 34.84375 24.125 34.84375 Z M 8.6875 28.125 L 8.6875 29.65625 L 10.5625 29.65625 L 10.5625 28.125 Z M 11.0625 28.125 L 11.0625 29.625 L 12.9375 29.625 L 12.9375 28.125 Z M 6.3125 28.15625 L 6.3125 29.6875 L 8.1875 29.6875 L 8.1875 28.15625 Z M 13.4375 30.03125 L 13.4375 31.53125 L 15.3125 31.53125 L 15.3125 30.03125 Z M 17.78125 30.0625 L 19.625 30.0625 L 19.625 31.53125 L 17.78125 31.53125 Z M 8.6875 30.09375 L 8.6875 31.59375 L 10.53125 31.59375 L 10.53125 30.09375 Z M 6.3125 30.125 L 6.3125 31.65625 L 8.1875 31.65625 L 8.1875 30.125 Z M 11.0625 31.96875 L 11.0625 33.5 L 12.9375 33.5 L 12.9375 31.96875 Z M 13.4375 31.96875 L 13.4375 33.46875 L 15.3125 33.46875 L 15.3125 31.96875 Z M 17.78125 31.96875 L 19.625 31.96875 L 19.625 33.46875 L 17.78125 33.46875 Z M 8.6875 32 L 8.6875 33.53125 L 10.53125 33.53125 L 10.53125 32 Z M 39.5625 33.15625 C 40.15625 33.214844 40.757813 33.253906 41.375 33.3125 L 41.375 35.125 C 40.769531 35.054688 40.171875 35.007813 39.5625 34.9375 Z M 8.6875 33.96875 L 8.6875 35.46875 L 10.53125 35.46875 L 10.53125 33.96875 Z M 11.0625 35.84375 L 11.0625 37.34375 L 12.9375 37.34375 L 12.9375 35.84375 Z M 15.875 35.84375 L 17.71875 35.84375 L 17.71875 37.34375 L 15.875 37.34375 Z M 8.6875 35.90625 L 8.6875 37.4375 L 10.53125 37.4375 L 10.53125 35.90625 Z M 25.46875 36 L 27.3125 36 L 27.3125 37.5625 C 27.003906 37.546875 25.78125 37.484375 25.46875 37.46875 Z M 30.21875 36.1875 C 30.6875 36.21875 31.136719 36.25 31.59375 36.28125 C 31.746094 36.292969 31.910156 36.300781 32.0625 36.3125 L 32.0625 37.90625 C 31.605469 37.871094 30.375 37.761719 30.21875 37.75 Z M 11.0625 37.78125 L 11.0625 39.28125 L 12.9375 39.28125 L 12.9375 37.78125 Z M 8.1875 37.875 C 7.542969 37.910156 6.929688 37.964844 6.3125 38 L 6.3125 39.5625 C 6.949219 39.523438 7.558594 39.476563 8.1875 39.4375 Z M 13.4375 39.65625 L 13.4375 41.1875 L 15.34375 41.1875 L 15.34375 39.65625 Z M 15.84375 39.65625 L 15.84375 41.1875 L 17.71875 41.1875 L 17.71875 39.65625 Z M 20.625 39.6875 L 22.5 39.6875 L 22.5 41.15625 L 20.625 41.15625 Z M 10.53125 39.71875 C 9.898438 39.746094 9.304688 39.785156 8.6875 39.8125 L 8.6875 41.375 C 9.320313 41.347656 9.914063 41.308594 10.53125 41.28125 Z M 11.0625 39.71875 L 11.0625 41.21875 L 12.9375 41.21875 L 12.9375 39.71875 Z M 8.1875 39.84375 C 7.554688 39.882813 6.941406 39.929688 6.3125 39.96875 L 6.3125 41.53125 C 6.953125 41.488281 7.5625 41.449219 8.1875 41.40625 Z M 25.34375 40 L 25.34375 41.5625 C 25.992188 41.617188 26.636719 41.667969 27.25 41.71875 C 27.265625 41.667969 27.28125 41.640625 27.28125 41.625 C 27.285156 41.316406 27.28125 41.027344 27.28125 40.71875 C 27.28125 40.15625 27.265625 40.144531 26.71875 40.09375 C 26.664063 40.089844 26.617188 40.066406 26.5625 40.0625 C 26.164063 40.035156 25.753906 40.027344 25.34375 40 Z M 34.8125 40.96875 L 34.8125 42.65625 C 35.433594 42.757813 36.054688 42.867188 36.6875 42.96875 L 36.6875 41.25 C 36.058594 41.15625 35.4375 41.0625 34.8125 40.96875 Z M 37.15625 41.34375 C 37.15625 41.511719 37.15625 41.664063 37.15625 41.8125 C 37.15625 41.960938 37.152344 42.105469 37.15625 42.25 C 37.160156 42.445313 37.125 42.667969 37.15625 42.84375 C 37.167969 42.902344 37.1875 42.957031 37.21875 43 C 37.335938 43.152344 37.691406 43.140625 37.9375 43.1875 C 38.304688 43.257813 38.660156 43.308594 39.03125 43.375 L 39.03125 41.65625 C 38.410156 41.554688 37.804688 41.449219 37.15625 41.34375 Z M 15.84375 41.59375 L 15.84375 43.09375 L 17.71875 43.09375 L 17.71875 41.59375 Z M 11.0625 41.625 L 11.0625 43.15625 L 12.9375 43.15625 L 12.9375 41.625 Z M 39.53125 41.75 L 39.53125 43.5 C 40.144531 43.625 40.757813 43.75 41.375 43.875 L 41.375 42.0625 C 40.757813 41.949219 40.148438 41.863281 39.53125 41.75 Z M 25.375 41.96875 L 25.375 43.53125 C 26.007813 43.589844 26.605469 43.65625 27.25 43.71875 L 27.25 42.125 C 26.609375 42.070313 26.003906 42.023438 25.375 41.96875 Z M 34.8125 43.09375 L 34.8125 44.75 C 35.433594 44.863281 36.054688 44.980469 36.6875 45.09375 L 36.6875 43.40625 C 36.0625 43.300781 35.441406 43.199219 34.8125 43.09375 Z M 15.84375 43.5 L 15.84375 45.21875 L 17.71875 45.21875 L 17.71875 43.5 Z M 18.21875 43.5625 L 18.21875 45.28125 L 20.09375 45.28125 L 20.09375 43.5625 Z M 20.59375 43.625 C 20.59375 44.183594 20.578125 44.699219 20.59375 45.21875 C 20.59375 45.273438 20.710938 45.367188 20.78125 45.375 C 21.058594 45.40625 21.34375 45.390625 21.625 45.40625 C 21.917969 45.421875 22.203125 45.453125 22.5 45.46875 L 22.5 43.71875 C 21.851563 43.6875 21.238281 43.65625 20.59375 43.625 Z M 23 43.75 L 23 45.5 C 23.628906 45.550781 24.226563 45.601563 24.875 45.65625 L 24.875 44.5 C 24.875 43.90625 24.875 43.898438 24.28125 43.84375 C 23.851563 43.804688 23.445313 43.785156 23 43.75 Z M 27.75 44.15625 L 27.75 45.96875 C 28.382813 46.050781 28.996094 46.136719 29.625 46.21875 L 29.625 44.40625 C 28.996094 44.332031 28.382813 44.230469 27.75 44.15625 Z M 30.125 44.46875 L 30.125 46.28125 C 30.757813 46.378906 31.371094 46.496094 32 46.59375 L 32 44.71875 C 31.367188 44.628906 30.75 44.558594 30.125 44.46875 Z M 34.8125 45.1875 C 34.8125 45.816406 34.804688 46.398438 34.8125 46.96875 C 34.8125 47.019531 34.890625 47.082031 34.9375 47.09375 C 35.519531 47.21875 36.085938 47.347656 36.6875 47.46875 L 36.6875 45.53125 C 36.066406 45.417969 35.460938 45.308594 34.8125 45.1875 Z M 37.15625 45.65625 C 37.15625 46.277344 37.148438 46.828125 37.15625 47.40625 C 37.15625 47.46875 37.230469 47.582031 37.28125 47.59375 C 37.859375 47.734375 38.453125 47.863281 39.0625 48 C 39.0625 47.367188 39.042969 46.769531 39.03125 46.15625 C 39.03125 46.101563 38.945313 46.015625 38.875 46 C 38.515625 45.914063 38.144531 45.824219 37.78125 45.75 C 37.582031 45.710938 37.378906 45.699219 37.15625 45.65625 Z "/>
+                    </g>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-7 linksFooter">
+            <div class="row">
+              <div class="col-md-4 col-sm-6 lista-links">
+                <div class="link tyc">
+                  <a href="#"> > Términos y Condiciones</a>
+                </div>
+                <div class="link licencias-btn-holder">
+                  <a href="#" class="licencias-btn"> > Licencias</a>
+                </div>
+                <div class="link ">
+                  <a href="#" class="accesible"> > Convenios</a>
+                </div>
+                <div class="link ">
+                  <a href="#" class="accesible"> > Accesible</a>
+                </div>
+
+              </div>
+              <div class="col-md-4 col-sm-6 lista-links">
+                <div class="link ">
+                  <a href="#" class="accesible"> > Nuestro Portal</a>
+                </div>
+                <div class="link ">
+                  <a href="#" class="accesible"> > Desarrolladores</a>
+                </div>
+                <div class="link ">
+                  <a href="#" class="accesible"> > Glosario</a>
+                </div>
+                <div class="link ">
+                  <a href="#" class="accesible"> > Marco Legal</a>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-6 lista-links copyr">
+                <p>Copyright &copy; 2018<br/> Municipalidad de Córdoba<br/> Todos los derechos reservados.
+
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 no-padding">
+            <div class="row rowConvenios">
+              <div class="col-xs-12 col-md-2">
+                <div class="titConvenios">
+                  Convenios
+                </div>
+              </div>
+              <div class="col-xs-12 col-md-10">
+                <div class="row">
+                  <div class="col-xs-12 col-md-3">
+                    <a href="https://www.argentina.gob.ar/modernizacion" target="_blank"><img src="assets/images/logos/modernizacion_nacion.png" class="img-responnsive imgLogoFooter"/></a>
+                  </div>
+                  <div class="col-xs-12 col-md-3">
+                    <a href="https://www.fcabierto.org/" target="_blank"><img src="assets/images/logos/conocimiento_abierto.png" class="img-responnsive imgLogoFooter"/></a>
+                  </div>
+                  <div class="col-xs-12 col-md-3">
+                    <a href="http://cobico.com.ar/" target="_blank"><img src="assets/images/logos/cobico.png" class="img-responnsive imgLogoFooter"/></a>
+                  </div>
+                  <div class="col-xs-12 col-md-3">
+                    <a href="https://redfederalaip.com.ar/" target="_blank"><img src="assets/images/logos/rafi.png" class="img-responnsive imgLogoFooter"/></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </footer>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="assets/js/bootstrap.min.js"></script>
+  <!-- <script src="assets/js/d3.v3.min.js"></script> -->
+  <script src="assets/js/loader.js"></script>
+  <script src="assets/js/index.js"></script>
+  <script src="assets/js/menuController.js"></script>
+
+  <script src="assets/js/d3.js"></script>
+  <script src="assets/js/d3plus.js"></script>
+  <script src="assets/js/ingresosGrapher.js"></script>
+  <!-- <script src="assets/js/afectacionEspecifica.js"></script> -->
+  <script>
+    touchAnalytics('/presupuesto-cordoba-2017/ingresos', 'Ingresos');
+  </script>
+</body>
+</html>
