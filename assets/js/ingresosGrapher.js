@@ -5,7 +5,7 @@ function dibujarD3_ing() {
   $("#ingresosGraph").empty();
     var datos = [];
     var detalle = [];
-    $.each( dataJSON.feed.entry, function( key, val ) {
+    $.each( dataJSON, function( key, val ) {
       var partida = val.gsx$partidas.$t;
       var partida_splited = partida.split('.');
       var nivel = partida_splited.length;
