@@ -1,17 +1,20 @@
+var selectedYear = "2018";
+
 $(document).ready(function() {
 	finishedDrawing();
 	$('.yearSelector').on('click', function(){
-		Cookies.set('year', $(this).data('year'));
-		$('.selectedYear').html($(this).data('year'));
+		selectedYear = $(this).data('year');
+		Cookies.set('year', selectedYear);
+		$('.selectedYear').html(selectedYear);
 	});
 });
 
-var selectedYear = "2018";
 
 if(Cookies.get('year') == undefined){
 	Cookies.set('year', '2018');
 }else{
-	$('.selectedYear').html(Cookies.get('year'));
+	selectedYear = Cookies.get('year');
+	$('.selectedYear').html(selectedYear);
 }
 
 var uuid_analytics = "UA-79840006-1";

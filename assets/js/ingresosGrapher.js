@@ -1,7 +1,7 @@
 
 window.already_printed_ae = false;
 function dibujarD3_ing() {
-  $.getJSON("https://spreadsheets.google.com/feeds/list/1jcG9GJScORYkrCyq5l5A9VojBng5Dzq7vDqpqWSBcQo/od6/public/values?alt=json", function( dataJSON ) {
+  $.getJSON("https://sheets.googleapis.com/v4/spreadsheets/1jcG9GJScORYkrCyq5l5A9VojBng5Dzq7vDqpqWSBcQo/values/2017?key=AIzaSyDWqm99ehcgTUcnekuujkT2P95l-kor_mM", function( dataJSON ) {
   $("#ingresosGraph").empty();
     var datos = [];
     var detalle = [];
