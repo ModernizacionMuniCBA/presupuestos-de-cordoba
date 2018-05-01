@@ -1,6 +1,18 @@
 $(document).ready(function() {
 	finishedDrawing();
+	$('.yearSelector').on('click', function(){
+		Cookies.set('year', $(this).data('year'));
+		$('.selectedYear').html($(this).data('year'));
+	});
 });
+
+var selectedYear = "2018";
+
+if(Cookies.get('year') == undefined){
+	Cookies.set('year', '2018');
+}else{
+	$('.selectedYear').html(Cookies.get('year'));
+}
 
 var uuid_analytics = "UA-79840006-1";
 
