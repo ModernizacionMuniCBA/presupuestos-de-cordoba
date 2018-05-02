@@ -68,6 +68,10 @@ function dibujarD3_participativo() {
 
 dibujarD3_participativo();
 
+function dibujar(){
+	dibujarD3_participativo();	
+}
+
 $("#tbody-participativo").on("click", ".nivel-3", function() {
   $(this).find("button>i").toggleClass("fa-plus fa-minus");
 });

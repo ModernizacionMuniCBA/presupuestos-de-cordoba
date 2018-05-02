@@ -89,6 +89,7 @@ function llenarTablas_ing(){
   //Llenar Tabla de Ingresos Corrientes Propios
     $.getJSON("https://sheets.googleapis.com/v4/spreadsheets/1nkqXSu3MlK7uKDqaL-EqG4ZeZTNSDYPklNGS-YRrTnM/values/"+selectedYear+"?key=AIzaSyDWqm99ehcgTUcnekuujkT2P95l-kor_mM", function( data ){
     var items = [];
+    $("#tbody-ingresos-corrientes-propios").empty();
     $.each( data.values, function( key, val ) {
       if(key>0){
         var partida = val[0];
@@ -115,6 +116,7 @@ function llenarTablas_ing(){
   $.getJSON("https://sheets.googleapis.com/v4/spreadsheets/1mYqmTfiEEHJyofD636sojncI2UwAgFT_kQpIujkudMQ/values/"+selectedYear+"?key=AIzaSyDWqm99ehcgTUcnekuujkT2P95l-kor_mM", function( data ){
     var items = [];
     // console.log(data.feed.entry);
+    $("#tbody-ingresos-corrientes-no-propios").empty();
     $.each( data.values, function( key, val ) {
     	if(key>0){
     		var partida = val[0];
@@ -141,26 +143,29 @@ function llenarTablas_ing(){
   //Llenar tabla de Ingresos de Capital
     $.getJSON("https://sheets.googleapis.com/v4/spreadsheets/1RJjQTHJEMeZ4KVwYrqylGJJqkw-QiY1eHSdDxdoDoFU/values/"+selectedYear+"?key=AIzaSyDWqm99ehcgTUcnekuujkT2P95l-kor_mM", function( data ){
       var items = [];
+      $("#tbody-ingresos-capital").empty();
       // console.log(data.feed.entry);
       $.each( data.values, function( key, val ) {
-        var partida = val[0];
-        var partida_splited = partida.split('.');
-        var nivel = partida_splited.length;
-        var concepto = val[1];
-        var total = val[2];
-        if (partida_splited[1]==""){
-          nivel -=1;
-        }
-        // console.log(partida_splited);
-        if (nivel <= 3){
-          if(partida_splited[0] == "2" || partida_splited[0] == "02" ){
-            if(partida_splited[0] == "2"){
-              $("#tbody-ingresos-capital").append('<tr class="nivel-'+nivel+'"><th scope="row">'+partida+'</th><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
-            }else{
-              $("#tbody-ingresos-capital").append('<tr class="nivel-'+nivel+'"><th scope="row">'+partida+'</th><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
-            }
-          }
-        }
+    	  if(key>0){
+    	        var partida = val[0];
+    	        var partida_splited = partida.split('.');
+    	        var nivel = partida_splited.length;
+    	        var concepto = val[1];
+    	        var total = val[2];
+    	        if (partida_splited[1]==""){
+    	          nivel -=1;
+    	        }
+    	        // console.log(partida_splited);
+    	        if (nivel <= 3){
+    	          if(partida_splited[0] == "2" || partida_splited[0] == "02" ){
+    	            if(partida_splited[0] == "2"){
+    	              $("#tbody-ingresos-capital").append('<tr class="nivel-'+nivel+'"><th scope="row">'+partida+'</th><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
+    	            }else{
+    	              $("#tbody-ingresos-capital").append('<tr class="nivel-'+nivel+'"><th scope="row">'+partida+'</th><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
+    	            }
+    	          }
+    	        }
+    	  }
       });
     });
 
@@ -179,45 +184,48 @@ function dibujarD3_AE() {
     var datos_propios = [];
     var datos_no_propios = [];
     $.each( data.values, function( key, val ) {
-      var partida = val[0];
-      var partida_splited = partida.split('.');
-      var nivel = partida_splited.length;
-      var concepto = val[1];
-      var total = val[2];
-      if (partida_splited[1]==""){
-        nivel -=1;
-      }
+    	if(key>0){
+    		var partida = val[0];
+    	      var partida_splited = partida.split('.');
+    	      var nivel = partida_splited.length;
+    	      var concepto = val[1];
+    	      var total = val[2];
+    	      if (partida_splited[1]==""){
+    	        nivel -=1;
+    	      }
 
-      if(partida_splited[0] != "I -" && window.already_printed_ae === false){
-        $("#tbody-ingresos-afectacion").append('<tr class="nivel-'+nivel+'"><th scope="row">'+partida+'</th><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
-      }
+    	      if(partida_splited[0] != "I -" && window.already_printed_ae === false){
+    	        $("#tbody-ingresos-afectacion").append('<tr class="nivel-'+nivel+'"><th scope="row">'+partida+'</th><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
+    	      }
 
-      if(nivel==2){
-        var linea = {"key": concepto,
-                "valor": parseInt(total.split('.').join(""))
-             }
-          datos.push(linea);
-      }
-      if(nivel==3){
-        var linea = {"key": concepto,
-                "valor": parseInt(total.split('.').join(""))
-             }
-          datos_jm.push(linea);
-      }
-      if(nivel==4 && partida_splited[1] == "01"){
-        var linea = {"Nombre": concepto,
-                        "key": partida,
-                      "valor": parseInt(total.split('.').join(""))
-             }
-          datos_propios.push(linea);
-      }
-      if(nivel==4 && partida_splited[1] == "02"){
-        var linea = {"Nombre": concepto,
-                        "key": partida,
-                      "valor": parseInt(total.split('.').join(""))
-             }
-          datos_no_propios.push(linea);
-      }
+    	      if(nivel==2){
+    	        var linea = {"key": concepto,
+    	                "valor": parseInt(total.split('.').join(""))
+    	             }
+    	          datos.push(linea);
+    	      }
+    	      if(nivel==3){
+    	        var linea = {"key": concepto,
+    	                "valor": parseInt(total.split('.').join(""))
+    	             }
+    	          datos_jm.push(linea);
+    	      }
+    	      if(nivel==4 && partida_splited[1] == "01"){
+    	        var linea = {"Nombre": concepto,
+    	                        "key": partida,
+    	                      "valor": parseInt(total.split('.').join(""))
+    	             }
+    	          datos_propios.push(linea);
+    	      }
+    	      if(nivel==4 && partida_splited[1] == "02"){
+    	        var linea = {"Nombre": concepto,
+    	                        "key": partida,
+    	                      "valor": parseInt(total.split('.').join(""))
+    	             }
+    	          datos_no_propios.push(linea);
+    	      }
+    	}
+      
 
 
     });
@@ -376,6 +384,11 @@ $(window).on('resize', function(){
   dibujarD3_AE();
 });
 
+function dibujar(){
+	  dibujarD3_ing();
+	  dibujarD3_AE();
+	  llenarTablas_ing();
+}
 
 $( document ).ready(function() {
   var hash = window.location.hash;

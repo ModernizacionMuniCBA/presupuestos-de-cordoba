@@ -6,12 +6,8 @@ window.already_printed_finalidad = false;
 window.already_printed_clasificacion = false;
 
 function dibujarD3_gastos() {
-  if(already_printed_corrientes == false){
-    dibujarD3_gastos_corrientes();
-  }
-  if(already_printed_capital == false){
-    dibujarD3_gastos_capital();
-  }
+  dibujarD3_gastos_corrientes();
+  dibujarD3_gastos_capital();
   dibujarD3_gastos_finalidad();
   dibujarD3_gastos_finalidad_funcion();
   $.getJSON("https://sheets.googleapis.com/v4/spreadsheets/11UGXTNvmaOezQNpFXxMXps_gT7kwEP08YeMdcz4wKXo/values/"+selectedYear+"?key=AIzaSyDWqm99ehcgTUcnekuujkT2P95l-kor_mM", function( dataJSON ) {
@@ -20,8 +16,8 @@ function dibujarD3_gastos() {
     var datos_clasif_econo = [];
     var detalle = [];
     var $tabla = $("#tbody-clasificacion-gasto");
-    // console.log(dataJSON.feed.entry);
     var i = 0;
+    $tabla.empty();
     $.each( dataJSON.values, function( key, val ) {
     	if(key>0){
     		   i += 1;
@@ -53,7 +49,6 @@ function dibujarD3_gastos() {
 
     		            datos.push(linea);
     		        }
-    		        if(already_printed_clasificacion == false){
     		          if(nivel <=4){
     		            if(partida=="-2"){
     		              $tabla.append('<tr class="nivel-'+nivel+' total"><td></td><th scope="row"> </th><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
@@ -68,7 +63,6 @@ function dibujarD3_gastos() {
     		            }
 
     		          }
-    		        }
     		      }
     	}
     });
@@ -149,7 +143,6 @@ function dibujarD3_gastos_corrientes() {
     	}
       
     });
-    already_printed_corrientes=true;
   });
 }
 
@@ -159,6 +152,7 @@ function dibujarD3_gastos_capital() {
     var datos_clasif_econo = [];
     var detalle = [];
     var i = 0;
+    $("#tbody-gastos-capital").empty();
     $.each( dataJSON.values, function( key, val ) {
     	if(key>0){
     		 i += 1;
@@ -186,7 +180,6 @@ function dibujarD3_gastos_capital() {
     	      }
     	}
     });
-    already_printed_capital=true;
 });
 }
 
@@ -196,6 +189,7 @@ function dibujarD3_gastos_finalidad() {
     var datos = [];
     var i = 0;
     var entradas = dataJSON.values;
+    $("#tbody-gastos-finalidad").empty();
     $.each( entradas, function( key, val ) {
     	if(key>0){
     	      i += 1;
@@ -205,13 +199,9 @@ function dibujarD3_gastos_finalidad() {
     	        var linea = {"key": concepto,
     	                "valor": parseInt(total.split('.').join(""))}
     	        datos.push(linea);
-    	        if(already_printed_finalidad == false){
     	          $("#tbody-gastos-finalidad").append('<tr class="nivel-3"><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
-    	        }
     	      }else{
-    	        if(already_printed_finalidad == false){
     	          $("#tbody-gastos-finalidad").append('<tr class="nivel-2"><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
-    	        }
     	      }
     	}
 
@@ -253,6 +243,7 @@ function dibujarD3_gastos_finalidad_funcion() {
     var detalle = [];
     var i = 0;
     // console.log(dataJSON.feed.entry);
+    $("#tbody-gastos-finalidad-funcion").empty();
     $.each( dataJSON.values, function( key, val ) {
     	if(key>0){
     		 i += 1;
@@ -268,13 +259,12 @@ function dibujarD3_gastos_finalidad_funcion() {
     	      }else{
     	        nivel_aux+=1;
     	      }
-    	      if(already_printed_finalidad_funcion == false){
-    	        if(i>1){
-    	          $("#tbody-gastos-finalidad-funcion").append('<tr class="nivel-'+nivel_aux+'"><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
-    	        }else{
-    	          $("#tbody-gastos-finalidad-funcion").append('<tr class="nivel-1"><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
-    	        }
-    	      }
+	        if(i>1){
+	          $("#tbody-gastos-finalidad-funcion").append('<tr class="nivel-'+nivel_aux+'"><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
+	        }else{
+	          $("#tbody-gastos-finalidad-funcion").append('<tr class="nivel-1"><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
+	        }
+    	      
 
     	      if(partida_splited[0]!= "-1"){
     	        detalle[nivel] = concepto;
@@ -355,6 +345,13 @@ $(window).on('resize', function(){
   dibujarD3_gastos();
 });
 
+function dibujar(){
+	dibujarD3_gastos();
+	dibujarD3_gastos_corrientes();
+	dibujarD3_gastos_capital();
+	dibujarD3_gastos_finalidad();
+	dibujarD3_gastos_finalidad_funcion()
+}
 
 $( document ).ready(function() {
   var hash = window.location.hash;

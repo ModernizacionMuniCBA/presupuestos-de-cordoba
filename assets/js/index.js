@@ -2,10 +2,12 @@ var selectedYear = "2018";
 
 $(document).ready(function() {
 	finishedDrawing();
-	$('.yearSelector').on('click', function(){
+	$('.yearSelector').on('click', function(e){
+		e.preventDefault();
 		selectedYear = $(this).data('year');
 		Cookies.set('year', selectedYear);
 		$('.selectedYear').html(selectedYear);
+		dibujar();
 	});
 });
 
