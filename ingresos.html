@@ -59,8 +59,10 @@
       <div class="navbar-header">
         <a class="navbar-brand" href="index.html">
           <div class="menuLogo">
-            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-             viewBox="0 0 242.9 300" style="enable-background:new 0 0 242.9 300;" xml:space="preserve">
+            <svg version="1.1" id="logoMuniCordoba" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+             viewBox="0 0 242.9 350" aria-labelledby="muniLogoTitle" style="enable-background:new 0 0 242.9 350;" width="50" height="75" xml:space="preserve">
+             <title id="muniLogoTitle">Logo de la Municipalidad de Córdoba</title>
+             <!-- <desc id="muniLogoDesc"></desc> -->
             <g>
             <path class="stLogo" d="M236.7,108.9l-28.5-28.5c-1.5-1.5-3.7-2.3-6-2.3c-2.3,0-4.6,0.9-6.1,2.4c-2.2,2.3-3,5.6-1.9,8.7
               c-3.7,5.3-9.7,8.4-16.1,8.4c-9.7,0-17.8-6.8-19.5-16.3h3.2c5,0,9.1-4.1,9.1-9.1c0-4.9-3.9-8.9-8.8-9.1c0.1-0.5,0.1-1,0.1-1.4
@@ -158,13 +160,22 @@
 
           </div>
         </a>
-        <a href="index.html">
-          <!-- <div class="sqGA"><h3 class="logoGA"><span Gobierno<br/>Abierto</h3><div class="logoGABar"></div></div> -->
+        <a href="./index.html">
           <div class="sqGA">
-            <h3 class="logoGA">Gobierno<br/>Abierto</h3>
-            <div class="logoGABar"></div>
-            <span class="top" id="topSqGA"></span>
-            <span class="bottom"></span>
+            <div class="logoGAG">
+              <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 133.7 149.9" aria-labelledby="gobAbiertoLogo"style="enable-background:new 0 0 133.7 149.9;" xml:space="preserve">
+                 <title id="gobAbiertoLogo">Logo de Gobierno Abierto</title>
+              <style type="text/css">
+                .stGA{fill:#231F20;}
+              </style>
+              <path class="stGA" d="M107.3,95.1h20.2v18c0,17.9-14.6,32.5-32.5,32.5H38.8c-17.9,0-32.5-14.6-32.5-32.5V36.7
+                c0-17.9,14.6-32.5,32.5-32.5H95c17.9,0,32.5,14.5,32.5,32.4h-20.2c-0.1-6.7-5.6-12.2-12.3-12.2H38.8c-6.8,0-12.3,5.5-12.3,12.3v76.4
+                c0,6.8,5.5,12.3,12.3,12.3H95c6.8,0,12.3-5.5,12.3-12.3V95.1z M59.2,56.1l-6.9,19c0,0,0.1,0,0.1,0l54.9,20l6.9-19l-54.9-20
+                C59.3,56.1,59.2,56.1,59.2,56.1z"/>
+              </svg>
+            </div>
+            <h1 class="logoGA">Gobierno<br/>Abierto</h1>
           </div>
         </a>
         <div class="hidden-md hidden-lg pull-right">
@@ -181,7 +192,7 @@
         <div class="hidden-sm hidden-xs">
           <ul class="nav navbar-nav navbar-right">
             <li>
-              <a href="index.html">
+              <a href="index.html" >
                 Home
               </a>
             </li>
@@ -206,12 +217,11 @@
               </a>
             </li>
             <li class="dropdown year">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">2017 <!--<span class="caret"></span>--></a>
-              <!-- <ul class="dropdown-menu">
-                <li><a href="#">2017</a></li>
-                <li><a href="#">2016</a></li>
-                <li><a href="#">2015</a></li>
-              </ul> -->
+              <a href="#" class="dropdown-toggle selectedYear" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">2018 <!--<span class="caret"></span>--></a>
+              <ul class="dropdown-menu lvl1">
+                <li><a href="#" class="yearSelector" data-year="2018">2018</a></li>
+                <li><a href="#" class="yearSelector" data-year="2017">2017</a></li>
+              </ul>
             </li>
             <li class="bajar-datos">
               <a target="_blank" href="https://gobiernoabierto.cordoba.gob.ar/data/datos-abiertos/categoria/economia/presupuestos/14">
