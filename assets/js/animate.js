@@ -5,11 +5,11 @@ if (iOS) document.body.classList.add('iOS');
 
 
 //console.log(Cookies.get('openedBefore'));
-if(Cookies.get('openedBefore') == "true"){
+if (Cookies.get('openedBefore') == "true") {
   $('.prs-loader').addClass('hidden');
   $('#loader').removeClass('hidden');
   finishedDrawing();
-}else{
+} else {
   $('.prs-loader').removeClass('hidden');
   $('#loader').addClass('hidden');
   Cookies.set('openedBefore', 'true');
@@ -40,7 +40,7 @@ if(Cookies.get('openedBefore') == "true"){
 
     var colors = ['#7EB354', '#BECF54', '#439768', '#4FAEAD'];
 
-    var createCircle = function(x,y) {
+    var createCircle = function(x, y) {
       var p = {};
       p.x = x;
       p.y = y;
@@ -61,7 +61,7 @@ if(Cookies.get('openedBefore') == "true"){
       return p;
     }
 
-    var createParticule = function(x,y) {
+    var createParticule = function(x, y) {
       var p = {};
       p.x = x;
       p.y = y;
@@ -76,7 +76,7 @@ if(Cookies.get('openedBefore') == "true"){
       return p;
     }
 
-    var createParticles = function(x,y) {
+    var createParticles = function(x, y) {
       var particules = [];
       for (var i = 0; i < numberOfParticules; i++) {
         var p = createParticule(x, y);
@@ -96,23 +96,35 @@ if(Cookies.get('openedBefore') == "true"){
       var circle = createCircle(x, y);
       var particulesAnimation = anime({
         targets: particules,
-        x: function(p) { return p.x + anime.random(-distance, distance); },
-        y: function(p) { return p.y + anime.random(-distance, distance); },
+        x: function(p) {
+          return p.x + anime.random(-distance, distance);
+        },
+        y: function(p) {
+          return p.y + anime.random(-distance, distance);
+        },
         radius: 0,
-        duration: function() { return anime.random(1200, 1800); },
+        duration: function() {
+          return anime.random(1200, 1800);
+        },
         easing: 'easeOutExpo',
         complete: removeAnimation
       });
       var circleAnimation = anime({
         targets: circle,
-        radius: function() { return anime.random(getFontSize() * 8.75, getFontSize() * 11.25); },
+        radius: function() {
+          return anime.random(getFontSize() * 8.75, getFontSize() * 11.25);
+        },
         lineWidth: 0,
         alpha: {
           value: 0,
           easing: 'linear',
-          duration: function() { return anime.random(400, 600); }
+          duration: function() {
+            return anime.random(400, 600);
+          }
         },
-        duration: function() { return anime.random(1200, 1800); },
+        duration: function() {
+          return anime.random(1200, 1800);
+        },
         easing: 'easeOutExpo',
         complete: removeAnimation
       });
@@ -152,7 +164,7 @@ if(Cookies.get('openedBefore') == "true"){
     var setDashoffset = function(el) {
       var l = el.getTotalLength();
       el.setAttribute('stroke-dasharray', l);
-      return [l,0];
+      return [l, 0];
     }
 
     var letters = anime({
@@ -200,7 +212,10 @@ if(Cookies.get('openedBefore') == "true"){
       duration: 880,
       complete: function(a) {
         var dot = dotJSDown.animatables[0].target.getBoundingClientRect();
-        var pos = {x: dot.left + (dot.width / 2), y: dot.top + (dot.height / 2)}
+        var pos = {
+          x: dot.left + (dot.width / 2),
+          y: dot.top + (dot.height / 2)
+        }
         fireworks.boom(pos.x, pos.y);
       }
     });
