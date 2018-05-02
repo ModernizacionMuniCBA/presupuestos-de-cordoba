@@ -6,6 +6,7 @@ function dibujarD3_participativo() {
     var detalle = []
     var $tabla = $("#tbody-participativo");
     $("#participativoGraph").empty();
+    $tabla.empty();
     $.each( dataJSON.values, function( key, val ) {
     	if(key>0){
     	      var concepto = val[1];
