@@ -1,41 +1,45 @@
 
 window.already_printed_ae = false;
 function dibujarD3_ing() {
-  $.getJSON("https://sheets.googleapis.com/v4/spreadsheets/1jcG9GJScORYkrCyq5l5A9VojBng5Dzq7vDqpqWSBcQo/values/2017?key=AIzaSyDWqm99ehcgTUcnekuujkT2P95l-kor_mM", function( dataJSON ) {
+  $.getJSON("https://sheets.googleapis.com/v4/spreadsheets/1jcG9GJScORYkrCyq5l5A9VojBng5Dzq7vDqpqWSBcQo/values/"+selectedYear+"?key=AIzaSyDWqm99ehcgTUcnekuujkT2P95l-kor_mM", function( dataJSON ) {
   $("#ingresosGraph").empty();
     var datos = [];
     var detalle = [];
-    $.each( dataJSON, function( key, val ) {
-      var partida = val.gsx$partidas.$t;
-      var partida_splited = partida.split('.');
-      var nivel = partida_splited.length;
-      var nivel_princ = parseInt(partida_splited[0]);
-      var nombre = val.gsx$concepto.$t;
-      var total = val.gsx$total.$t;
-      if (partida_splited[1]==""){
-        nivel -=1;
-      }
-      detalle[nivel] = nombre;
+    console.log(dataJSON);
+    $.each( dataJSON.values, function( key, val ) {
+      if(key>0){
+        var partida = val[0];
+        var partida_splited = partida.split('.');
+        var nivel = partida_splited.length;
+        var nivel_princ = parseInt(partida_splited[0]);
+        var nombre = val[1];
+        var total = val[2];
+        if (partida_splited[1]==""){
+          nivel -=1;
+        }
+        detalle[nivel] = nombre;
 
-      if (nivel_princ == 3){
-        nivel = 4
-        detalle[2] = detalle[1]
-        detalle[3] = detalle[1]
-        detalle[4] = detalle[1]
-      }else if (nivel_princ == 2 && nivel == 3) {
-        nivel = 4
-        detalle[4] = detalle[3]
+        if (nivel_princ == 3){
+          nivel = 4
+          detalle[2] = detalle[1]
+          detalle[3] = detalle[1]
+          detalle[4] = detalle[1]
+        }else if (nivel_princ == 2 && nivel == 3) {
+          nivel = 4
+          detalle[4] = detalle[3]
+        }
+
+        if (nivel == 4){
+          var linea = {"key": detalle[4],
+                  "rec1": detalle[1],
+                  "rec2": detalle[2],
+                  "rec3": detalle[3],
+                 "valor": parseInt(total.split('.').join(""))
+               }
+            datos.push(linea);
+        }
       }
 
-      if (nivel == 4){
-        var linea = {"key": detalle[4],
-                "rec1": detalle[1],
-                "rec2": detalle[2],
-                "rec3": detalle[3],
-               "valor": parseInt(total.split('.').join(""))
-             }
-          datos.push(linea);
-      }
     });
     // console.log(datos);
 
@@ -83,63 +87,67 @@ function dibujarD3_ing() {
 
 function llenarTablas_ing(){
   //Llenar Tabla de Ingresos Corrientes Propios
-  $.getJSON("https://spreadsheets.google.com/feeds/list/1nkqXSu3MlK7uKDqaL-EqG4ZeZTNSDYPklNGS-YRrTnM/od6/public/values?alt=json", function( data ) {
+    $.getJSON("https://sheets.googleapis.com/v4/spreadsheets/1nkqXSu3MlK7uKDqaL-EqG4ZeZTNSDYPklNGS-YRrTnM/values/"+selectedYear+"?key=AIzaSyDWqm99ehcgTUcnekuujkT2P95l-kor_mM", function( data ){
     var items = [];
-    $.each( data.feed.entry, function( key, val ) {
-      var partida = val.gsx$partidas.$t;
-      var partida_splited = partida.split('.');
-      var nivel = partida_splited.length;
-      var concepto = val.gsx$concepto.$t;
-      var total = val.gsx$total.$t;
-      if (partida_splited[1]==""){
-        nivel -=1;
-      }
-      if (nivel <= 3){
-        if(partida_splited[0] == "1" || partida_splited[0] == "01" ){
-          if(partida_splited[1] == ""){
-            $("#tbody-ingresos-corrientes-propios").append('<tr class="nivel-'+nivel+'"><th scope="row">'+partida+'</th><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
-          }else if(partida_splited[1] == "01"){
-            $("#tbody-ingresos-corrientes-propios").append('<tr class="nivel-'+nivel+'"><th scope="row">'+partida+'</th><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
+    $.each( data.values, function( key, val ) {
+      if(key>0){
+        var partida = val[0];
+        var partida_splited = partida.split('.');
+        var nivel = partida_splited.length;
+        var concepto = val[1];
+        var total = val[2];
+        if (partida_splited[1]==""){
+          nivel -=1;
+        }
+        if (nivel <= 3){
+          if(partida_splited[0] == "1" || partida_splited[0] == "01" ){
+            if(partida_splited[1] == ""){
+              $("#tbody-ingresos-corrientes-propios").append('<tr class="nivel-'+nivel+'"><th scope="row">'+partida+'</th><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
+            }else if(partida_splited[1] == "01"){
+              $("#tbody-ingresos-corrientes-propios").append('<tr class="nivel-'+nivel+'"><th scope="row">'+partida+'</th><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
+            }
           }
         }
       }
     });
   });
   //Llenar tabla de Ingresos Corrientes No Propios
-  $.getJSON("https://spreadsheets.google.com/feeds/list/1mYqmTfiEEHJyofD636sojncI2UwAgFT_kQpIujkudMQ/od6/public/values?alt=json", function( data ) {
+  $.getJSON("https://sheets.googleapis.com/v4/spreadsheets/1mYqmTfiEEHJyofD636sojncI2UwAgFT_kQpIujkudMQ/values/"+selectedYear+"?key=AIzaSyDWqm99ehcgTUcnekuujkT2P95l-kor_mM", function( data ){
     var items = [];
     // console.log(data.feed.entry);
-    $.each( data.feed.entry, function( key, val ) {
-      var partida = val.gsx$partidas.$t;
-      var partida_splited = partida.split('.');
-      var nivel = partida_splited.length;
-      var concepto = val.gsx$concepto.$t;
-      var total = val.gsx$total.$t;
-      if (partida_splited[1]==""){
-        nivel -=1;
-      }
-      if (nivel <= 4){
-        if(partida_splited[0] == "1" || partida_splited[0] == "01" ){
-          if(partida_splited[1] == ""){
-            $("#tbody-ingresos-corrientes-no-propios").append('<tr class="nivel-'+nivel+'"><th scope="row">'+partida+'</th><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
-          }else if(partida_splited[1] == "02"){
-            $("#tbody-ingresos-corrientes-no-propios").append('<tr class="nivel-'+nivel+'"><th scope="row">'+partida+'</th><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
-          }
-        }
-      }
+    $.each( data.values, function( key, val ) {
+    	if(key>0){
+    		var partida = val[0];
+    	      var partida_splited = partida.split('.');
+    	      var nivel = partida_splited.length;
+    	      var concepto = val[1];
+    	      var total = val[2];
+    	      if (partida_splited[1]==""){
+    	        nivel -=1;
+    	      }
+    	      if (nivel <= 4){
+    	        if(partida_splited[0] == "1" || partida_splited[0] == "01" ){
+    	          if(partida_splited[1] == ""){
+    	            $("#tbody-ingresos-corrientes-no-propios").append('<tr class="nivel-'+nivel+'"><th scope="row">'+partida+'</th><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
+    	          }else if(partida_splited[1] == "02"){
+    	            $("#tbody-ingresos-corrientes-no-propios").append('<tr class="nivel-'+nivel+'"><th scope="row">'+partida+'</th><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
+    	          }
+    	        }
+    	      }
+    	}
     });
   });
 
   //Llenar tabla de Ingresos de Capital
-    $.getJSON("https://spreadsheets.google.com/feeds/list/1RJjQTHJEMeZ4KVwYrqylGJJqkw-QiY1eHSdDxdoDoFU/od6/public/values?alt=json", function( data ) {
+    $.getJSON("https://sheets.googleapis.com/v4/spreadsheets/1RJjQTHJEMeZ4KVwYrqylGJJqkw-QiY1eHSdDxdoDoFU/values/"+selectedYear+"?key=AIzaSyDWqm99ehcgTUcnekuujkT2P95l-kor_mM", function( data ){
       var items = [];
       // console.log(data.feed.entry);
-      $.each( data.feed.entry, function( key, val ) {
-        var partida = val.gsx$_cn6ca.$t;
+      $.each( data.values, function( key, val ) {
+        var partida = val[0];
         var partida_splited = partida.split('.');
         var nivel = partida_splited.length;
-        var concepto = val.gsx$concepto.$t;
-        var total = val.gsx$total.$t;
+        var concepto = val[1];
+        var total = val[2];
         if (partida_splited[1]==""){
           nivel -=1;
         }
@@ -159,8 +167,7 @@ function llenarTablas_ing(){
 }
 
 function dibujarD3_AE() {
-
-  $.getJSON("https://spreadsheets.google.com/feeds/list/1lJgGTuLvAMulKx59cJckTzvIFlur-fs2Twyh1dUOKgU/od6/public/values?alt=json", function( data ) {
+  $.getJSON("https://sheets.googleapis.com/v4/spreadsheets/1lJgGTuLvAMulKx59cJckTzvIFlur-fs2Twyh1dUOKgU/values/"+selectedYear+"?key=AIzaSyDWqm99ehcgTUcnekuujkT2P95l-kor_mM", function( data ){
     $("#afectacion-especifica-j").empty();
     $("#afectacion-especifica-jm").empty();
     $("#afectacion-especifica-propios").empty();
@@ -171,12 +178,12 @@ function dibujarD3_AE() {
     var datos_jm = [];
     var datos_propios = [];
     var datos_no_propios = [];
-    $.each( data.feed.entry, function( key, val ) {
-      var partida = val.gsx$_cn6ca.$t;
+    $.each( data.values, function( key, val ) {
+      var partida = val[0];
       var partida_splited = partida.split('.');
       var nivel = partida_splited.length;
-      var concepto = val.gsx$concepto.$t;
-      var total = val.gsx$afectacionespecifica.$t;
+      var concepto = val[1];
+      var total = val[2];
       if (partida_splited[1]==""){
         nivel -=1;
       }
