@@ -1,6 +1,9 @@
 window.already_printed_participativo = false;
 
 function dibujarD3_participativo() {
+  var textoExplicativo = {'2017': 'El Presupuesto Participativo de la ciudad de Córdoba, según normativa vigente, cuenta hasta con el diez por ciento (10%) del presupuesto propio destinado a obra pública (Plan de trabajos públicos) y se complementa con lo no ejecutado del presupuesto participativo del año anterior. Para el año 2017, este monto asciende a $167.445.426. Dicho monto se compone por $118.766.010 que representa el 10% del Plan de Trabajos Públicos con fondos propios previstos para el ejercicio 2017 y $ 48.679.516 que representa al saldo del presupuesto participativo de 2016.',
+		      '2018': 'El Presupuesto Participativo de la ciudad de Córdoba, según normativa vigente, cuenta hasta con el diez por ciento (10%) del presupuesto propio destinado a obra pública (Plan de trabajos públicos) y se complementa con lo no ejecutado del presupuesto participativo del año anterior. Para el año 2018, este monto asciende a $256.692.407. Dicho monto se compone por $118.766.010 que representa el 10% del Plan de Trabajos Públicos con fondos propios previstos para el ejercicio 2017 y $ 48.679.516 que representa al saldo del presupuesto participativo de 2016.'}
+  $('.definicion').html(textoExplicativo[selectedYear]);
   $.getJSON("https://sheets.googleapis.com/v4/spreadsheets/1O2Dk6ndwUnfOXE-YKMvSNuprFCpaMDaHz5OUAdxNLNw/values/"+selectedYear+"?key=AIzaSyDWqm99ehcgTUcnekuujkT2P95l-kor_mM", function( dataJSON ) {
     var datos = [];
     var detalle = []

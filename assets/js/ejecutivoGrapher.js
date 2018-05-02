@@ -1,18 +1,24 @@
-window.already_read_juris = false;
-window.datos_juris = [];
+window.already_read_juris = {'2017':false, '2018':false};
+window.datos_juris = {'2017':[], '2018':[]};
 window.botones = $('.btn-ejecutivo');
+window.juris = -1;
+window.selectedYearPr = -1;
+function setJuris(juris){
+	window.juris = juris;
+}
 
 function dibujarD3_gastos_ejecutivo(juris) {
   $("#tbody-gastos-ejecutivo").empty();
   $("#grafico-secretaria").empty();
-  if(already_read_juris == false){
-    $.getJSON("https://spreadsheets.google.com/feeds/list/1IjS0rgyRL4MLaH0ovyb7KnjiaBUGON1HEzRcUUmckEk/od6/public/values?alt=json", function( dataJSON ) {
-      datos_juris = dataJSON.feed.entry;
-      graficar(datos_juris, juris);
-      already_read_juris = true;
+  if(already_read_juris[selectedYear] == false ){
+    $.getJSON("https://sheets.googleapis.com/v4/spreadsheets/1IjS0rgyRL4MLaH0ovyb7KnjiaBUGON1HEzRcUUmckEk/values/"+selectedYear+"?key=AIzaSyDWqm99ehcgTUcnekuujkT2P95l-kor_mM", function( dataJSON ) {
+      datos_juris[selectedYear] = dataJSON.values;
+      graficar(datos_juris[selectedYear], juris);
+      already_read_juris[selectedYear] = true;
     });
   }else{
-    graficar(datos_juris, juris);
+	  console.log(datos_juris);
+    graficar(datos_juris[selectedYear], juris);
   }
 }
 
@@ -27,15 +33,14 @@ function generar_gafico(datos, juris){
   var res = []
   
   $.each( dat, function( key, val ) {
-    var partida = val.gsx$partida.$t;
-    var nivel_tabla = val.gsx$nivel.$t;
+    var partida = val[1];
+    var nivel_tabla = val[0];
     var partida_splited = partida.split('.');
     var nivel = partida_splited.length;
     var nivel_princ = parseInt(partida_splited[0]);
     var subnivel = parseInt(partida_splited[1]);
-    var concepto = val.gsx$concepto.$t;
-    console.log(val,juris,'secretariadegobiernoparticipacionciudadanaydesarrollosocial');
-    var total = val['gsx$'+juris].$t;
+    var concepto = val[2];
+    var total = val[juris];
     if(nivel_tabla != -2){
       if (partida_splited[1]==""){
         nivel -=1;
@@ -94,34 +99,25 @@ function llenar_tabla_ejecutivo(datos, juris){
   var dat = datos;
   var detalle = [];
   var $tabla = $("#tbody-gastos-ejecutivo");
-  for (var key = 0; key < dat.length; key++) {
+  for (var key = 1; key < dat.length; key++) {
     var val = dat[key];
-    var partida = val.gsx$partida.$t;
-    var nivel = val.gsx$nivel.$t;
+    var partida = val[1];
+    var nivel = val[0];
     var nivel_princ = parseInt(nivel) + 2;
-    var concepto = val.gsx$concepto.$t;
-    var total = val['gsx$'+juris].$t;
+    var concepto = val[2];
+    var total = val[juris];
     detalle[nivel]=concepto.toLowerCase().split(' ').join('_');
-    if(total == ""){
+    if(total == undefined){
       total = 0;
     }
 
     var mostrar = nivel >= 2 ? " style='display:none'":'';
-    var nivelProximoDato = key+1 !== dat.length ? dat[key+1].gsx$nivel.$t : false;
+    var nivelProximoDato = key+1 !== dat.length ? dat[key+1][0] : false;
     var esColapsable = nivel_princ >= 3 && nivelProximoDato > nivel;
     var plus = esColapsable ? ' <button class="btn btn-xs btn-default pull-right"><i class="fa fa-plus "></i></button>' : '';
     var claseColapsable = esColapsable ? ' pointer' : '';
     $tabla.append('<tr'+mostrar+' class="nivel-'+nivel_princ+claseColapsable+'"><td>'+plus+'</td><th scope="row">'+partida+'</th><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
 
-    // if(nivel < 3 ){
-    //   $("#tbody-gastos-ejecutivo").append('<tr class="nivel-'+nivel+'"><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
-    //
-    // }else if(nivel == 3){
-    //   $("#tbody-gastos-ejecutivo").append('<tr class="table-clickable nivel-'+nivel+' '+detalle[(nivel-1)]+'" data-toggle="collapse" data-target=".nivel-'+(nivel+1)+'.'+detalle[nivel]+'"><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
-    // }
-    // if(nivel > 3){
-    //   $("#tbody-gastos-ejecutivo").append('<tr class="table-clickable nivel-'+nivel+' '+detalle[(nivel-1)]+' collapse" data-toggle="collapse" data-target=".nivel-'+(nivel+1)+'.'+detalle[nivel]+'"><td>'+concepto+'</td><td>$'+total.toLocaleString("es-AR")+'</td></tr>');
-    // }
   }
   var $ultimaFila = $tabla.find('tr').last().detach().addClass('total');
   $tabla.prepend($ultimaFila);
@@ -129,12 +125,22 @@ function llenar_tabla_ejecutivo(datos, juris){
   $('.table-ejecutivo').show();
 }
 
+function dibujar(){
+	var jurisAux = window.juris;
+	if(jurisAux !=-1){
+		dibujarD3_gastos_ejecutivo(juris);
+		
+	}
+}
+
 botones.click(function(){
     var $boton = $(this);
     botones.removeClass('active');
     $boton.addClass('active');
     $("#secretaria-actual").html("<h2 class='text-center'>"+$boton.html()+"<h2>");
-    dibujarD3_gastos_ejecutivo($boton.attr('id'));
+    setJuris($boton.data('juris'));
+    dibujarD3_gastos_ejecutivo($boton.data('juris'));
+    
 });
 
 $("#tbody-gastos-ejecutivo").on("click", ".nivel-3", function(){
