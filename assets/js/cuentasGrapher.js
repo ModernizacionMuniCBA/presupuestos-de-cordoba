@@ -1,7 +1,7 @@
 var $tabla = $("#tbody-gastos-tribunal-cuentas");
 
 function dibujarD3_gastos_tribunal_cuentas() {
-  $.getJSON("https://sheets.googleapis.com/v4/spreadsheets/1O1K1GYR6RlaLZKlAvnw2BAT84K-GjERzjhE5h2OHeUU/values/" + selectedYear + "?key=AIzaSyDWqm99ehcgTUcnekuujkT2P95l-kor_mM", function(dataJSON) {
+  $.getJSON("https://sheets.googleapis.com/v4/spreadsheets/1O1K1GYR6RlaLZKlAvnw2BAT84K-GjERzjhE5h2OHeUU/values/" + selectedYear + "?key="+apiKey, function(dataJSON) {
     var datos = dataJSON.values;
     $tabla.empty();
     for (var key = 1; key < datos.length; key++) {

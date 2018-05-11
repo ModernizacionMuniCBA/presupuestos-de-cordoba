@@ -6,7 +6,7 @@ function dibujarD3_participativo() {
     '2018': 'El Presupuesto Participativo de la ciudad de Córdoba, según normativa vigente, cuenta hasta con el diez por ciento (10%) del presupuesto propio destinado a obra pública (Plan de trabajos públicos) y se complementa con lo no ejecutado del presupuesto participativo del año anterior.<br/> <br/> Para el año 2018, este monto asciende a $ 258.348.645. Las acciones llevadas en pos de la ejecución de estos créditos tienen que ver principalmente con infraestructura. Este año las diferentes formas de gastos en infraestructura a realizarse mediante la intervención de proyectos de presupuesto participativo ascienden a $239.418.645 que incluye únicamente inversiones en obras nuevas y no así tareas de mantenimiento y/o reparación. El resto se destina a intervenciones de carácter social como programas de cultura comunitaria, epidemiología, algunos subsidios a instituciones, todos las cuáles son decididas por los vecinos.'
   }
   $('.definicion').html(textoExplicativo[selectedYear]);
-  $.getJSON("https://sheets.googleapis.com/v4/spreadsheets/1O2Dk6ndwUnfOXE-YKMvSNuprFCpaMDaHz5OUAdxNLNw/values/" + selectedYear + "?key=AIzaSyDWqm99ehcgTUcnekuujkT2P95l-kor_mM", function(dataJSON) {
+  $.getJSON("https://sheets.googleapis.com/v4/spreadsheets/1O2Dk6ndwUnfOXE-YKMvSNuprFCpaMDaHz5OUAdxNLNw/values/" + selectedYear + "?key="+apiKey, function(dataJSON) {
     var datos = [];
     var detalle = []
     var $tabla = $("#tbody-participativo");

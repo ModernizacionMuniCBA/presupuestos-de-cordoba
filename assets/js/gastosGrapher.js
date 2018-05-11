@@ -9,7 +9,7 @@ function dibujarD3_gastos() {
   dibujarD3_gastos_capital();
   dibujarD3_gastos_finalidad();
   dibujarD3_gastos_finalidad_funcion();
-  $.getJSON("https://sheets.googleapis.com/v4/spreadsheets/11UGXTNvmaOezQNpFXxMXps_gT7kwEP08YeMdcz4wKXo/values/" + selectedYear + "?key=AIzaSyDWqm99ehcgTUcnekuujkT2P95l-kor_mM", function(dataJSON) {
+  $.getJSON("https://sheets.googleapis.com/v4/spreadsheets/11UGXTNvmaOezQNpFXxMXps_gT7kwEP08YeMdcz4wKXo/values/" + selectedYear + "?key="+apiKey, function(dataJSON) {
     $("#clasificacion-economica-gasto").empty();
     var datos = [];
     var datos_clasif_econo = [];
@@ -115,7 +115,7 @@ function dibujarD3_gastos() {
 }
 
 function dibujarD3_gastos_corrientes() {
-  $.getJSON("https://sheets.googleapis.com/v4/spreadsheets/12aHIOCmpAYYOx2mBoO_IzAqfjeOUX0AnX7BheISd4go/values/" + selectedYear + "?key=AIzaSyDWqm99ehcgTUcnekuujkT2P95l-kor_mM", function(dataJSON) {
+  $.getJSON("https://sheets.googleapis.com/v4/spreadsheets/12aHIOCmpAYYOx2mBoO_IzAqfjeOUX0AnX7BheISd4go/values/" + selectedYear + "?key="+apiKey, function(dataJSON) {
     var datos = [];
     var datos_clasif_econo = [];
     var detalle = [];
@@ -158,7 +158,7 @@ function dibujarD3_gastos_corrientes() {
 }
 
 function dibujarD3_gastos_capital() {
-  $.getJSON("https://sheets.googleapis.com/v4/spreadsheets/1dHvfU13hR8rThdLqplWKSMg6t8Xt3oq1nxB9c-ZJlfA/values/" + selectedYear + "?key=AIzaSyDWqm99ehcgTUcnekuujkT2P95l-kor_mM", function(dataJSON) {
+  $.getJSON("https://sheets.googleapis.com/v4/spreadsheets/1dHvfU13hR8rThdLqplWKSMg6t8Xt3oq1nxB9c-ZJlfA/values/" + selectedYear + "?key="+apiKey, function(dataJSON) {
     var datos = [];
     var datos_clasif_econo = [];
     var detalle = [];
@@ -195,7 +195,7 @@ function dibujarD3_gastos_capital() {
 }
 
 function dibujarD3_gastos_finalidad() {
-  $.getJSON("https://sheets.googleapis.com/v4/spreadsheets/1kNKGph0cxoVQf2WHSJK3ok7MoHg8vmISX5WFJ40jnyc/values/" + selectedYear + "?key=AIzaSyDWqm99ehcgTUcnekuujkT2P95l-kor_mM", function(dataJSON) {
+  $.getJSON("https://sheets.googleapis.com/v4/spreadsheets/1kNKGph0cxoVQf2WHSJK3ok7MoHg8vmISX5WFJ40jnyc/values/" + selectedYear + "?key="+apiKey, function(dataJSON) {
     $("#gastos-finalidad").empty();
     var datos = [];
     var i = 0;
@@ -253,7 +253,7 @@ function dibujarD3_gastos_finalidad() {
 }
 
 function dibujarD3_gastos_finalidad_funcion() {
-  $.getJSON("https://sheets.googleapis.com/v4/spreadsheets/1kneGr7WYlVWQ4KyzH79bm3W5tHW4C45z1HYg1AYrlJg/values/" + selectedYear + "?key=AIzaSyDWqm99ehcgTUcnekuujkT2P95l-kor_mM", function(dataJSON) {
+  $.getJSON("https://sheets.googleapis.com/v4/spreadsheets/1kneGr7WYlVWQ4KyzH79bm3W5tHW4C45z1HYg1AYrlJg/values/" + selectedYear + "?key="+apiKey, function(dataJSON) {
     $("#finalidadFuncionGraph").empty();
     var datos = [];
     var detalle = [];

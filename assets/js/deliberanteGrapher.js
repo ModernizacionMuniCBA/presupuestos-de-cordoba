@@ -1,5 +1,5 @@
 function dibujarD3_gastos_delibertante() {
-  $.getJSON("https://sheets.googleapis.com/v4/spreadsheets/1bYCECQ2H15g3-IbGP3t_F3v0146VC99NqjehOWkkvhY/values/" + selectedYear + "?key=AIzaSyDWqm99ehcgTUcnekuujkT2P95l-kor_mM", function(dataJSON) {
+  $.getJSON("https://sheets.googleapis.com/v4/spreadsheets/1bYCECQ2H15g3-IbGP3t_F3v0146VC99NqjehOWkkvhY/values/" + selectedYear + "?key="+apiKey, function(dataJSON) {
     var $tabla = $("#tbody-gastos-concejo-deliberante");
     var datos = dataJSON.values;
     $tabla.empty();

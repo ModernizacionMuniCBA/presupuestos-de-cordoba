@@ -18,7 +18,7 @@ function dibujarD3_gastos_ejecutivo(juris) {
   $("#tbody-gastos-ejecutivo").empty();
   $("#grafico-secretaria").empty();
   if (already_read_juris[selectedYear] == false) {
-    $.getJSON("https://sheets.googleapis.com/v4/spreadsheets/1IjS0rgyRL4MLaH0ovyb7KnjiaBUGON1HEzRcUUmckEk/values/" + selectedYear + "?key=AIzaSyDWqm99ehcgTUcnekuujkT2P95l-kor_mM", function(dataJSON) {
+    $.getJSON("https://sheets.googleapis.com/v4/spreadsheets/1IjS0rgyRL4MLaH0ovyb7KnjiaBUGON1HEzRcUUmckEk/values/" + selectedYear + "?key="+apiKey, function(dataJSON) {
       datos_juris[selectedYear] = dataJSON.values;
       graficar(datos_juris[selectedYear], juris);
       already_read_juris[selectedYear] = true;

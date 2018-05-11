@@ -2,7 +2,7 @@ var $tabla = $("#tbody-gastos-tribunal-faltas");
 
 function dibujarD3_gastos_tribunal_faltas() {
 
-  $.getJSON("https://sheets.googleapis.com/v4/spreadsheets/1ul8x07sCDmok1DujucaLyN-aWxpAXAXwlw8X2ixmvZc/values/" + selectedYear + "?key=AIzaSyDWqm99ehcgTUcnekuujkT2P95l-kor_mM", function(dataJSON) {
+  $.getJSON("https://sheets.googleapis.com/v4/spreadsheets/1ul8x07sCDmok1DujucaLyN-aWxpAXAXwlw8X2ixmvZc/values/" + selectedYear + "?key="+apiKey, function(dataJSON) {
     var datos = dataJSON.values;
     console.log(datos);
     $tabla.empty();
