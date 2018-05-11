@@ -23,7 +23,16 @@ body {
   content: "";
   display: block;
 }
-
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
 a:hover, a:focus{
   color: #00a665;
   text-decoration: none;
@@ -477,6 +486,9 @@ footer{
 .lista-links a:hover{
   color: #00a665;
 }
+.lista-links a.disabled, .lista-links a.disabled:hover {
+  color: #888;
+}
 
 .lista-links .link{
     margin: 10px 0px;
@@ -811,3 +823,302 @@ body.nav-expanded {
 .stroke ul .dropdown-menu.lvl1 li a:after{
   display: none;
 }
+
+.menuLogo .st0, .blockchain .st0, .resultado .st0, .card-icono .st0, .logoFooter .st0 {
+  fill: #00a665;
+}
+/* Footer Logos SVG */
+
+#modernizacion .st0 {
+  fill: #C0C0C0;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+#modernizacion .st1 {
+  fill: #C8C8C8;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+#modernizacion .st2 {
+  fill: #767676;
+  stroke: #767676;
+  stroke-miterlimit: 10;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+#modernizacion .st3 {
+  fill: #6F6F6F;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+#modernizacion .st4 {
+  fill: #717171;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+#modernizacion .st5 {
+  fill: #202020;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+#modernizacion .st6 {
+  fill: #FFFFFF;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+#modernizacion .st7 {
+  fill: #6C6C6C;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+#modernizacion:hover .st0 {
+  fill: #FFC10E;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+#modernizacion:hover .st1 {
+  fill: #FBBB80;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+#modernizacion:hover .st2 {
+  fill: #2DA34A;
+  stroke: #2DA34A;
+  stroke-miterlimit: 10;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+#modernizacion:hover .st3 {
+  fill: #0094D4;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+#modernizacion:hover .st4 {
+  fill: #EE4023;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+#modernizacion:hover .st5 {
+  fill: #202020;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+#modernizacion:hover .st6 {
+  fill: #FFFFFF;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+#modernizacion:hover .st7 {
+  fill: #0094D4;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+#fca .cls-1 {
+  fill: #4d4d4d;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+#fca .cls-2 {
+  fill: #8c8c8c;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+#fca:hover .cls-1 {
+  fill: #FF0000;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+#fca:hover .cls-2 {
+  fill: #55BF0E;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+#aip .st0 {
+  fill: #555555;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+#aip .st1 {
+  fill: #626262;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+#aip .st2 {
+  fill: #A2A2A2;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+#aip .st3 {
+  fill: #949494;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+#aip .st4 {
+  fill: #8E8E8E;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+#aip .st5 {
+  fill: #ABABAB;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+#aip .st6 {
+  fill: #484848;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+#aip .st7 {
+  fill: #FEFEFE;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+#aip .st8 {
+  fill: #ABABAB;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+#aip:hover .st0 {
+  fill: #555555;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+#aip:hover .st1 {
+  fill: #3366CB;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+#aip:hover .st2 {
+  fill: #66CB66;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+#aip:hover .st3 {
+  fill: #6698FE;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+#aip:hover .st4 {
+  fill: #FE6633;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+#aip:hover .st5 {
+  fill: #FE9833;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+#aip:hover .st6 {
+  fill: #CB0066;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+#aip:hover .st7 {
+  fill: #FEFEFE;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+#aip:hover .st8 {
+  fill: #98CB33;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+#narino .st0 {
+  fill: #555555;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+#narino .st1 {
+  fill: #737373;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+#narino .st2 {
+  fill: #C6C6C6;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+#narino .st3 {
+  fill: #9D9D9D;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+#narino .st4 {
+  fill: #555555;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+#narino:hover .st0 {
+  fill: #CB2128;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+#narino:hover .st1 {
+  fill: #009BD2;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+#narino:hover .st2 {
+  fill: #F1C93D;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+#narino:hover .st3 {
+  fill: #89B64B;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+#narino:hover .st4 {
+  fill: #4F5660;
+  transition: all .2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+}
+
+#ucc .cls-1{fill:#6C6C6C;}
