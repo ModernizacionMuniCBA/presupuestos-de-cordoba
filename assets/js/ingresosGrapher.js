@@ -1,14 +1,6 @@
 window.already_printed_ae = false;
 
 function dibujarD3_ing() {
-  $.ajax({
-    url: "https://sheets.googleapis.com/v4/spreadsheets/1jcG9GJScORYkrCyq5l5A9VojBng5Dzq7vDqpqWSBcQo/values/" + selectedYear + "?key="+apiKey,
-    type: "post",
-    dataType: "json",
-    error: function(hr){
-      console.log(hr.responseText);
-    },
-  });
   $.getJSON("https://sheets.googleapis.com/v4/spreadsheets/1jcG9GJScORYkrCyq5l5A9VojBng5Dzq7vDqpqWSBcQo/values/" + selectedYear + "?key="+apiKey, function(dataJSON) {
     $("#ingresosGraph").empty();
     var datos = [];
