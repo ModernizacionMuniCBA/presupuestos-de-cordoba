@@ -7,20 +7,37 @@ window.sin_deuda = [];
 window.visualizationCorrientes = null;
 window.$btnConIntereses = $("#con-intereses");
 window.$btnSinIntereses = $("#sin-intereses");
+var textoExplicativo = {
+  '2017': 'Para el caso del 2017 se expone información al 2º trimestre con actualización trimestral.',
+  '2018': 'Para el caso del 2018 se expone información al 1º trimestre con actualización trimestral.'
+}
+var textoAclaracion = {
+  '2017': '(*) Los datos de 2017 son al 3º trimestre.',
+  '2018': '(*) Los datos de 2018 son al 1º trimestre.'
+}
+
+$('.definicionYear').html(textoExplicativo[selectedYear]);
+$('.aclaracion').html(textoAclaracion[selectedYear]);
+
+function dibujar() {
+  $('.definicionYear').html(textoExplicativo[selectedYear]);
+  $('.aclaracion').html(textoAclaracion[selectedYear]);
+}
 
 function dibujarD3() {
   if (!already_read_data_grafico) {
-    $.getJSON("https://spreadsheets.google.com/feeds/list/1bb72z4oCul0FWPDfoMoV_pfI_pbzGbQO7PT-Ukqm94o/ocwg0jj/public/values?alt=json", function(dataJSON) {
-      datos_grafico = dataJSON.feed.entry;
+    $.getJSON("https://sheets.googleapis.com/v4/spreadsheets/1bb72z4oCul0FWPDfoMoV_pfI_pbzGbQO7PT-Ukqm94o/values/2018?key="+apiKey, function(dataJSON) {
+      console.log(dataJSON);
+      datos_grafico = dataJSON.values;
       already_read_data_grafico = true;
       dibujarD3();
     });
   } else if (!already_read_data_tabla) {
-    $.getJSON("https://spreadsheets.google.com/feeds/list/1Lu7tzYu5bMwJ-Yib3pGAbWDqkufov8BJP27HKzx8wEE/od6/public/values?alt=json", function(dataJSON) {
-      datos_tabla = dataJSON.feed.entry;
+    // $.getJSON("https://spreadsheets.google.com/feeds/list/1Lu7tzYu5bMwJ-Yib3pGAbWDqkufov8BJP27HKzx8wEE/od6/public/values?alt=json", function(dataJSON) {
+    //   datos_tabla = dataJSON.feed.entry;
       already_read_data_tabla = true;
       dibujarD3();
-    });
+    // });
   } else {
     dibujarD3_ejecuciones_presupuestarias_grafico();
     dibujarD3_ejecuciones_presupuestarias_tabla();
@@ -33,21 +50,21 @@ function dibujarD3_ejecuciones_presupuestarias_grafico() {
   var capital = [];
   con_deuda = [];
   sin_deuda = [];
-  $.each(datos_grafico, function(key, val) {
-    var concepto = val.gsx$_cokwr.$t;
-    concepto = concepto == "2017" ? "2017 *" : concepto;
+  for(var i = 1; i<=5; i++){
     con_deuda.push({
       id: "Resultado Económico con intereses de la deuda",
-      año: concepto,
-      "millones de pesos": parseInt(val.gsx$coninteresesdedeuda.$t)
+      año: datos_grafico[i][1],
+      "millones de pesos": parseInt(datos_grafico[i][2])
     });
     sin_deuda.push({
       id: "Resultado Económico sin intereses de la deuda",
-      año: concepto,
-      "millones de pesos": parseInt(val.gsx$sininteresesdedeuda.$t)
+      año: datos_grafico[i][1],
+      "millones de pesos": parseInt(datos_grafico[i][3])
     });
-  });
+  }
 
+  console.log(con_deuda);
+  console.log(sin_deuda);
   visualizationCorrientes = d3plus.viz()
     .container("#grafico-ejecuciones")
     .background("#EEEEEE")
