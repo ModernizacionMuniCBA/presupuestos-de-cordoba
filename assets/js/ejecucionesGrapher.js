@@ -16,28 +16,42 @@ var textoAclaracion = {
   '2018': '(*) Los datos de 2018 son al 1º trimestre.'
 }
 
+var tablaEjecucion = {
+  '2017': 'Trimestre III 2017',
+  '2018': 'Trimestre I 2018'
+}
+
+var titTabla = {
+  '2017': 'Ejecutado al 3º Trim. 2017',
+  '2018': 'Ejecutado al 1º Trim. 2018'
+}
+
 $('.definicionYear').html(textoExplicativo[selectedYear]);
 $('.aclaracion').html(textoAclaracion[selectedYear]);
+$('.titTrim').html(titTabla[selectedYear]);
 
 function dibujar() {
+  already_read_data_tabla=false;
   $('.definicionYear').html(textoExplicativo[selectedYear]);
   $('.aclaracion').html(textoAclaracion[selectedYear]);
+  $('.titTrim').html(titTabla[selectedYear]);
+
+  dibujarD3();
 }
 
 function dibujarD3() {
   if (!already_read_data_grafico) {
     $.getJSON("https://sheets.googleapis.com/v4/spreadsheets/1bb72z4oCul0FWPDfoMoV_pfI_pbzGbQO7PT-Ukqm94o/values/2018?key="+apiKey, function(dataJSON) {
-      console.log(dataJSON);
       datos_grafico = dataJSON.values;
       already_read_data_grafico = true;
       dibujarD3();
     });
   } else if (!already_read_data_tabla) {
-    // $.getJSON("https://spreadsheets.google.com/feeds/list/1Lu7tzYu5bMwJ-Yib3pGAbWDqkufov8BJP27HKzx8wEE/od6/public/values?alt=json", function(dataJSON) {
-    //   datos_tabla = dataJSON.feed.entry;
+    $.getJSON("https://sheets.googleapis.com/v4/spreadsheets/1Lu7tzYu5bMwJ-Yib3pGAbWDqkufov8BJP27HKzx8wEE/values/"+tablaEjecucion[selectedYear]+"?key="+apiKey, function(dataJSON) {
+      datos_tabla = dataJSON.values;
       already_read_data_tabla = true;
       dibujarD3();
-    // });
+    });
   } else {
     dibujarD3_ejecuciones_presupuestarias_grafico();
     dibujarD3_ejecuciones_presupuestarias_tabla();
@@ -63,8 +77,6 @@ function dibujarD3_ejecuciones_presupuestarias_grafico() {
     });
   }
 
-  console.log(con_deuda);
-  console.log(sin_deuda);
   visualizationCorrientes = d3plus.viz()
     .container("#grafico-ejecuciones")
     .background("#EEEEEE")
@@ -108,22 +120,25 @@ function dibujarD3_ejecuciones_presupuestarias_grafico() {
 function dibujarD3_ejecuciones_presupuestarias_tabla() {
   var $tabla = $("#tbody-ejecuciones");
   $tabla.empty();
+  console.log(datos_tabla);
   var i = 0;
   $.each(datos_tabla, function(key, val) {
     i += 1;
-    var partida = val.gsx$partida.$t;
-    var partida_splited = partida.split('.');
-    var nivel = partida_splited.length;
-    var nivel_princ = parseInt(partida_splited[0]);
-    //var subnivel = partida_splited[1] ? parseInt(partida_splited[1]) : null;
-    var concepto = val.gsx$denominacion.$t;
-    var ejecutado = val.gsx$ejecutado.$t.split('.').join("");
-    var definitivo = val.gsx$presupuestodefinitivo.$t.split('.').join("");
-    var porcentajeEjecucion = val.gsx$deejecución.$t;
-    if (i != datos_tabla.length) {
-      $tabla.append('<tr class="nivel-3"><td>' + concepto + '</td><td>$' + Number(ejecutado).toLocaleString("es-AR") + '</td><td>$' + Number(definitivo).toLocaleString("es-AR") + '</td><td>' + porcentajeEjecucion + '</td></tr>');
-    } else {
-      $tabla.append('<tr class="nivel-2"><td>' + concepto + '</td><td>$' + Number(ejecutado).toLocaleString("es-AR") + '</td><td>$' + Number(definitivo).toLocaleString("es-AR") + '</td><td>' + porcentajeEjecucion + '</td></tr>');
+    if(i>1){
+      var partida = val[0];
+      var partida_splited = partida.split('.');
+      var nivel = partida_splited.length;
+      var nivel_princ = parseInt(partida_splited[0]);
+      //var subnivel = partida_splited[1] ? parseInt(partida_splited[1]) : null;
+      var concepto = val[1];
+      var ejecutado = val[2].split('.').join("");
+      var definitivo = val[3].split('.').join("");
+      var porcentajeEjecucion = val[4];
+      if (i != datos_tabla.length) {
+        $tabla.append('<tr class="nivel-3"><td>' + concepto + '</td><td>$' + Number(ejecutado).toLocaleString("es-AR") + '</td><td>$' + Number(definitivo).toLocaleString("es-AR") + '</td><td>' + porcentajeEjecucion + '</td></tr>');
+      } else {
+        $tabla.append('<tr class="nivel-2"><td>' + concepto + '</td><td>$' + Number(ejecutado).toLocaleString("es-AR") + '</td><td>$' + Number(definitivo).toLocaleString("es-AR") + '</td><td>' + porcentajeEjecucion + '</td></tr>');
+      }
     }
   });
 }
