@@ -1,0 +1,300 @@
+@media (min-width: 375px) {
+  h3.noticias{
+    font-size: 3em;
+    margin-top: 27px;
+  }
+  .nav-buscar .form-control{
+    font-size: 1.4em;
+    height: 40px;
+  }
+  #nav-close{
+    visibility: hidden;
+  }
+  .nav-expander.is-open{
+    display: inline-block;
+  }
+}
+/* Media Queries */
+/*Small devices (landscape phones, 424px and up)*/
+@media (min-width: 424px) {
+  h3.noticias{
+    font-size: 4em;
+    margin-top: 27px;
+  }
+}
+/*Small devices (landscape phones, 544px and up)*/
+@media (min-width: 544px) {
+
+}
+
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) {
+  .no-border-b-tablet {
+    border-bottom: none;
+  }
+  .nav-buscar {
+      height: 90px;
+  }
+  .nav-buscar .form-control{
+    font-size: 1.5em;
+  }
+  .layer.trama.trama-8{
+    width: 200px;
+    height: 200px;
+    z-index: 1;
+    top: 265px;
+    left: 540px;
+  }
+  .logoFooter{
+    margin-top: 11px;
+  }
+  .border-768-r{
+    border-right: 1px solid #BBBBBB;
+  }
+  .border-768-b{
+    padding-bottom: 10px;
+    border-bottom: 1px solid #BBBBBB;
+  }
+  .layer.trama.trama-5{
+    width: 250px;
+    height: 250px;
+    top: 0px;
+    left: 300px;
+    z-index: 1;
+  }
+  .imageHome{
+    height: 500px;
+  }
+  .layer.trama.introduccion{
+    height: 500px;
+  }
+  #l1{
+    padding-left: 50px;
+    padding-top:150px;
+  }
+  .newsCard{
+    background-color: transparent;
+    width: 100%;
+    height:500px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+/*Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+  .border-b-mob{
+    border-bottom: none;
+  }
+  .logo-loading .bottom{
+    height: 84px;
+  }
+  .logo-loading .top {
+    height: 56px;
+  }
+
+  .logo-loading .bottom {
+      top: 56px;
+  }
+  .nav-buscar {
+      height: 90px;
+  }
+  .nav-buscar .form-control{
+    font-size: 1.5em;
+    height: 60px;
+  }
+  .fa-search.fa-4x{
+    font-size: 4em;
+  }
+  .cerrar.fa-3x{
+    font-size: 3em;
+  }
+  .layer.trama.trama-3{
+    width: 400px;
+    height: 400px;
+    top: 0px;
+    left: 430px;
+    z-index: 1;
+  }
+  .navbar-gaMuniCba .navbar-header{
+    margin-bottom: -35px;
+  }
+  .logoFooter{
+    margin-top: 6px;
+  }
+  footer .copyr{
+    float:right;
+  }
+  footer .rowConvenios .imgLogoFooter{
+    margin-top: -5px;
+  }
+  .border-768-r{
+    border-right: 0px;
+  }
+  .border-768-b{
+    border-bottom: 0px;
+  }
+  .border-b-r{
+    border-bottom: 1px solid #BBBBBB;
+    border-right: 1px solid #BBBBBB;
+  }
+  .border-b{
+    border-bottom: 1px solid #BBBBBB;
+  }
+  .border-r{
+    border-right: 1px solid #BBBBBB;
+  }
+
+  .logo {
+  	margin-left: -60px;
+  	margin-top: -70px;
+  }
+  .menuLogo{
+    margin-left: -15px;
+  }
+  .navbar-gaMuniCba{
+    height: 75px;
+  }
+
+  .menuLogo{
+    width: 67.5px;
+  }
+
+  .hamburger {
+    background: transparent;
+    border: none;
+    display: block;
+    height: 32px;
+    margin-right: 15px;
+    position: relative;
+    top: 20px;
+    width: 32px;
+    z-index: 999;
+  }
+  .container-fluid.inFContainer{
+    padding-top: 75px;
+  }
+  .vecinoBg h2{
+    font-size: 3.5em;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .vecinoBg h3{
+    font-size: 3.5em;
+    font-weight: 700;
+  }
+  .vecinoBg a{
+    color: #FFFFFF;
+    font-size: 4.5em;
+    font-weight: 900;
+  }
+  .navbar-gaMuniCba .navbar-header{
+    width: 205px;
+  }
+  .mHeight{
+    height: 250.5px;
+  }
+  .minHeight{
+    min-height: 250px;
+  }
+  /*.tarjetaDato{
+    height: 250px;
+  }*/
+
+  .col-descargas{
+    padding-left: 0px;
+    padding-right: 12px;
+    margin-bottom: 10px;
+  }
+  .newsCard-img{
+    height: 300px;
+    display: flex;
+    align-items: center;
+  }
+  .newsCard-img-holder{
+    height: 300px;
+    display: flex;
+    align-items: center;
+  }
+  .newsCard{
+    height: 500px;
+  }
+  .layer.verde{
+    height: 500px;
+  }
+  .layer.celeste{
+    height: 500px;
+  }
+  .newsCard-img{
+    height: 500px;
+  }
+  .newsCard-img-holder{
+    height: 500px;
+  }
+}
+
+/*Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+  .tarjetaDato a{
+    text-decoration: none;
+  }
+  .tarjetaDato a:hover{
+    text-decoration: underline;
+  }
+  .row-no-margin{
+    /*margin-right: -15px;*/
+  }
+  .tarjetaDato.especial .numero-tarjetaDato{
+    font-size: 9em;
+  }
+  .tarjetaDato.especial .titulo-tarjetaDato{
+    margin-top: 35px;
+  }
+  .tarjetaDato .titulo-destacado-tarjetaDato{
+    font-size: 1.25em;
+  }
+  .tarjetaDato .dato-descargado h3{
+    font-size: 1.15em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .tarjetaDato .dato-descargado p{
+    font-size: 0.9em;
+  }
+  .logo {
+    margin-left: -60px;
+    margin-top: -90px;
+  }
+  .tl-headline.tl-headline-title{
+    font-size: 2.5em!important;
+    line-height: 1.1em!important;
+    font-weight: 700;
+    color: #6D6D6D;
+    text-transform: uppercase;
+  }
+  .tl-timeline p{
+    font-size: 1.5em !important;
+    font-weight: 100;
+    color: #6D6D6D;
+    /*text-transform: uppercase;*/
+  }
+.navbar-gaMuniCba .nav.navbar-nav.navbar-right li a{
+  margin-left: 30px;
+}
+.col-subidos{
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.col-descargas{
+  padding-left: 0px;
+  padding-right: 30px;
+}
+}
+
+@media (min-width: 1400px) {
+
+}
+
+@media (min-width: 992px) {
+
+}
