@@ -1,0 +1,639 @@
+[
+    {
+        "key": "Contribuci\u00f3n que incide sobre los Inmuebles", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE JURISDICCION MUNICIPAL", 
+        "rec3": "TASAS Y DERECHOS SOBRE EL PATRIMONIO", 
+        "valor": 2131036673
+    }, 
+    {
+        "key": "Derechos de Catastro", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE JURISDICCION MUNICIPAL", 
+        "rec3": "TASAS Y DERECHOS SOBRE EL PATRIMONIO", 
+        "valor": 12511302
+    }, 
+    {
+        "key": "Contribuci\u00f3n que incide sobre la Energ\u00eda El\u00e9ctrica", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE JURISDICCION MUNICIPAL", 
+        "rec3": "TASAS Y DERECHOS SOBRE EL PATRIMONIO", 
+        "valor": 420000000
+    }, 
+    {
+        "key": "Contribuci\u00f3n que incide sobre la Construcci\u00f3n de Obras Privadas", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE JURISDICCION MUNICIPAL", 
+        "rec3": "TASAS Y DERECHOS SOBRE EL PATRIMONIO", 
+        "valor": 117492059
+    }, 
+    {
+        "key": "Contribuci\u00f3n para la Financiaci\u00f3n del Desarrollo Local y Regional de Obras de Gas Natural y Otras de Inter\u00e9s General", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE JURISDICCION MUNICIPAL", 
+        "rec3": "TASAS Y DERECHOS SOBRE EL PATRIMONIO", 
+        "valor": 0
+    }, 
+    {
+        "key": "Contribuci\u00f3n que incide sobre los Inmuebles para la Construcci\u00f3n de Obras de Desague Pluvial", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE JURISDICCION MUNICIPAL", 
+        "rec3": "TASAS Y DERECHOS SOBRE EL PATRIMONIO", 
+        "valor": 386891013
+    }, 
+    {
+        "key": "Tasa de Saneamiento y Protecci\u00f3n Ambiental", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE JURISDICCION MUNICIPAL", 
+        "rec3": "TASAS Y DERECHOS SOBRE EL PATRIMONIO", 
+        "valor": 0
+    }, 
+    {
+        "key": "Contribuci\u00f3n para la Financiaci\u00f3n del Desarrollo de la Infraestructura Sanitaria y Cloacal", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE JURISDICCION MUNICIPAL", 
+        "rec3": "TASAS Y DERECHOS SOBRE EL PATRIMONIO", 
+        "valor": 0
+    }, 
+    {
+        "key": "Derecho de Conexi\u00f3n a Redes Distribuidoras de Gas", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE JURISDICCION MUNICIPAL", 
+        "rec3": "TASAS Y DERECHOS SOBRE EL PATRIMONIO", 
+        "valor": 27476554
+    }, 
+    {
+        "key": "Contribuci\u00f3n que incide sobre la Actividad Comercial, Industrial y de Servicios", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE JURISDICCION MUNICIPAL", 
+        "rec3": "CONTRIBUCION QUE INCIDE SOBRE EL COMERCIO, INDUSTRIA Y ACTIVIDADES LUCRATIVAS", 
+        "valor": 5200000000
+    }, 
+    {
+        "key": "Contribuci\u00f3n que incide sobre la Ocupaci\u00f3n o Utilizaci\u00f3n de Espacios del Dominio P\u00fablico", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE JURISDICCION MUNICIPAL", 
+        "rec3": "CONTRIBUCION QUE INCIDE SOBRE EL COMERCIO, INDUSTRIA Y ACTIVIDADES LUCRATIVAS", 
+        "valor": 54000000
+    }, 
+    {
+        "key": "Contribuci\u00f3n que incide sobre los Mercados", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE JURISDICCION MUNICIPAL", 
+        "rec3": "CONTRIBUCION QUE INCIDE SOBRE EL COMERCIO, INDUSTRIA Y ACTIVIDADES LUCRATIVAS", 
+        "valor": 1275211
+    }, 
+    {
+        "key": "Municipalidad de C\u00f3rdoba - \"Mercado de Abasto Ordenanza N\u00b0 11.088\"", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE JURISDICCION MUNICIPAL", 
+        "rec3": "CONTRIBUCION QUE INCIDE SOBRE EL COMERCIO, INDUSTRIA Y ACTIVIDADES LUCRATIVAS", 
+        "valor": 2151478
+    }, 
+    {
+        "key": "Fondo de Promoci\u00f3n y Competitividad \u2013 \u201cOrdenanza N\u00ba 11.232\"", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE JURISDICCION MUNICIPAL", 
+        "rec3": "CONTRIBUCION QUE INCIDE SOBRE EL COMERCIO, INDUSTRIA Y ACTIVIDADES LUCRATIVAS", 
+        "valor": 0
+    }, 
+    {
+        "key": "Contribuci\u00f3n que incide sobre los Prestatarios del Servicio de Transporte Colectivo", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE JURISDICCION MUNICIPAL", 
+        "rec3": "DERECHOS DE INSPECCION Y CONTROL DE VEH\u00cdCULOS Y EMPRESAS DE TRANSPORTE", 
+        "valor": 1494226
+    }, 
+    {
+        "key": "Contribuci\u00f3n que incide sobre la Habilitaci\u00f3n y Transferencia del Servicio P\u00fablico de Taxi", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE JURISDICCION MUNICIPAL", 
+        "rec3": "DERECHOS DE INSPECCION Y CONTROL DE VEH\u00cdCULOS Y EMPRESAS DE TRANSPORTE", 
+        "valor": 59789167
+    }, 
+    {
+        "key": "Contribuci\u00f3n que incide sobre los Automotores", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE JURISDICCION MUNICIPAL", 
+        "rec3": "DERECHOS DE INSPECCION Y CONTROL DE VEH\u00cdCULOS Y EMPRESAS DE TRANSPORTE", 
+        "valor": 929671649
+    }, 
+    {
+        "key": "Contribuci\u00f3n que incide sobre los Cementerios", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE JURISDICCION MUNICIPAL", 
+        "rec3": "TASAS Y DERECHOS SOBRE LOS CEMENTERIOS", 
+        "valor": 27013061
+    }, 
+    {
+        "key": "Contribuci\u00f3n que incide sobre los Espect\u00e1culos y Diversiones P\u00fablicas", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE JURISDICCION MUNICIPAL", 
+        "rec3": "DERECHOS SOBRE LOS ESPECTACULOS PUBLICOS y JUEGOS DE AZAR", 
+        "valor": 45293609
+    }, 
+    {
+        "key": "Contribuci\u00f3n que incide sobre la Publicidad y Propaganda", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE JURISDICCION MUNICIPAL", 
+        "rec3": "DERECHOS SOBRE LOS ESPECTACULOS PUBLICOS y JUEGOS DE AZAR", 
+        "valor": 0
+    }, 
+    {
+        "key": "Contribuci\u00f3n de Mejoras - Obras P\u00fablicas por Concesi\u00f3n", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE JURISDICCION MUNICIPAL", 
+        "rec3": "CONTRIBUCION DE MEJORAS", 
+        "valor": 0
+    }, 
+    {
+        "key": "Contribuci\u00f3n de Mejoras - Obras por Contrataci\u00f3n y/o Administraci\u00f3n a Cargo de Propietarios Beneficiados", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE JURISDICCION MUNICIPAL", 
+        "rec3": "CONTRIBUCION DE MEJORAS", 
+        "valor": 127836
+    }, 
+    {
+        "key": "Contribucion de Mejoras - Obras PR.A.M.", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE JURISDICCION MUNICIPAL", 
+        "rec3": "CONTRIBUCION DE MEJORAS", 
+        "valor": 0
+    }, 
+    {
+        "key": "Multas", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE JURISDICCION MUNICIPAL", 
+        "rec3": "MULTAS Y OTROS DERECHOS Y TASAS", 
+        "valor": 74100000
+    }, 
+    {
+        "key": "Tasas de Actuaci\u00f3n Administrativa", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE JURISDICCION MUNICIPAL", 
+        "rec3": "MULTAS Y OTROS DERECHOS Y TASAS", 
+        "valor": 118300000
+    }, 
+    {
+        "key": "Ingresos por Infracciones de Tr\u00e1nsito", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE JURISDICCION MUNICIPAL", 
+        "rec3": "MULTAS Y OTROS DERECHOS Y TASAS", 
+        "valor": 90907910
+    }, 
+    {
+        "key": "Fondo de Seguridad Vial - Ordenanza 9981/98", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE JURISDICCION MUNICIPAL", 
+        "rec3": "MULTAS Y OTROS DERECHOS Y TASAS", 
+        "valor": 0
+    }, 
+    {
+        "key": "Fondo de Mejora del Sistema de Transporte Automotor de la Ciudad de C\u00f3rdoba", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE JURISDICCION MUNICIPAL", 
+        "rec3": "MULTAS Y OTROS DERECHOS Y TASAS", 
+        "valor": 722907
+    }, 
+    {
+        "key": "Derechos Conexi\u00f3n Cloacas", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE JURISDICCION MUNICIPAL", 
+        "rec3": "MULTAS Y OTROS DERECHOS Y TASAS", 
+        "valor": 39000000
+    }, 
+    {
+        "key": "Ingreso por Emisi\u00f3n de Carnet de Conducir", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE JURISDICCION MUNICIPAL", 
+        "rec3": "MULTAS Y OTROS DERECHOS Y TASAS", 
+        "valor": 76526434
+    }, 
+    {
+        "key": "Aforo por Inscripci\u00f3n a Concursos para la Administraci\u00f3n P\u00fablica", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE JURISDICCION MUNICIPAL", 
+        "rec3": "MULTAS Y OTROS DERECHOS Y TASAS", 
+        "valor": 0
+    }, 
+    {
+        "key": "Ingresos por estadia de vehiculos demorados y elementos o bienes incautados", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE JURISDICCION MUNICIPAL", 
+        "rec3": "MULTAS Y OTROS DERECHOS Y TASAS", 
+        "valor": 5000000
+    }, 
+    {
+        "key": "Ingresos por Colocaciones Financieras", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE JURISDICCION MUNICIPAL", 
+        "rec3": "OTROS INGRESOS CORRIENTES", 
+        "valor": 48100000
+    }, 
+    {
+        "key": "Ingresos Eventuales", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE JURISDICCION MUNICIPAL", 
+        "rec3": "OTROS INGRESOS CORRIENTES", 
+        "valor": 26677062
+    }, 
+    {
+        "key": "Fondo solidario de inclusi\u00f3n social \u2013 FO.S.I.S.", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE JURISDICCION MUNICIPAL", 
+        "rec3": "OTROS INGRESOS CORRIENTES", 
+        "valor": 294000000
+    }, 
+    {
+        "key": "Ingresos Estacionamiento Medido Ord. 10.804", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE JURISDICCION MUNICIPAL", 
+        "rec3": "INGRESOS CUENTAS CON AFECTACION ESPECIFICA", 
+        "valor": 0
+    }, 
+    {
+        "key": "Ingresos Cuenta Especial CPC Ord. 10.020", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE JURISDICCION MUNICIPAL", 
+        "rec3": "INGRESOS CUENTAS CON AFECTACION ESPECIFICA", 
+        "valor": 0
+    }, 
+    {
+        "key": "Ingresos Cuenta Direccion de Deporte Ord. 9.311", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE JURISDICCION MUNICIPAL", 
+        "rec3": "INGRESOS CUENTAS CON AFECTACION ESPECIFICA", 
+        "valor": 0
+    }, 
+    {
+        "key": "Ingresos Cuenta Secretaria de Cultura Ord. 11.549", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE JURISDICCION MUNICIPAL", 
+        "rec3": "INGRESOS CUENTAS CON AFECTACION ESPECIFICA", 
+        "valor": 0
+    }, 
+    {
+        "key": "Ingresos Cuenta Especial Ambiente Ord 10.607", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE JURISDICCION MUNICIPAL", 
+        "rec3": "INGRESOS CUENTAS CON AFECTACION ESPECIFICA", 
+        "valor": 0
+    }, 
+    {
+        "key": "Ingresos Playas Estacionamiento Municipal", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE JURISDICCION MUNICIPAL", 
+        "rec3": "INGRESOS CUENTAS CON AFECTACION ESPECIFICA", 
+        "valor": 0
+    }, 
+    {
+        "key": "Fondo de Apoyo a la Infrestructura Deportiva - Ord. 12.438", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE JURISDICCION MUNICIPAL", 
+        "rec3": "INGRESOS CUENTAS CON AFECTACION ESPECIFICA", 
+        "valor": 0
+    }, 
+    {
+        "key": "Coparticipaci\u00f3n de Impuestos Nacionales y Provinciales", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE OTRAS JURISDICCIONES", 
+        "rec3": "DE JURISDICCION NACIONAL Y PROVINCIAL", 
+        "valor": 4399868358
+    }, 
+    {
+        "key": "Fondo Federal Solidario", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE OTRAS JURISDICCIONES", 
+        "rec3": "DE JURISDICCION NACIONAL Y PROVINCIAL", 
+        "valor": 0
+    }, 
+    {
+        "key": "Fondo Materno Infantil y Nutrici\u00f3n -PROMIN- Ordenanza N\u00b0 9610/96", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE OTRAS JURISDICCIONES", 
+        "rec3": "DE JURISDICCION NACIONAL Y PROVINCIAL", 
+        "valor": 0
+    }, 
+    {
+        "key": "Fondo de Financiamiento de la Descentralizaci\u00f3n Provincial", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE OTRAS JURISDICCIONES", 
+        "rec3": "DE JURISDICCION NACIONAL Y PROVINCIAL", 
+        "valor": 471150000
+    }, 
+    {
+        "key": "Aporte no reintegrables - Plan Federal", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE OTRAS JURISDICCIONES", 
+        "rec3": "DE JURISDICCION NACIONAL Y PROVINCIAL", 
+        "valor": 0
+    }, 
+    {
+        "key": "Aportes no Reintegrables - Situaciones de Emergencia", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE OTRAS JURISDICCIONES", 
+        "rec3": "DE JURISDICCION NACIONAL Y PROVINCIAL", 
+        "valor": 0
+    }, 
+    {
+        "key": "Aporte Nacional no Reintegrable - \"Plan Alimentario\"", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE OTRAS JURISDICCIONES", 
+        "rec3": "DE JURISDICCION NACIONAL Y PROVINCIAL", 
+        "valor": 0
+    }, 
+    {
+        "key": "Aporte Provincial no Reintegrable - \"Plan Alimentario\"", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE OTRAS JURISDICCIONES", 
+        "rec3": "DE JURISDICCION NACIONAL Y PROVINCIAL", 
+        "valor": 0
+    }, 
+    {
+        "key": "Aportes no Reintegrables - Sistema de Transporte", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE OTRAS JURISDICCIONES", 
+        "rec3": "DE JURISDICCION NACIONAL Y PROVINCIAL", 
+        "valor": 0
+    }, 
+    {
+        "key": "Aportes - \"Programa Federal  de Emergencia Habitacional\"", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE OTRAS JURISDICCIONES", 
+        "rec3": "DE JURISDICCION NACIONAL Y PROVINCIAL", 
+        "valor": 0
+    }, 
+    {
+        "key": "Aportes no Reintegrables - Protecci\u00f3n Humana", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE OTRAS JURISDICCIONES", 
+        "rec3": "DE JURISDICCION NACIONAL Y PROVINCIAL", 
+        "valor": 0
+    }, 
+    {
+        "key": "Aportes no Reintegrables - \"Programa Arraigo\"", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE OTRAS JURISDICCIONES", 
+        "rec3": "DE JURISDICCION NACIONAL Y PROVINCIAL", 
+        "valor": 0
+    }, 
+    {
+        "key": "Aportes no Reintegrables - \"C.I.C Ordenanza N\u00ba 10.919\"", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE OTRAS JURISDICCIONES", 
+        "rec3": "DE JURISDICCION NACIONAL Y PROVINCIAL", 
+        "valor": 0
+    }, 
+    {
+        "key": "Aportes no Reintegrables - \"C.I.C Ordenanza N\u00ba 10.970\"", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE OTRAS JURISDICCIONES", 
+        "rec3": "DE JURISDICCION NACIONAL Y PROVINCIAL", 
+        "valor": 0
+    }, 
+    {
+        "key": "Aportes no Reintegrables - \"C.I.C Ordenanza N\u00ba 11.054\"", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE OTRAS JURISDICCIONES", 
+        "rec3": "DE JURISDICCION NACIONAL Y PROVINCIAL", 
+        "valor": 0
+    }, 
+    {
+        "key": "Aporte del Tesoro Nacional", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE OTRAS JURISDICCIONES", 
+        "rec3": "DE JURISDICCION NACIONAL Y PROVINCIAL", 
+        "valor": 0
+    }, 
+    {
+        "key": "Aporte Nacional no Reintegrable - Hogar de Ancianos Padre La Monaca Ord. N\u00ba 11.066", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE OTRAS JURISDICCIONES", 
+        "rec3": "DE JURISDICCION NACIONAL Y PROVINCIAL", 
+        "valor": 0
+    }, 
+    {
+        "key": "Acuerdo Marco Secretaria de Ambiente - Ordenanza N\u00b0 11.158", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE OTRAS JURISDICCIONES", 
+        "rec3": "DE JURISDICCION NACIONAL Y PROVINCIAL", 
+        "valor": 0
+    }, 
+    {
+        "key": "Aportes Destinados a Erogaciones del \u00c1rea de Salud", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE OTRAS JURISDICCIONES", 
+        "rec3": "DE JURISDICCION NACIONAL Y PROVINCIAL", 
+        "valor": 0
+    }, 
+    {
+        "key": "Aportes Programas Para Personas Con Discapacidad", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE OTRAS JURISDICCIONES", 
+        "rec3": "DE JURISDICCION NACIONAL Y PROVINCIAL", 
+        "valor": 0
+    }, 
+    {
+        "key": "Plan Integral de Cloacas - Ordenanza N\u00ba 11.436", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE OTRAS JURISDICCIONES", 
+        "rec3": "DE JURISDICCION NACIONAL Y PROVINCIAL", 
+        "valor": 0
+    }, 
+    {
+        "key": "Acuerdo con Ciudad de Torino - Ordenanza N\u00ba 11.555", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE OTRAS JURISDICCIONES", 
+        "rec3": "DE JURISDICCION NACIONAL Y PROVINCIAL", 
+        "valor": 0
+    }, 
+    {
+        "key": "Convenio \u00danico de Colaboraci\u00f3n - Ordenanza N\u00ba 11.603", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE OTRAS JURISDICCIONES", 
+        "rec3": "DE JURISDICCION NACIONAL Y PROVINCIAL", 
+        "valor": 0
+    }, 
+    {
+        "key": "Convenio Apoyo Econ\u00f3mico Ministerio de Desarrollo Social de La Naci\u00f3n - Ordenanza N\u00ba 11.599", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE OTRAS JURISDICCIONES", 
+        "rec3": "DE JURISDICCION NACIONAL Y PROVINCIAL", 
+        "valor": 0
+    }, 
+    {
+        "key": "Convenio de Apoyo Econ\u00f3mico del Ministerio de Desarrollo Social de la Naci\u00f3n - Ordenanza N\u00ba 11.647", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE OTRAS JURISDICCIONES", 
+        "rec3": "DE JURISDICCION NACIONAL Y PROVINCIAL", 
+        "valor": 0
+    }, 
+    {
+        "key": "Convenio Marco del Plan Integral \"M\u00e1s y Mejor Trabajo\" - Ordenanza N\u00ba 11.597", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE OTRAS JURISDICCIONES", 
+        "rec3": "DE JURISDICCION NACIONAL Y PROVINCIAL", 
+        "valor": 0
+    }, 
+    {
+        "key": "Aportes no Reintegrables - Convenio Marco de Cooperacion Ni\u00f1ez, Adolescencia y Familia -Ordenanza N\u00ba 11.655", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE OTRAS JURISDICCIONES", 
+        "rec3": "DE JURISDICCION NACIONAL Y PROVINCIAL", 
+        "valor": 0
+    }, 
+    {
+        "key": "Subsidio no Reintegrable del Ministerio de Desarrollo Social de la Naci\u00f3n - Ord. N\u00ba 11.662", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE OTRAS JURISDICCIONES", 
+        "rec3": "DE JURISDICCION NACIONAL Y PROVINCIAL", 
+        "valor": 0
+    }, 
+    {
+        "key": "Programa Federal de Integraci\u00f3n Socio - Comunitaria Ordenanza N\u00ba 11.853", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE OTRAS JURISDICCIONES", 
+        "rec3": "DE JURISDICCION NACIONAL Y PROVINCIAL", 
+        "valor": 0
+    }, 
+    {
+        "key": "Fondo C\u00f3rdoba Ciudad Educadora - Ordenanza 12.174", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE OTRAS JURISDICCIONES", 
+        "rec3": "DE JURISDICCION NACIONAL Y PROVINCIAL", 
+        "valor": 0
+    }, 
+    {
+        "key": "Convenio de Equidad y Ordenamiento Fiscal - Ordenanza N\u00ba 12.537", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE OTRAS JURISDICCIONES", 
+        "rec3": "DE JURISDICCION NACIONAL Y PROVINCIAL", 
+        "valor": 741505700
+    }, 
+    {
+        "key": "Programa de Financiamiento de Obras Viales Urbanas, Periurbanas, Caminos de Producci\u00f3n, Accesos a Pueblos y Obras de Seguridad", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE OTRAS JURISDICCIONES", 
+        "rec3": "DE JURISDICCION NACIONAL Y PROVINCIAL", 
+        "valor": 822516984
+    }, 
+    {
+        "key": "Programa Mejoramiento Barrial", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE OTRAS JURISDICCIONES", 
+        "rec3": "DE JURISDICCION NACIONAL Y PROVINCIAL", 
+        "valor": 229291907
+    }, 
+    {
+        "key": "Programa Casa del Futuro", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE OTRAS JURISDICCIONES", 
+        "rec3": "DE JURISDICCION NACIONAL Y PROVINCIAL", 
+        "valor": 6985988
+    }, 
+    {
+        "key": "Programa Techo Digno", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE OTRAS JURISDICCIONES", 
+        "rec3": "DE JURISDICCION NACIONAL Y PROVINCIAL", 
+        "valor": 928961978
+    }, 
+    {
+        "key": "Fondo de Cooperaci\u00f3n Cultural de Espa\u00f1a - Ordenanza N\u00b0 9844/97", 
+        "rec1": "INGRESOS CORRIENTES", 
+        "rec2": "DE OTRAS JURISDICCIONES", 
+        "rec3": "OTROS INGRESOS", 
+        "valor": 0
+    }, 
+    {
+        "key": "Pr\u00e9stamos para Obras Diversas", 
+        "rec1": "INGRESOS DE CAPITAL", 
+        "rec2": "USO DEL CREDITO", 
+        "rec3": "Pr\u00e9stamos para Obras Diversas", 
+        "valor": 0
+    }, 
+    {
+        "key": "Pr\u00e9stamos del B.I.R.F. y/o del F.I.M.", 
+        "rec1": "INGRESOS DE CAPITAL", 
+        "rec2": "USO DEL CREDITO", 
+        "rec3": "Pr\u00e9stamos del B.I.R.F. y/o del F.I.M.", 
+        "valor": 0
+    }, 
+    {
+        "key": "Pr\u00e9stamos del B.I.D. y  F.I.M.", 
+        "rec1": "INGRESOS DE CAPITAL", 
+        "rec2": "USO DEL CREDITO", 
+        "rec3": "Pr\u00e9stamos del B.I.D. y  F.I.M.", 
+        "valor": 0
+    }, 
+    {
+        "key": "Pr\u00e9stamos del B.I.D. -  Ordenanza N\u00b0 10.208", 
+        "rec1": "INGRESOS DE CAPITAL", 
+        "rec2": "USO DEL CREDITO", 
+        "rec3": "Pr\u00e9stamos del B.I.D. -  Ordenanza N\u00b0 10.208", 
+        "valor": 0
+    }, 
+    {
+        "key": "Pr\u00e9stamos para Fondo de Infraestructura", 
+        "rec1": "INGRESOS DE CAPITAL", 
+        "rec2": "USO DEL CREDITO", 
+        "rec3": "Pr\u00e9stamos para Fondo de Infraestructura", 
+        "valor": 0
+    }, 
+    {
+        "key": "Pr\u00e9stamos Ordenanza N\u00ba 10.270", 
+        "rec1": "INGRESOS DE CAPITAL", 
+        "rec2": "USO DEL CREDITO", 
+        "rec3": "Pr\u00e9stamos Ordenanza N\u00ba 10.270", 
+        "valor": 0
+    }, 
+    {
+        "key": "Pr\u00e9stamos Ordenanza N\u00ba10.279", 
+        "rec1": "INGRESOS DE CAPITAL", 
+        "rec2": "USO DEL CREDITO", 
+        "rec3": "Pr\u00e9stamos Ordenanza N\u00ba10.279", 
+        "valor": 0
+    }, 
+    {
+        "key": "Pr\u00e9stamos para financiar compra de inmuebles", 
+        "rec1": "INGRESOS DE CAPITAL", 
+        "rec2": "USO DEL CREDITO", 
+        "rec3": "Pr\u00e9stamos para financiar compra de inmuebles", 
+        "valor": 0
+    }, 
+    {
+        "key": "Cr\u00e9ditos de Corto Plazo", 
+        "rec1": "INGRESOS DE CAPITAL", 
+        "rec2": "USO DEL CREDITO", 
+        "rec3": "Cr\u00e9ditos de Corto Plazo", 
+        "valor": 0
+    }, 
+    {
+        "key": "Cr\u00e9ditos de Mediano Plazo", 
+        "rec1": "INGRESOS DE CAPITAL", 
+        "rec2": "USO DEL CREDITO", 
+        "rec3": "Cr\u00e9ditos de Mediano Plazo", 
+        "valor": 390000000
+    }, 
+    {
+        "key": "Cr\u00e9ditos de Largo Plazo", 
+        "rec1": "INGRESOS DE CAPITAL", 
+        "rec2": "USO DEL CREDITO", 
+        "rec3": "Cr\u00e9ditos de Largo Plazo", 
+        "valor": 0
+    }, 
+    {
+        "key": "Otros Usos del Cr\u00e9dito", 
+        "rec1": "INGRESOS DE CAPITAL", 
+        "rec2": "USO DEL CREDITO", 
+        "rec3": "Otros Usos del Cr\u00e9dito", 
+        "valor": 0
+    }, 
+    {
+        "key": "REMANENTE DE EJERCICIOS ANTERIORES", 
+        "rec1": "REMANENTE DE EJERCICIOS ANTERIORES", 
+        "rec2": "REMANENTE DE EJERCICIOS ANTERIORES", 
+        "rec3": "REMANENTE DE EJERCICIOS ANTERIORES", 
+        "valor": 1434000000
+    }
+]
