@@ -41,10 +41,62 @@ var tablaRecursosProp = {
             'Totales': 'Totales Trim I 18'
           }
 }
+var titTablaR = {
+  '2017': 'Tercer Trimestre 2017',
+  '2018': 'Primer Trimestre 2018'
+}
+var titTablaR2 = {
+  '2017': 'Tercer Trimestre 2016',
+  '2018': 'Tercer Trimestre 2017'
+}
+var titTablaR3 = {
+  '2017': 'Var. III-2017/III-2016',
+  '2018': 'Var. I° trim 2018 / I° tim 2017'
+}
+var titTablaR4 = {
+  '2017': 'Acumulado al 30 de Septiembre de 2017',
+  '2018': 'Acumulado al 31 de Marzo de 2018'
+}
+var titTablaR5 = {
+  '2017': 'Var. Acumulado III 2017/III 2016',
+  '2018': 'Var. Acumulado 2018/2017'
+}
+
+var nota1 = {
+  '2017':'*Incluye pagos moratorias.<br> **Incluye $18.600.332 en proceso de ingreso contable.<br>Nota:Incluye ajustes de ingresos percibidos en trimestres anteriores.',
+  '2018': '*Incluye pagos moratorias.'
+}
+
+var nota2 ={
+  '2017' :'* Incluye adelanto de Coparticipación<br>** Incluye ingreso por Convenio de equidad y Ordenamiento Fiscal<br>Nota: Incluye ajustes de ingresos percibidos en trimestres anteriores.',
+  '2018' : '* Incluye ingreso por Convenio de equidad y Ordenamiento Fiscal'
+}
+var nota3 ={
+  '2017' :'* Aportes y contribuciones a la Caja de Jubilaciones y Pensiones. Aportes y contribuciones Obra Social. Otros conceptos retenidos.<br>Nota:Incluye ajustes de ingresos percibidos en trimestres anteriores.					',
+  '2018' : '* Aportes y contribuciones a la Caja de Jubilaciones y Pensiones. Aportes y contribuciones Obra Social. Otros conceptos retenidos. <br>Nota: Incluye ajustes de ingresos percibidos en trimestres anteriores.'
+}
+var nota4 ={
+  '2017' : 'Nota:Información de recaudación con carácter provisorio. No incluye saldos de disponibilidades de ejercicios anteriores.',
+  '2018' : 'Nota: Información de recaudación con carácter provisorio. No incluye saldos de disponibilidades de ejercicios anteriores.'
+}
 
 $('.definicionYear').html(textoExplicativo[selectedYear]);
 $('.aclaracion').html(textoAclaracion[selectedYear]);
 $('.titTrim').html(titTabla[selectedYear]);
+
+$('.titTrimR').html(titTablaR[selectedYear]);
+$('.titTrimR2').html(titTablaR2[selectedYear]);
+$('.titTrimR3').html(titTablaR3[selectedYear]);
+$('.titTrimR4').html(titTablaR4[selectedYear]);
+$('.titTrimR5').html(titTablaR5[selectedYear]);
+
+$('.notaR1').html(nota1[selectedYear]);
+$('.notaR2').html(nota2[selectedYear]);
+$('.notaR3').html(nota3[selectedYear]);
+$('.notaR4').html(nota4[selectedYear]);
+
+
+
 function desplegar_tabla(estado, tabla) {
     var tablA = document.getElementById(tabla);
     if (tablA.style.display == "none") {
@@ -85,6 +137,18 @@ function dibujar() {
   $('.definicionYear').html(textoExplicativo[selectedYear]);
   $('.aclaracion').html(textoAclaracion[selectedYear]);
   $('.titTrim').html(titTabla[selectedYear]);
+
+  $('.titTrimR').html(titTablaR[selectedYear]);
+  $('.titTrimR2').html(titTablaR2[selectedYear]);
+  $('.titTrimR3').html(titTablaR3[selectedYear]);
+  $('.titTrimR4').html(titTablaR4[selectedYear]);
+  $('.titTrimR5').html(titTablaR5[selectedYear]);
+
+  $('.notaR1').html(nota1[selectedYear]);
+  $('.notaR2').html(nota2[selectedYear]);
+  $('.notaR3').html(nota3[selectedYear]);
+  $('.notaR4').html(nota4[selectedYear]);
+
 
   dibujarD3();
 }
