@@ -1,7 +1,6 @@
 window.already_read_data_grafico = false;
 window.already_read_data_tabla = false;
 window.datos_tabla = [];
-window.datos_tabla_Recursos = [];
 window.datos_grafico = [];
 window.con_deuda = [];
 window.sin_deuda = [];
@@ -26,6 +25,7 @@ var titTabla = {
   '2017': 'Ejecutado al 3º Trim. 2017',
   '2018': 'Ejecutado al 1º Trim. 2018'
 }
+
 
 var tablaRecursosProp = {
   '2017': {
@@ -84,6 +84,7 @@ $('.definicionYear').html(textoExplicativo[selectedYear]);
 $('.aclaracion').html(textoAclaracion[selectedYear]);
 $('.titTrim').html(titTabla[selectedYear]);
 
+
 $('.titTrimR').html(titTablaR[selectedYear]);
 $('.titTrimR2').html(titTablaR2[selectedYear]);
 $('.titTrimR3').html(titTablaR3[selectedYear]);
@@ -131,6 +132,7 @@ function desplegar_tabla_datos(tabla) {
       }
     });
 }
+
 
 function dibujar() {
   already_read_data_tabla=false;
@@ -289,7 +291,6 @@ function dibujarD3_ejecuciones_presupuestarias_tabla() {
     }
   });
 }
-
 
 $(window).on('resize', function() {
   dibujarD3();
