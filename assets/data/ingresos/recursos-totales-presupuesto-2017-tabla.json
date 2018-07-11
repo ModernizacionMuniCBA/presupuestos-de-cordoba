@@ -1,0 +1,250 @@
+[
+    {
+        "concepto": "INGRESOS CORRIENTES", 
+        "key": "1", 
+        "key_0": "1", 
+        "nivel": 1, 
+        "subnivel": "", 
+        "valor": 18264528457
+    }, 
+    {
+        "concepto": "DE JURISDICCION MUNICIPAL", 
+        "key": "1.01", 
+        "key_0": "1", 
+        "nivel": 2, 
+        "subnivel": "01", 
+        "valor": 10415068355
+    }, 
+    {
+        "concepto": "TASAS Y DERECHOS SOBRE EL PATRIMONIO", 
+        "key": "1.01.01", 
+        "key_0": "1", 
+        "nivel": 3, 
+        "subnivel": "01", 
+        "valor": 3270407601
+    }, 
+    {
+        "concepto": "CONTRIBUCION QUE INCIDE SOBRE EL COMERCIO, INDUSTRIA Y ACTIVIDADES LUCRATIVAS", 
+        "key": "1.01.02", 
+        "key_0": "1", 
+        "nivel": 3, 
+        "subnivel": "01", 
+        "valor": 5277826689
+    }, 
+    {
+        "concepto": "DERECHOS DE INSPECCION Y CONTROL DE VEH\u00cdCULOS Y EMPRESAS DE TRANSPORTE", 
+        "key": "1.01.03", 
+        "key_0": "1", 
+        "nivel": 3, 
+        "subnivel": "01", 
+        "valor": 990955042
+    }, 
+    {
+        "concepto": "TASAS Y DERECHOS SOBRE LOS CEMENTERIOS", 
+        "key": "1.01.04", 
+        "key_0": "1", 
+        "nivel": 3, 
+        "subnivel": "01", 
+        "valor": 27013061
+    }, 
+    {
+        "concepto": "DERECHOS SOBRE LOS ESPECTACULOS PUBLICOS y JUEGOS DE AZAR", 
+        "key": "1.01.05", 
+        "key_0": "1", 
+        "nivel": 3, 
+        "subnivel": "01", 
+        "valor": 45293609
+    }, 
+    {
+        "concepto": "CONTRIBUCION DE MEJORAS", 
+        "key": "1.01.06", 
+        "key_0": "1", 
+        "nivel": 3, 
+        "subnivel": "01", 
+        "valor": 127836
+    }, 
+    {
+        "concepto": "MULTAS Y OTROS DERECHOS Y TASAS", 
+        "key": "1.01.07", 
+        "key_0": "1", 
+        "nivel": 3, 
+        "subnivel": "01", 
+        "valor": 405000031
+    }, 
+    {
+        "concepto": "OTROS INGRESOS CORRIENTES", 
+        "key": "1.01.08", 
+        "key_0": "1", 
+        "nivel": 3, 
+        "subnivel": "01", 
+        "valor": 368777062
+    }, 
+    {
+        "concepto": "INGRESOS CUENTAS CON AFECTACION ESPECIFICA", 
+        "key": "1.01.09", 
+        "key_0": "1", 
+        "nivel": 3, 
+        "subnivel": "01", 
+        "valor": 29667424
+    }, 
+    {
+        "concepto": "DE OTRAS JURISDICCIONES", 
+        "key": "1.02", 
+        "key_0": "1", 
+        "nivel": 2, 
+        "subnivel": "02", 
+        "valor": 7849460103
+    }, 
+    {
+        "concepto": "DE JURISDICCION NACIONAL Y PROVINCIAL", 
+        "key": "1.02.01", 
+        "key_0": "1", 
+        "nivel": 3, 
+        "subnivel": "02", 
+        "valor": 7849460103
+    }, 
+    {
+        "concepto": "OTROS INGRESOS", 
+        "key": "1.02.02", 
+        "key_0": "1", 
+        "nivel": 3, 
+        "subnivel": "02", 
+        "valor": 0
+    }, 
+    {
+        "concepto": "INGRESOS DE CAPITAL", 
+        "key": "2", 
+        "key_0": "2", 
+        "nivel": 1, 
+        "subnivel": "", 
+        "valor": 390000000
+    }, 
+    {
+        "concepto": "USO DEL CREDITO", 
+        "key": "2.01", 
+        "key_0": "2", 
+        "nivel": 2, 
+        "subnivel": "01", 
+        "valor": 390000000
+    }, 
+    {
+        "concepto": "Pr\u00e9stamos para Obras Diversas", 
+        "key": "2.01.01", 
+        "key_0": "2", 
+        "nivel": 3, 
+        "subnivel": "01", 
+        "valor": 0
+    }, 
+    {
+        "concepto": "Pr\u00e9stamos del B.I.R.F. y/o del F.I.M.", 
+        "key": "2.01.02", 
+        "key_0": "2", 
+        "nivel": 3, 
+        "subnivel": "01", 
+        "valor": 0
+    }, 
+    {
+        "concepto": "Pr\u00e9stamos del B.I.D. y  F.I.M.", 
+        "key": "2.01.03", 
+        "key_0": "2", 
+        "nivel": 3, 
+        "subnivel": "01", 
+        "valor": 0
+    }, 
+    {
+        "concepto": "Pr\u00e9stamos del B.I.D. -  Ordenanza N\u00b0 10.208", 
+        "key": "2.01.04", 
+        "key_0": "2", 
+        "nivel": 3, 
+        "subnivel": "01", 
+        "valor": 0
+    }, 
+    {
+        "concepto": "Pr\u00e9stamos para Fondo de Infraestructura", 
+        "key": "2.01.05", 
+        "key_0": "2", 
+        "nivel": 3, 
+        "subnivel": "01", 
+        "valor": 0
+    }, 
+    {
+        "concepto": "Pr\u00e9stamos Ordenanza N\u00ba 10.270", 
+        "key": "2.01.06", 
+        "key_0": "2", 
+        "nivel": 3, 
+        "subnivel": "01", 
+        "valor": 0
+    }, 
+    {
+        "concepto": "Pr\u00e9stamos Ordenanza N\u00ba10.279", 
+        "key": "2.01.07", 
+        "key_0": "2", 
+        "nivel": 3, 
+        "subnivel": "01", 
+        "valor": 0
+    }, 
+    {
+        "concepto": "Pr\u00e9stamos para financiar compra de inmuebles", 
+        "key": "2.01.08", 
+        "key_0": "2", 
+        "nivel": 3, 
+        "subnivel": "01", 
+        "valor": 0
+    }, 
+    {
+        "concepto": "Cr\u00e9ditos de Corto Plazo", 
+        "key": "2.01.09", 
+        "key_0": "2", 
+        "nivel": 3, 
+        "subnivel": "01", 
+        "valor": 0
+    }, 
+    {
+        "concepto": "Cr\u00e9ditos de Mediano Plazo", 
+        "key": "2.01.10", 
+        "key_0": "2", 
+        "nivel": 3, 
+        "subnivel": "01", 
+        "valor": 390000000
+    }, 
+    {
+        "concepto": "Cr\u00e9ditos de Largo Plazo", 
+        "key": "2.01.11", 
+        "key_0": "2", 
+        "nivel": 3, 
+        "subnivel": "01", 
+        "valor": 0
+    }, 
+    {
+        "concepto": "Otros Usos del Cr\u00e9dito", 
+        "key": "2.01.12", 
+        "key_0": "2", 
+        "nivel": 3, 
+        "subnivel": "01", 
+        "valor": 0
+    }, 
+    {
+        "concepto": "VENTA DE ACTIVO FIJO", 
+        "key": "2.02", 
+        "key_0": "2", 
+        "nivel": 2, 
+        "subnivel": "02", 
+        "valor": 0
+    }, 
+    {
+        "concepto": "VENTA DE BIENES EN DESUSO", 
+        "key": "2.03", 
+        "key_0": "2", 
+        "nivel": 2, 
+        "subnivel": "03", 
+        "valor": 0
+    }, 
+    {
+        "concepto": "REMANENTE DE EJERCICIOS ANTERIORES", 
+        "key": "3", 
+        "key_0": "3", 
+        "nivel": 1, 
+        "subnivel": "", 
+        "valor": 1434000000
+    }
+]
