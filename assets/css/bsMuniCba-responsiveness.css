@@ -83,6 +83,10 @@
 
 /*Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) {
+  .a-opinar{
+    background-color: #ff0059 !important;
+    color: #FFF !important;
+  }
   .border-b-mob{
     border-bottom: none;
   }
@@ -279,7 +283,7 @@
     /*text-transform: uppercase;*/
   }
 .navbar-gaMuniCba .nav.navbar-nav.navbar-right li a{
-  margin-left: 30px;
+  margin-left: 10px;
 }
 .col-subidos{
   padding-left: 15px;

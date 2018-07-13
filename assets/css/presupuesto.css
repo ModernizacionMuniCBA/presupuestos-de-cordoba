@@ -600,11 +600,11 @@ hr {
 
 #navbar .navbar-nav .bajar-datos a {
   text-align: center;
-  margin-top: 6px;
+  margin-top: 20px;
   color: #FFFFFF;
   line-height: 1em;
   background-color: #009059;
-  padding: 14px 18px;
+  padding: 6px 14px;
   font-weight: 500;
 }
 #navbar .navbar-nav .bajar-datos a:hover {
