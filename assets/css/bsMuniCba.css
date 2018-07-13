@@ -550,7 +550,18 @@ footer .rowConvenios .imgLogoFooter{
   display: inherit;
 }
 
-
+/*Titulo*/
+.TituloEjecuciones {
+    background-color: #006B5E;
+    padding: 20px 60px;
+    font-size: 1.75em;
+    text-transform: uppercase;
+    line-height: 1.1em;
+    font-weight: 300;
+    font-style: italic;
+    color: #FFFFFF;
+    margin-top: 10px;
+}
 /*		4. Botones		*/
 .btn.btn-muniCba {
     color: #fff;
