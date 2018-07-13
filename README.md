@@ -1,2 +1,1 @@
-# presupuestos-de-cordoba
-Presupuestos abiertos de Córdoba visualizados
+# Presupuestos abiertos de la Ciudad de Córdoba visualizados
