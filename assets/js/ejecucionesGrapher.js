@@ -80,24 +80,6 @@ var nota4 ={
   '2018' : 'Nota: Información de recaudación con carácter provisorio. No incluye saldos de disponibilidades de ejercicios anteriores.'
 }
 
-// var selectY ;
-// var URLactual = window.location;
-// alert(URLactual);
-// $(document).ready(function() {
-//   function show(bloq17, bloq18) {
-//       var div2017 = document.getElementById(bloq17);
-//       var div2018 = document.getElementById(bloq18);
-//       if (div2017.style.display == "none"  && div2018.style.display == "block") {
-//         selectY = 2017;
-//       div2017.style.display = "block";
-//       div2018.style.display = "none";
-//       } else {
-//         selectY = 2018;
-//       div2017.style.display = "none";
-//       div2018.style.display = "block";
-//       }
-//   }
-// });
 $('.definicionYear').html(textoExplicativo[selectedYear]);
 $('.aclaracion').html(textoAclaracion[selectedYear]);
 $('.titTrim').html(titTabla[selectedYear]);
