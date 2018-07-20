@@ -1,23 +1,51 @@
 var selectedYear = "2018";
+// var selectY ;
+
+jQuery(window).bind('hashchange', function () {
+  //detect hash change
+  var tab = window.location.hash.slice(1);
+
+  finishedDrawing();
+  var text_selected = $(this).data('year');
+  selectedYear = tab;
+  Cookies.set('year', selectedYear);
+  dibujar();
+  $(".dropdown .selectedYear").text(tab);
+  $(".dropdown .selectedYear").attr("href", "#"+tab);
+
+});
 
 $(document).ready(function() {
-  finishedDrawing();
-  $('.yearSelector').on('click', function(e) {
-    e.preventDefault();
-    selectedYear = $(this).data('year');
-    Cookies.set('year', selectedYear);
-    $('.selectedYear').html(selectedYear);
+
+  var URLactual = window.location;
+  var url = URLactual.toString();
+  var seleccionado = url.substring(url.indexOf('#')+1, url.indexOf('#')+5);
+  if(seleccionado == 'http'){seleccionado = 2018;}
+  if (Cookies.get('year') == undefined) {
+    selectedYear = seleccionado;
+    Cookies.set('year', seleccionado);
     dibujar();
+    $(".dropdown .selectedYear").text(seleccionado);
+    $(".dropdown .selectedYear").attr("href", "#"+seleccionado);
+  } else {
+    selectedYear = seleccionado;
+    Cookies.set('year', seleccionado);
+    dibujar();
+    $(".dropdown .selectedYear").text(seleccionado);
+    $(".dropdown .selectedYear").attr("href", "#"+seleccionado);
+  }
+
+  finishedDrawing();
+  $(".selected li a").click(function(e){
+    var text_selected = $(this).data('year');
+    selectedYear = text_selected;
+    Cookies.set('year', selectedYear);
+    dibujar();
+    $(".dropdown .selectedYear").text(text_selected);
+    $(".dropdown .selectedYear").attr("href", "#"+text_selected);
   });
 });
 
-
-if (Cookies.get('year') == undefined) {
-  Cookies.set('year', '2018');
-} else {
-  selectedYear = Cookies.get('year');
-  $('.selectedYear').html(selectedYear);
-}
 
 var uuid_analytics = "UA-79840006-1";
 

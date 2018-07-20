@@ -97,15 +97,6 @@ $('.notaR3').html(nota3[selectedYear]);
 $('.notaR4').html(nota4[selectedYear]);
 
 
-
-function desplegar_tabla(estado, tabla) {
-    var tablA = document.getElementById(tabla);
-    if (tablA.style.display == "none") {
-    tablA.style.display = "";
-    } else {
-    tablA.style.display = "none";
-    }
-}
 function desplegar_tabla_datos(tabla) {
     var $tabla = $("#"+tabla);
     $tabla.empty();
