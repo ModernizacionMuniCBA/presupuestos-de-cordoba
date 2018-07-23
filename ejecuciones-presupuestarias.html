@@ -1853,7 +1853,12 @@ viewBox="0 0 310.2 98.6" enable-background="new 0 0 310.2 98.6" xml:space="prese
   <script src="assets/js/d3plus.js"></script>
   <script src="assets/js/ejecucionesGrapher.js"></script>
   <script>
-    touchAnalytics('/presupuesto-cordoba-2017/ejecuciones-presupuestarias#2018', 'Ejecuciones Presupuestarias');
+  touchAnalytics('/presupuesto-cordoba/ejecuciones-presupuestarias', 'Ejecuciones Presupuestarias 2018');
+    jQuery(window).bind('hashchange', function () {
+      //detect hash change
+      var tab = window.location.hash.slice(1);
+      touchAnalytics('/presupuesto-cordoba/ejecuciones-presupuestarias#'+tab, 'Ejecuciones Presupuestarias '+tab);
+    })
   </script>
 </body>
 

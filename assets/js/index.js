@@ -4,7 +4,6 @@ var selectedYear = "2018";
 jQuery(window).bind('hashchange', function () {
   //detect hash change
   var tab = window.location.hash.slice(1);
-
   finishedDrawing();
   var text_selected = $(this).data('year');
   selectedYear = tab;
