@@ -1990,7 +1990,12 @@ viewBox="0 0 310.2 98.6" enable-background="new 0 0 310.2 98.6" xml:space="prese
   <script src="assets/js/ingresosGrapher.js"></script>
   <!-- <script src="assets/js/afectacionEspecifica.js"></script> -->
   <script>
-    touchAnalytics('/presupuesto-cordoba-2017/ingresos', 'Ingresos');
+    touchAnalytics('/presupuesto-cordoba/ingresos', 'Ingresos 2018');
+    jQuery(window).bind('hashchange', function () {
+      //detect hash change
+      var tab = window.location.hash.slice(1);
+      touchAnalytics('/presupuesto-cordoba/ingresos#'+tab, 'Ingresos '+tab);
+    })
   </script>
 </body>
 </html>

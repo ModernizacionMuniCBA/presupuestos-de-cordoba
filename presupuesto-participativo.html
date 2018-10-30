@@ -1758,7 +1758,12 @@ viewBox="0 0 310.2 98.6" enable-background="new 0 0 310.2 98.6" xml:space="prese
   <script src="assets/js/participativoGrapher.js"></script>
 
   <script>
-    touchAnalytics('/presupuesto-cordoba-2017/presupuesto-participativo', 'Presupuesto Participativo');
+    touchAnalytics('/presupuesto-cordoba/presupuesto-participativo', 'Presupuesto Participativo 2018');
+    jQuery(window).bind('hashchange', function () {
+      //detect hash change
+      var tab = window.location.hash.slice(1);
+      touchAnalytics('/presupuesto-cordoba/presupuesto-participativo#'+tab, 'Ejecuciones Presupuestarias '+tab);
+    })
   </script>
 </body>
 
