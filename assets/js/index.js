@@ -1,4 +1,4 @@
-var selectedYear = "2018";
+var selectedYear = "2019";
 // var selectY ;
 
 jQuery(window).bind('hashchange', function () {
@@ -8,10 +8,12 @@ jQuery(window).bind('hashchange', function () {
   var text_selected = $(this).data('year');
   selectedYear = tab;
   Cookies.set('year', selectedYear);
-  dibujar();
   $(".dropdown .selectedYear").text(tab);
   $(".dropdown .selectedYear").attr("href", "#"+tab);
-
+  try {
+    dibujar();
+  }
+  catch {}
 });
 
 $(document).ready(function() {
@@ -19,30 +21,36 @@ $(document).ready(function() {
   var URLactual = window.location;
   var url = URLactual.toString();
   var seleccionado = url.substring(url.indexOf('#')+1, url.indexOf('#')+5);
-  if(seleccionado == 'http'){seleccionado = 2018;}
+  if(seleccionado == 'http'){seleccionado = 2019;}
+  // -- Para probar en Localhost 
+  if (!seleccionado) seleccionado = 2019;
+  // --
   if (Cookies.get('year') == undefined) {
     selectedYear = seleccionado;
     Cookies.set('year', seleccionado);
-    dibujar();
     $(".dropdown .selectedYear").text(seleccionado);
     $(".dropdown .selectedYear").attr("href", "#"+seleccionado);
+    //dibujar();
   } else {
     selectedYear = seleccionado;
     Cookies.set('year', seleccionado);
-    dibujar();
     $(".dropdown .selectedYear").text(seleccionado);
     $(".dropdown .selectedYear").attr("href", "#"+seleccionado);
+    //dibujar();
   }
 
   finishedDrawing();
-  $(".selected li a").click(function(e){
+
+  //$(".selected li a").click(function(e){
+    $(".yearSelector").click(function(e) {
     var text_selected = $(this).data('year');
     selectedYear = text_selected;
     Cookies.set('year', selectedYear);
-    dibujar();
     $(".dropdown .selectedYear").text(text_selected);
     $(".dropdown .selectedYear").attr("href", "#"+text_selected);
+    //dibujar();
   });
+
 });
 
 

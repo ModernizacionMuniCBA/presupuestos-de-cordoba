@@ -1,10 +1,12 @@
 window.already_read_juris = {
   '2017': false,
-  '2018': false
+  '2018': false,
+  '2019': false
 };
 window.datos_juris = {
   '2017': [],
-  '2018': []
+  '2018': [],
+  '2019': []
 };
 window.botones = $('.btn-ejecutivo');
 window.juris = -1;
