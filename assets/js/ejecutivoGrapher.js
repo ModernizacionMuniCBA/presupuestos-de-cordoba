@@ -117,7 +117,7 @@ function generar_gafico(datos, juris) {
 function llenar_tabla_ejecutivo(datos, juris) {
   var dat = datos;
   var detalle = [];
-  var $tabla = $("#tbody-gastos-ejecutivo");
+  var tabla = $("#tbody-gastos-ejecutivo");
   for (var key = 1; key < dat.length; key++) {
     var val = dat[key];
     var partida = val[1];
@@ -135,11 +135,10 @@ function llenar_tabla_ejecutivo(datos, juris) {
     var esColapsable = nivel_princ >= 3 && nivelProximoDato > nivel;
     var plus = esColapsable ? ' <button class="btn btn-xs btn-default pull-right"><i class="fa fa-plus "></i></button>' : '';
     var claseColapsable = esColapsable ? ' pointer' : '';
-    $tabla.append('<tr' + mostrar + ' class="nivel-' + nivel_princ + claseColapsable + '"><td>' + plus + '</td><th scope="row">' + partida + '</th><td>' + concepto + '</td><td>$' + total.toLocaleString("es-AR") + '</td></tr>');
-
+    tabla.append('<tr' + mostrar + ' class="nivel-' + nivel_princ + claseColapsable + '"><td>' + plus + '</td><th scope="row">' + partida + '</th><td>' + concepto + '</td><td>$' + total.toLocaleString("es-AR") + '</td></tr>');
   }
-  var $ultimaFila = $tabla.find('tr').last().detach().addClass('total');
-  $tabla.prepend($ultimaFila);
+  var $ultimaFila = tabla.find('tr').last().detach().addClass('total');
+  tabla.prepend($ultimaFila);
 
   $('.table-ejecutivo').show();
 }

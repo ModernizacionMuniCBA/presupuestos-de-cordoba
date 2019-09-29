@@ -4,7 +4,7 @@ function dibujarD3_gastos_tribunal_faltas() {
 
   $.getJSON("https://sheets.googleapis.com/v4/spreadsheets/1ul8x07sCDmok1DujucaLyN-aWxpAXAXwlw8X2ixmvZc/values/" + selectedYear + "?key="+apiKey, function(dataJSON) {
     var datos = dataJSON.values;
-    console.log(datos);
+    //console.log(datos);
     $tabla.empty();
     for (var key = 1; key < datos.length; key++) {
       var val = datos[key];

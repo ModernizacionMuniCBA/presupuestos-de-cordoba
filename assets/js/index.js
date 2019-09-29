@@ -1,19 +1,36 @@
 var selectedYear = "2019";
-// var selectY ;
 
-jQuery(window).bind('hashchange', function () {
+// Capturamos evento de hashchange ("#") en la url.
+$(window).bind('hashchange', function () {
   //detect hash change
   var tab = window.location.hash.slice(1);
   finishedDrawing();
   var text_selected = $(this).data('year');
-  selectedYear = tab;
+  let parsedYear = parseInt(tab, 10);
+
+  // Hay páginas que modifican el hash de la URL con valores
+  // que no se corresponden con años. Esto arrastra ciertos otros problemas a lo largo
+  // del sitio. Debemos asegurarnos que el hash SEA, al menos, un número.
+  if (!isNaN(parsedYear)) {
+    selectedYear = parsedYear;
+    Cookies.set('year', selectedYear);
+    $(".dropdown .selectedYear").text(tab);
+    $(".dropdown .selectedYear").attr("href", "#" + parsedYear);
+  }
+
+  /*selectedYear = tab;
   Cookies.set('year', selectedYear);
   $(".dropdown .selectedYear").text(tab);
-  $(".dropdown .selectedYear").attr("href", "#"+tab);
-  try {
-    dibujar();
-  }
-  catch {}
+  $(".dropdown .selectedYear").attr("href", "#"+tab);*/
+  
+  // Cuando nos encontramos en la home, la función "dibujar()" no existe debido
+  // a que no se cargan los .js correspondientes y los mismos sólamente
+  // son cargados desde las visualizaciones correspondientes.
+  // Envolvemos la función dentro de un try como workaround, sin embargo
+  // lo ideal es crear un template correctamente y sólo hacer la modificación
+  // de datos necesarios según la visualización en la que nos encontremos.
+  try { dibujar(); }
+  catch { /* No tenemos nada que hacer. */ }
 });
 
 $(document).ready(function() {
@@ -25,7 +42,9 @@ $(document).ready(function() {
   // -- Para probar en Localhost 
   if (!seleccionado) seleccionado = 2019;
   // --
-  if (Cookies.get('year') == undefined) {
+  
+  // -- ???
+  /*if (Cookies.get('year') == undefined) {
     selectedYear = seleccionado;
     Cookies.set('year', seleccionado);
     $(".dropdown .selectedYear").text(seleccionado);
@@ -37,18 +56,35 @@ $(document).ready(function() {
     $(".dropdown .selectedYear").text(seleccionado);
     $(".dropdown .selectedYear").attr("href", "#"+seleccionado);
     //dibujar();
-  }
+  }*/
+  // --
+
+  //let yearFromCookies = Cookies.get("year");
+
+  selectedYear = seleccionado;
+  Cookies.set("year", seleccionado);
+  $(".dropdown .selectedYear").text(seleccionado).attr("href", "#" + seleccionado);
+  try { dibujar(); }
+  catch { /* No tenemos nada que hacer. */ }
 
   finishedDrawing();
 
-  //$(".selected li a").click(function(e){
-    $(".yearSelector").click(function(e) {
-    var text_selected = $(this).data('year');
-    selectedYear = text_selected;
-    Cookies.set('year', selectedYear);
-    $(".dropdown .selectedYear").text(text_selected);
-    $(".dropdown .selectedYear").attr("href", "#"+text_selected);
-    //dibujar();
+  $(".yearSelector").click(function(e) {
+    //var text_selected = $(this).data('year');
+    let text_selected = $(this).attr("data-year");
+    let parsedYear = parseInt(text_selected, 10);
+
+    // Hay páginas que modifican el hash de la URL con valores
+    // que no se corresponden con años. Esto arrastra ciertos otros problemas a lo largo
+    // del sitio. Debemos asegurarnos que el hash SEA, al menos, un número.
+    if (!isNaN(parsedYear)) {
+      selectedYear = parsedYear;
+      Cookies.set('year', selectedYear);
+      $(".dropdown .selectedYear").text(text_selected);
+      $(".dropdown .selectedYear").attr("href", "#" + parsedYear);
+    }
+    //try { dibujar(); }
+    //catch { /* No tenemos nada que hacer. */ }
   });
 
 });
