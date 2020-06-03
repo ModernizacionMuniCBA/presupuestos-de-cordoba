@@ -603,12 +603,12 @@ hr {
   margin-top: 20px;
   color: #FFFFFF;
   line-height: 1em;
-  background-color: #009059;
+  background-color: #009EE2;
   padding: 6px 14px;
   font-weight: 500;
 }
 #navbar .navbar-nav .bajar-datos a:hover {
-  background-color: #00a665;
+  background-color: #0162C8;
 }
 #navbar .navbar-nav .bajar-datos a::after {
   display: none;
@@ -621,7 +621,7 @@ hr {
 }
 
 .navbar-nav .year a.dropdown-toggle{
-  color: #00a665;
+  color: #009EE2;
   font-weight: 500!important;
   font-size: 1.5em!important;
 }
@@ -984,7 +984,7 @@ hr {
         bottom: 5px;
         border-radius: 50%;
         border: 3px solid transparent;
-        border-top-color: #00a665;
+        border-top-color: #009EE2;
 
         -webkit-animation: spin 3s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
         animation: spin 3s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
@@ -1143,7 +1143,7 @@ hr {
 }
 
 
-.stLogo{fill:#00a665;}{
+.stLogo{fill:#009EE2;}{
 
 #grafico-ejecuciones #d3plus_graph_xlabel,
 #grafico-ejecuciones #d3plus_graph_ylabel {

@@ -34,7 +34,7 @@ body {
   width: 1px;
 }
 a:hover, a:focus{
-  color: #00a665;
+  color: #009EE2;
   text-decoration: none;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
@@ -93,7 +93,7 @@ a:hover, a:focus{
 .sqGA{
   width: 160px;
   height: 75px;
-  background-color: #00a665;
+  background-color: #009EE2;
   display: inline-block;
   color: #FFF;
   overflow: hidden;
@@ -102,10 +102,10 @@ a:hover, a:focus{
 }
 .sqGA.inverse{
   background-color: transparent;
-  color: #00a665;
+  color: #009EE2;
 }
 .sqGA.inverse a{
-    color: #00a665;
+    color: #009EE2;
 }
 .logoGA{
   margin: 0px;
@@ -126,7 +126,7 @@ a:hover, a:focus{
   fill: #FFF;
 }
 .sqGA.inverse .logoGAG .stGA{
-  fill: #00a665;
+  fill: #009EE2;
 }
 
 
@@ -232,20 +232,20 @@ a:hover, a:focus{
 .hamburger.is-open .hamb-top {
   -webkit-transform: rotate(45deg);
   -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.73, 1, 0.28, 0.08);
-  background-color: #00a665;
+  background-color: #009EE2;
   margin-top: -2px;
   top: 50%;
 }
 
 .hamburger.is-open .hamb-middle {
-  background-color: #00a665;
+  background-color: #009EE2;
   display: none;
 }
 
 .hamburger.is-open .hamb-bottom {
   -webkit-transform: rotate(-45deg);
   -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.73, 1, 0.28, 0.08);
-  background-color: #00a665;
+  background-color: #009EE2;
   margin-top: -2px;
   top: 50%;
 }
@@ -253,7 +253,7 @@ a:hover, a:focus{
 .hamburger.is-open:before {
   -webkit-transform: translate3d(0, 0, 0);
   -webkit-transition: all 0.35s ease-in-out;
-  color: #00a665;
+  color: #009EE2;
   content: '';
   display: block;
   font-size: 14px;
@@ -273,7 +273,7 @@ a:hover, a:focus{
 
 .nav-buscar {
     float: left;
-    background-color: #00a665;
+    background-color: #009EE2;
     height: 90px;
     display: none;
 }
@@ -284,7 +284,7 @@ a:hover, a:focus{
   font-size: 2em;
 }
 .nav-buscar .form-control{
-  background-color: #00a665;
+  background-color: #009EE2;
   color: #FFFFFF;
   height: 40px;
   font-size: 1.1em;
@@ -297,7 +297,7 @@ a:hover, a:focus{
   border-radius: 0px;
 }
 .nav-buscar .btn-default{
-  background-color: #00a665;
+  background-color: #009EE2;
   color: #FFFFFF;
   height: 60px;
   width: 60px;
@@ -306,7 +306,7 @@ a:hover, a:focus{
 }
 .nav-buscar .btn-default:active,
 .nav-buscar .btn-default:focus{
-  background-color: #00a665;
+  background-color: #009EE2;
   color: #2CBE99;
   outline: none;
   box-shadow: none;
@@ -349,7 +349,7 @@ nav ul li a:before {
   width: 0%;
   content: '.';
   color: transparent;
-  background: #00a665;
+  background: #009EE2;
   height: 3px;
   margin-top: -10px;
 }
@@ -360,7 +360,7 @@ nav ul li a:before {
     width: 0%;
     content: '.';
     color: transparent;
-    background: #00a665;
+    background: #009EE2;
     height: 3px;
 }
 .stroke ul li a:hover:after {
@@ -375,7 +375,7 @@ nav ul li a:before {
 
 /* Vecino */
 .vecinoBg{
-  background-color: #00a665;
+  background-color: #009EE2;
   color: #FFFFFF;
   text-align: center;
   padding: 0px 0px 20px 0px;
@@ -419,10 +419,10 @@ footer{
   margin-top: 20px;
 }
 .footer-derecha{
-  border-left: 4px solid #00a665;
+  border-left: 4px solid #009EE2;
 }
 .tituloGA-footer{
-  color: #00a665;
+  color: #009EE2;
   font-family: "Gotham Rounded";
   font-weight: 600;
   text-transform: uppercase;
@@ -434,7 +434,7 @@ footer{
     padding-bottom: 15px;
 }
 .redesSociales a{
-  color: #00a665;
+  color: #009EE2;
   transition: all .2s ease-in-out;
   -webkit-transition: all .2s ease-in-out;
 }
@@ -442,7 +442,7 @@ footer{
   color: #FFF;
 }
 .redesSociales a:hover span.fa-stack{
-  border: 7px solid #00a665;
+  border: 7px solid #009EE2;
   border-radius: 50%;
 }
 .redesSociales a:hover .fa-stack-2x{
@@ -451,7 +451,7 @@ footer{
   margin-left: -2.5px;
 }
 .redesSociales a:hover .fa-stack-1x{
-  color: #00a665;
+  color: #009EE2;
   margin-top: -6.5px;
 }
 
@@ -461,7 +461,7 @@ footer{
   margin-left: -3px;
 }
 .redesSociales a:hover .github .fa-stack-1x{
-  color: #00a665;
+  color: #009EE2;
   margin-top: -7px;
 }
 
@@ -484,7 +484,7 @@ footer{
   margin-top: 20px;
 }
 .lista-links a:hover{
-  color: #00a665;
+  color: #009EE2;
 }
 .lista-links a.disabled, .lista-links a.disabled:hover {
   color: #888;
@@ -505,7 +505,7 @@ footer{
   margin-top: 6px;
 }
 footer .copyr{
-  color: #00a665;
+  color: #009EE2;
   font-size: 1.3em;
   margin-top: 30px;
   float:left;
@@ -525,7 +525,7 @@ footer .rowConvenios{
   margin-top: 40px;
 }
 footer .rowConvenios .titConvenios{
-  background-color: #00a665;
+  background-color: #009EE2;
   color: #FFF;
   font-weight: 500;
   text-transform: uppercase;
@@ -565,7 +565,7 @@ footer .rowConvenios .imgLogoFooter{
 /*		4. Botones		*/
 .btn.btn-muniCba {
     color: #fff;
-    background-color: #00a665;
+    background-color: #009EE2;
     border-color: #1BA34B;
 }
 
@@ -808,7 +808,7 @@ body.nav-expanded {
 }
 
 .navbar-nav>li>.dropdown-menu.lvl1, ul.dropdown-menu.lvl1{
-      border: 1px solid #00a665;
+      border: 1px solid #009EE2;
 }
 
 .navbar-gaMuniCba .nav.navbar-nav.navbar-right .dropdown-menu.lvl1 li a{
@@ -822,7 +822,7 @@ body.nav-expanded {
 }
 
 .navbar-gaMuniCba .nav.navbar-nav.navbar-right .dropdown-menu.lvl1 li a:hover{
-  background-color: #00a665;
+  background-color: #009EE2;
   transition: all 0.35s ease-in-out;
   color: #FFFFFF;
 }
@@ -836,7 +836,7 @@ body.nav-expanded {
 }
 
 .menuLogo .st0, .blockchain .st0, .resultado .st0, .card-icono .st0, .logoFooter .st0 {
-  fill: #00a665;
+  fill: #009EE2;
 }
 /* Footer Logos SVG */
 
